@@ -43,23 +43,7 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $e
      * @return \Illuminate\Http\Response
      *
-     * Standart function
-    public function render($request, Exception $e)
-    {
-        return parent::render($request, $e);
-    }*/
-
-    /* This don't view custom 404 error
-    public function render($request, Exception $e) {
-        if (config('app.debug') && ! $request->ajax()) {
-            $whoops = new \Whoops\Run;
-            $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-
-            return $whoops->handleException($e);
-        }
-
-        return parent::render($request, $e);
-    }*/
+     */
     
     public function render($request, Exception $e)
     {
