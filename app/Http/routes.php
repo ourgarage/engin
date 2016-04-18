@@ -1,20 +1,11 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', [
+        'as' => 'index-admin',
+        'uses' => 'Admin\DashboardController@index',
+    ]);
 });
 
+//@todo: this should be rewritten to separate routes for more flexible interaction in the future
 Route::auth();
-
-Route::get('/home', 'HomeController@index');

@@ -158,6 +158,11 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
+        /*
+         * Our Service Providers...
+         */
+        App\Providers\ComposerServiceProvider::class,
+
     ],
 
     /*
