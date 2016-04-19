@@ -161,6 +161,7 @@ return [
          */
         Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Gaaarfild\LaravelTitle\LaravelTitleServiceProvider::class,
 
         /*
          * Our Service Providers...
@@ -213,6 +214,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Title' => Gaaarfild\LaravelTitle\TitleFacade::class,
 
     ],
 
