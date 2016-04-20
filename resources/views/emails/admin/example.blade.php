@@ -2,10 +2,6 @@
 
 @section('body')
 
-    <style>
-        /*somestyle*/
-    </style>
-
     /* BODY */
 
 @endsection
