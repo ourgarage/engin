@@ -9,7 +9,8 @@
         "laravel/framework": "5.2.*",
         "barryvdh/laravel-debugbar": "*",
         "barryvdh/laravel-ide-helper": "^2.1",
-        "gaaarfild/laravel-title": "1.*"
+        "gaaarfild/laravel-title": "1.*",
+        "ourgarage/static-pages": "dev-develop"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -19,6 +20,12 @@
         "symfony/dom-crawler": "2.8.*|3.0.*",
         "filp/whoops": "^2.1"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ourgarage/static-pages.git"
+        }
+    ],
     "autoload": {
         "classmap": [
             "database"
