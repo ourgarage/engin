@@ -12,5 +12,5 @@ return [
     'suffix' => '',
 
     //Display if title not set
-    'on_empty' => '@',
+    'on_empty' => '',
 ];
