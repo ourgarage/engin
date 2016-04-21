@@ -3,7 +3,7 @@
 return [
 
     //Separates segments on render
-    'delimiter' => ' - ',
+    'delimiter' => ' | ',
 
     //Add this prefix at the beginning of rendered title
     'prefix' => '',
@@ -12,5 +12,5 @@ return [
     'suffix' => '',
 
     //Display if title not set
-    'on_empty' => '',
+    'on_empty' => '@',
 ];

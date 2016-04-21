@@ -20,6 +20,8 @@ class AuthController extends Controller
 
     public function login()
     {
+        \Title::append('Login');
+
         return view('auth.login');
     }
 
@@ -32,6 +34,8 @@ class AuthController extends Controller
 
     public function showRegistrationForm()
     {
+        \Title::append('Register');
+
         return view('auth.register');
     }
 }

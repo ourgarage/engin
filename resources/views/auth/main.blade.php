@@ -6,15 +6,19 @@
 
     @include('basis.meta')
 
-    {{--Laravel-Title Package--}}
+    @php(\Title::prepend('Admin'))
+
+    <title>{{ \Title::render() }}</title>
 
     @include('basis.css')
 
     @yield('local-css')
 
+    <link href='/css/auth.css' rel='stylesheet' type='text/css'>
+
 </head>
 
-<body style="background: #eeeeee;">
+<body>
 
 <div class="container-fluid">
 
