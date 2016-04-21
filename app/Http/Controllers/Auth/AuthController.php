@@ -29,4 +29,9 @@ class AuthController extends Controller
 
         return redirect()->route('index-admin');
     }
+
+    public function showRegistrationForm()
+    {
+        return view('auth.register');
+    }
 }
