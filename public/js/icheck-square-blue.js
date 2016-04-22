@@ -1,3 +1,7 @@
-/**
- * Created by mv on 22.04.16.
- */
+$(function () {
+    $('input').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%'
+    });
+});

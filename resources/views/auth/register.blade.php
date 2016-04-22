@@ -1,6 +1,6 @@
 @extends('auth.main')
 
-@section('local-css')
+@section('css')
 
     <link href="/packages/adminLTE/dist/css/AdminLTE.min.css" rel="stylesheet" type='text/css'>
 
@@ -97,18 +97,10 @@
 
 @endsection
 
-@section('local-js')
+@section('js')
 
     <script src="/packages/adminLTE/plugins/iCheck/icheck.min.js"></script>
 
-    <script>
-        $(function () {
-            $('input').iCheck({
-                checkboxClass: 'icheckbox_square-blue',
-                radioClass: 'iradio_square-blue',
-                increaseArea: '20%'
-            });
-        });
-    </script>
+    <script src="/js/icheck-square-blue.js"></script>
 
 @endsection

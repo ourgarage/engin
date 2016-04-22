@@ -1,6 +1,6 @@
 @extends('auth.main')
 
-@section('local-css')
+@section('css')
 
     <link href="/packages/adminLTE/dist/css/AdminLTE.min.css" rel="stylesheet" type='text/css'>
 
@@ -21,12 +21,6 @@
                 <div class="login-box-body">
 
                     <p class="login-box-msg">Reset Password</p>
-
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
                     <form role="form" method="POST" action="{{ route('password-email.post') }}">
 
@@ -61,7 +55,4 @@
 
     </div>
 
-@endsection
-
-@section('local-js')
 @endsection

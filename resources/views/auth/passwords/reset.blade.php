@@ -1,6 +1,6 @@
 @extends('auth.main')
 
-@section('local-css')
+@section('css')
 
     <link href="/packages/adminLTE/dist/css/AdminLTE.min.css" rel="stylesheet" type='text/css'>
 
@@ -78,5 +78,3 @@
 
 @endsection
 
-@section('local-js')
-@endsection
