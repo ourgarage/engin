@@ -12,14 +12,22 @@ class AuthController extends Controller
 {
 //    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    public function __construct()
+    {
+        \Title::prepend('Admin');
+    }
+
     public function logout()
     {
         \Auth::guard('web')->logout();
+        
         return redirect()->guest(route('login'));
     }
 
     public function login()
     {
+        \Title::append('Login');
+
         return view('auth.login');
     }
 
@@ -28,5 +36,12 @@ class AuthController extends Controller
         \Auth::attempt(request()->only(['email', 'password']), request('remember'));
 
         return redirect()->route('index-admin');
+    }
+
+    public function showRegistrationForm()
+    {
+        \Title::append('Register');
+
+        return view('auth.register');
     }
 }
