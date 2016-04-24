@@ -14,8 +14,6 @@
 
     <link href="/packages/adminLTE/dist/css/AdminLTE.min.css" rel="stylesheet" type='text/css'>
 
-    <link href="/packages/ionicons/css/ionicons.min.css" rel="stylesheet" type='text/css'>
-
     <link rel="stylesheet" href="/packages/adminLTE/dist/css/AdminLTE.min.css">
 
     <link rel="stylesheet" href="/packages/adminLTE/dist/css/skins/_all-skins.min.css">
