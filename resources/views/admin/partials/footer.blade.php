@@ -1,3 +1,6 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; 2016 OurGarage.</strong> All rights reserved.
+    <strong>
+        Copyright &copy; {{ date("Y") . ' ' . config('constants.name.simple') }}
+    </strong>
+    All rights reserved.
 </footer>
