@@ -12,11 +12,7 @@
 
     @yield('css')
 
-    <link href="/packages/adminLTE/dist/css/AdminLTE.min.css" rel="stylesheet" type='text/css'>
-
-    <link rel="stylesheet" href="/packages/adminLTE/dist/css/AdminLTE.min.css">
-
-    <link rel="stylesheet" href="/packages/adminLTE/dist/css/skins/_all-skins.min.css">
+    <link href="/packages/adminLTE/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -37,14 +33,7 @@
                 <div class="content-wrapper">
 
                     <section class="content-header">
-                        <h1>
-                            Blank page
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                            <li><a href="#">Examples</a></li>
-                            <li class="active">Blank page</li>
-                        </ol>
+                        <h1></h1>
                     </section>
 
                     <section class="content">
@@ -65,11 +54,9 @@
 
 @include('basis.js')
 
-<script src="/packages/adminLTE/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-
 <script src="/packages/adminLTE/plugins/fastclick/fastclick.min.js"></script>
 
-<script src="/packages/adminLTE/dist/js/app.min.js"></script>
+<script src="/packages/adminLTE/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 
 @yield('js')
 

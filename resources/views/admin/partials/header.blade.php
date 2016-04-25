@@ -1,7 +1,7 @@
 <header class="main-header">
 
     <a href="#" class="logo">
-        <span class="logo-lg"><b>Admin</b>LTE</span>
+        <span class="logo-lg"><b>Admin panel</b></span>
     </a>
 
     <nav class="navbar navbar-static-top" role="navigation">
@@ -23,25 +23,19 @@
                         <span class="label label-success">4</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="header">You have 4 messages</li>
+                        <li class="header"></li>
                         <li>
                             <ul class="menu">
                                 <li>
                                     <a href="#">
-                                        <div class="pull-left">
-                                            <img src="/packages/adminLTE/dist/img/user2-160x160.jpg"
-                                                 class="img-circle" alt="User Image">
-                                        </div>
-                                        <h4>
-                                            Support Team
-                                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                        </h4>
-                                        <p>Why not buy a new awesome theme?</p>
+
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="footer"><a href="#">See All Messages</a></li>
+                        <li class="footer">
+                            <a href="#"></a>
+                        </li>
                     </ul>
                 </li>
 
@@ -51,17 +45,19 @@
                         <span class="label label-warning">10</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="header">You have 10 notifications</li>
+                        <li class="header"></li>
                         <li>
                             <ul class="menu">
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
+
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="footer"><a href="#">View all</a></li>
+                        <li class="footer">
+                            <a href="#"></a>
+                        </li>
                     </ul>
                 </li>
 
@@ -71,28 +67,18 @@
                         <span class="label label-danger">9</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="header">You have 9 tasks</li>
+                        <li class="header"></li>
                         <li>
                             <ul class="menu">
                                 <li>
                                     <a href="#">
-                                        <h3>
-                                            Design some buttons
-                                            <small class="pull-right">20%</small>
-                                        </h3>
-                                        <div class="progress xs">
-                                            <div class="progress-bar progress-bar-aqua" style="width: 20%"
-                                                 role="progressbar" aria-valuenow="20" aria-valuemin="0"
-                                                 aria-valuemax="100">
-                                                <span class="sr-only">20% Complete</span>
-                                            </div>
-                                        </div>
+
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="footer">
-                            <a href="#">View all tasks</a>
+                            <a href="#"></a>
                         </li>
                     </ul>
                 </li>

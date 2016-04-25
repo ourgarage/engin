@@ -2,6 +2,4 @@
 
 @section('body')
 
-    1234
-
 @stop
