@@ -10,36 +10,35 @@
 
 <body>
 
-    <table style="width:100%;">
+<div style="
+    background: #3870a9;
+    border-radius: .26em .26em 0 0;
+    padding: 2.6em 0;">
 
-        <tbody>
+    <img
+        src="/images/logo/logo-0001.png"
+        {{--src="{{ $message->embed(public_path('images/logo/logo-0001.png')) }}"--}}
+        alt="logo"
+        style="
+     max-width:75vw;
+     width:13em;
+     display:block;
+     margin: 0 auto;
+     ">
+    <p style="text-align: center;margin-top: .39em">High technologies</p>
+</div>
 
-            <tr>
-                <td>
-                    {{--For Example--}}
-                    {{--<img src="{{ $message->embed(public_path(config('image.admin-email-logo'))) }}"--}}
-                    {{--alt="logo" style="width: 4em;>--}}
-                    INSERT LOGO
-                </td>
-            </tr>
+<div>
+    @yield('title')
+</div>
 
-            <tr>
-                <td>
-                    @yield('title')
-                </td>
-            </tr>
+<div>
+    @yield('body')
+</div>
 
-            @yield('body')
-
-            <tr>
-                <td>
-                    @yield('footer')
-                </td>
-            </tr>
-
-        </tbody>
-
-    </table>
+<div>
+    @yield('footer')
+</div>
 
 </body>
 

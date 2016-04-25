@@ -2,7 +2,7 @@
 
 <p>Link for Register Complete (confirm email)</p>
 
-<a href="{{ route('index-admin', $token) }}">
+<a href="{{ route('index-admin', $user->hash) }}">
     {{ trans('email.welcome-email.btn-confirm') }}
 </a>
 

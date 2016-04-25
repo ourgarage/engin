@@ -8,9 +8,11 @@
 
     <p>Link for Register Complete (confirm email)</p>
 
-    <p>{{ $token }}</p>
+    <p>Name: {{ $user->name }}</p>
 
-    <a href="{{ route('index-admin', $token) }}">
+    <p>Token: {{ $user->hash }}</p>
+
+    <a href="{{ route('index-admin', $user->hash) }}">
         confirm email
     </a>
 

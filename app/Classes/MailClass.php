@@ -9,14 +9,12 @@ class MailClass
 
     public function register($user)
     {
-        $data = ['token' => $user->hash];
+        Mail::queue(['emails.admin.register-html', 'emails.admin.register-text'],
+            ['user' => $user], function ($m) use ($user) {
 
-        $adresat = ['email' => $user->email];
+            $m->to($user->email, $user->name)->subject('Register');
 
-        Mail::queue(['emails.admin.register-html', 'emails.admin.register-text'], $data,
-            function ($message) use ($adresat) {
-                $message->to($adresat['email'])->subject('Register');
-            });
+        });
     }
 
 

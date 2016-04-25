@@ -52,9 +52,7 @@ class AuthController extends Controller
 
     public function registerPost(Request $request, MailClass $mailClass)
     {
-
 //        UserRegisterPostRequest $errors,
-
         $user = User::create([
                 'name' => $request::get('name'),
                 'email' => $request::get('email'),
