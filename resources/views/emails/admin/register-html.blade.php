@@ -1,7 +1,7 @@
 @extends('emails.admin.main')
 
 @section('title')
-    Register complete
+    <p style="padding: 1em 0 0 0; font-weight: 600; font-size: 1.3em">Register complete</p>
 @endsection
 
 @section('body')
