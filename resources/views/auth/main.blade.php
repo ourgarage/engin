@@ -20,6 +20,8 @@
 
 <div class="container-fluid">
 
+    @include('basis.notification-on-page')
+
     <div class="row">
         <div class="col-md-12">
             @yield('body')

@@ -19,6 +19,7 @@
                     {{--For Example--}}
                     {{--<img src="{{ $message->embed(public_path(config('image.admin-email-logo'))) }}"--}}
                     {{--alt="logo" style="width: 4em;>--}}
+                    INSERT LOGO
                 </td>
             </tr>
 
@@ -28,7 +29,7 @@
                 </td>
             </tr>
 
-            @yield(body)
+            @yield('body')
 
             <tr>
                 <td>

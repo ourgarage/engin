@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1245fdb05c6cd13adbff3f93521bc3ce",
-    "content-hash": "08d45b344982b588b0a03d4f9722987f",
+    "hash": "456b35da27f5737c60053c9e7637dc60",
+    "content-hash": "76a2072781239c0caf196fc0d2acf9a2",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -279,6 +279,50 @@
             "time": "2015-11-06 14:35:42"
         },
         {
+            "name": "gaaarfild/laravel-notifications",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gaaarfild/laravel-notifications.git",
+                "reference": "39e16a0b50db9beb12769bc0b46163d006e44c9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gaaarfild/laravel-notifications/zipball/39e16a0b50db9beb12769bc0b46163d006e44c9f",
+                "reference": "39e16a0b50db9beb12769bc0b46163d006e44c9f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.2",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Gaaarfild\\LaravelNotifications\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dinar Garipov",
+                    "email": "garipov.dinar@gmail.com"
+                }
+            ],
+            "description": "Convenient flash notifications",
+            "keywords": [
+                "laravel",
+                "notifications"
+            ],
+            "time": "2015-12-25 23:05:48"
+        },
+        {
             "name": "gaaarfild/laravel-title",
             "version": "v1.2.1",
             "source": {
@@ -410,6 +454,63 @@
                 }
             ],
             "time": "2015-04-20 18:58:01"
+        },
+        {
+            "name": "jenssegers/date",
+            "version": "v3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jenssegers/date.git",
+                "reference": "000caf2e52c5029a746c244390e304413abbbd28"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/000caf2e52c5029a746c244390e304413abbbd28",
+                "reference": "000caf2e52c5029a746c244390e304413abbbd28",
+                "shasum": ""
+            },
+            "require": {
+                "nesbot/carbon": "^1.0",
+                "php": ">=5.4",
+                "symfony/translation": "^2.0|^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0|^5.0",
+                "satooshi/php-coveralls": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jenssegers\\Date\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Segers",
+                    "homepage": "https://jenssegers.com"
+                }
+            ],
+            "description": "A date library to help you work with dates in different languages",
+            "homepage": "https://github.com/jenssegers/date",
+            "keywords": [
+                "carbon",
+                "date",
+                "datetime",
+                "i18n",
+                "laravel",
+                "time",
+                "translation"
+            ],
+            "time": "2016-04-07 12:00:23"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -968,12 +1069,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ourgarage/static-pages.git",
-                "reference": "3f5338352570d7d1178485959fb410560cf463a1"
+                "reference": "205e5f3cd0753a9db0b267ec03499c52c17e8f68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ourgarage/static-pages/zipball/3f5338352570d7d1178485959fb410560cf463a1",
-                "reference": "3f5338352570d7d1178485959fb410560cf463a1",
+                "url": "https://api.github.com/repos/ourgarage/static-pages/zipball/205e5f3cd0753a9db0b267ec03499c52c17e8f68",
+                "reference": "205e5f3cd0753a9db0b267ec03499c52c17e8f68",
                 "shasum": ""
             },
             "type": "package",
@@ -996,7 +1097,7 @@
                 "source": "https://github.com/ourgarage/static-pages/tree/develop",
                 "issues": "https://github.com/ourgarage/static-pages/issues"
             },
-            "time": "2016-04-20 21:02:13"
+            "time": "2016-04-23 08:51:46"
         },
         {
             "name": "paragonie/random_compat",
