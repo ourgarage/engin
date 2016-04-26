@@ -1,9 +1,12 @@
-<p>Register complete</p>
-
-<p>Link for Register Complete (confirm email)</p>
+<p>{{ $user->name }}, congratulations on your successful registration on (ВСТАВИТЬ НАЗВАНИЕ САЙТА ИЗ КОНФИГА, ПОКА
+    НЕ СМЕРДЖЕНО).</p>
+<p>For full use of all resources, please confirm your email address by clicking on the link</p>
 
 <a href="{{ route('index-admin', $user->hash) }}">
-    {{ trans('email.welcome-email.btn-confirm') }}
+    <span>Confirm email</span>
 </a>
 
-<p>Something info about what all of this is not our fail =)</p>
+<p>
+    Unless you were the initiator of registering on the site <a href="{{ route('index') }}">ВСТАВИТЬ НАЗВАНИЕ</a>, then no response from you is not
+    required
+</p>

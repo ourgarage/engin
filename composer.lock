@@ -1069,12 +1069,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ourgarage/static-pages.git",
-                "reference": "205e5f3cd0753a9db0b267ec03499c52c17e8f68"
+                "reference": "2b8b061c0bfa49c2b1c5a7674a382f0380e022bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ourgarage/static-pages/zipball/205e5f3cd0753a9db0b267ec03499c52c17e8f68",
-                "reference": "205e5f3cd0753a9db0b267ec03499c52c17e8f68",
+                "url": "https://api.github.com/repos/ourgarage/static-pages/zipball/2b8b061c0bfa49c2b1c5a7674a382f0380e022bb",
+                "reference": "2b8b061c0bfa49c2b1c5a7674a382f0380e022bb",
                 "shasum": ""
             },
             "type": "package",
@@ -1097,7 +1097,7 @@
                 "source": "https://github.com/ourgarage/static-pages/tree/develop",
                 "issues": "https://github.com/ourgarage/static-pages/issues"
             },
-            "time": "2016-04-23 08:51:46"
+            "time": "2016-04-26 09:02:03"
         },
         {
             "name": "paragonie/random_compat",

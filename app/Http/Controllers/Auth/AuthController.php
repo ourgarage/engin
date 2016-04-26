@@ -33,7 +33,7 @@ class AuthController extends Controller
     {
         \Title::append('Login');
 
-        return view('auth.login');
+        return view('auth.register-complete');
     }
 
     public function loginPost()
