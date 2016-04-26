@@ -22,14 +22,14 @@
 
                 <div class="register-box-body">
 
-                    <p class="login-box-msg">Register a new membership</p>
+                    <p class="login-box-msg">{{ trans('auth.new_register') }}</p>
 
                     <form role="form" method="POST" action="{{ route('register.post') }}">
 
                         {!! csrf_field() !!}
 
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="Name" name="name" value="{{ old('name') }}">
+                            <input type="text" class="form-control" placeholder="{{ trans('auth.name') }}" name="name" value="{{ old('name') }}">
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
                             @if ($errors->has('name'))
                                 <span class="help-block">
@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="form-group has-feedback">
-                            <input type="password" class="form-control" placeholder="Password" name="password">
+                            <input type="password" class="form-control" placeholder="{{ trans('auth.password') }}" name="password">
                             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                             @if ($errors->has('password'))
                                 <span class="help-block">
@@ -59,7 +59,7 @@
                         </div>
 
                         <div class="form-group has-feedback">
-                            <input type="password" class="form-control" placeholder="Retype password" name="password_confirmation">
+                            <input type="password" class="form-control" placeholder="{{ trans('auth.r_password') }}" name="password_confirmation">
                             <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
                             @if ($errors->has('password_confirmation'))
                                 <span class="help-block">
@@ -72,20 +72,20 @@
                             <div class="col-xs-8">
                                 <div class="checkbox icheck">
                                     <label>
-                                        <input type="checkbox"> I agree to the <a href="#">rules</a>
+                                        <input type="checkbox"> {{ trans('auth.i_agree') }} <a href="#">{{ trans('auth.rules') }}</a>
                                     </label>
                                 </div>
                             </div>
 
                             <div class="col-xs-4">
-                                <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+                                <button type="submit" class="btn btn-primary btn-block btn-flat">{{ trans('auth.register') }}</button>
                             </div>
                         </div>
 
                     </form>
 
-                    <a href="{{ route('login') }}">I already have a membership</a><br>
-                    <a href="#" class="text-center">Support</a>
+                    <a href="{{ route('login') }}">{{ trans('auth.i_membership') }}</a><br>
+                    <a href="#" class="text-center">{{ trans('auth.support') }}</a>
 
                 </div>
 
