@@ -20,7 +20,7 @@
 
                 <div class="login-box-body">
 
-                    <p class="login-box-msg">Reset Password</p>
+                    <p class="login-box-msg">{{ trans('passwords.head_reset_password') }}</p>
 
                     <form role="form" method="POST" action="{{ route('password-reset.post') }}">
 
@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="form-group has-feedback">
-                            <input type="password" class="form-control" placeholder="Password" name="password">
+                            <input type="password" class="form-control" placeholder="{{ trans('auth.password') }}" name="password">
                             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                             @if ($errors->has('password'))
                                 <span class="help-block">
@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="form-group has-feedback">
-                            <input type="password" class="form-control" placeholder="Retype password" name="password_confirmation">
+                            <input type="password" class="form-control" placeholder="{{ trans('auth.r_password') }}" name="password_confirmation">
                             <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
                             @if ($errors->has('password_confirmation'))
                                 <span class="help-block">
@@ -61,7 +61,7 @@
                         <div class="row">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary btn-block btn-flat">
-                                    Reset Password
+                                    {{ trans('passwords.button_reset') }}
                                 </button>
                             </div>
                         </div>

@@ -20,7 +20,7 @@
 
                 <div class="login-box-body">
 
-                    <p class="login-box-msg">Reset Password</p>
+                    <p class="login-box-msg">{{ trans('passwords.head_reset_password') }}</p>
 
                     <form role="form" method="POST" action="{{ route('password-email.post') }}">
 
@@ -40,7 +40,7 @@
                         <div class="row">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary btn-block btn-flat fa-envelope">
-                                    Send Password Reset Link
+                                    {{ trans('passwords.send_link') }}
                                 </button>
                             </div>
                         </div>
