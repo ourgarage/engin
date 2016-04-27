@@ -10,8 +10,6 @@
 
     @include('basis.css')
 
-    <link href="/packages/adminLTE/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css">
-
     @yield('css')
 
 </head>
@@ -53,10 +51,6 @@
 </div>
 
 @include('basis.js')
-
-<script src="/packages/adminLTE/plugins/fastclick/fastclick.min.js"></script>
-
-<script src="/packages/adminLTE/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 
 @yield('js')
 
