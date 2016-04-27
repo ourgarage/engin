@@ -120,12 +120,14 @@ class AuthController extends Controller
         if ($confirm->updated_at >= Date::now()->subHours('24') && $confirm->user->status == 'pending') {
             $confirm->user()->update(['status' => 'active']);
 
+            Auth::login($confirm->user);
+
             Notifications::success('You successfully confirmed your registration');
         }
 
         Notifications::error('Error. Perhaps the allotted time is up for registration. On the login page you can request a follow-up letter to confirm your registration');
 
-        return redirect()->route('login');
+        return redirect()->route('index');
     }
 
 }
