@@ -15,6 +15,7 @@ class CreateRegisterConfirmsTable extends Migration
         Schema::create('register_confirms', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email')->index();
+            $table->string('hash')->nullable();
             $table->timestamps();
         });
     }

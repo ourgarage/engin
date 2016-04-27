@@ -60,22 +60,23 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
-    public function registerPost(UserRegisterPostRequest $errors, MailClass $mailClass)
+    public function registerPost(UserRegisterPostRequest $errors, MailClass $mailClass, RegisterConfirm $confirm)
     {
         $user = User::create([
             'name' => request('name'),
             'email' => request('email'),
             'password' => bcrypt(request('password')),
-            'hash' => randomString()
         ]);
+
+        $confirm = $confirm->create(['email' => $user->email, 'hash' => randomString()]);
 
         if (!$user instanceof Model) {
 
-            $mailClass->register($user);
+            $mailClass->register($user, $confirm->hash);
 
             Notifications::success('Success');
 
-            return redirect()->route('registration-complete');
+            return redirect()->route('login');
 
         } else {
 
@@ -91,6 +92,8 @@ class AuthController extends Controller
     {
         $user = $user::where('email', request('email'))->with('confirm')->first();
 
+        $hash = randomString();
+
         if ($user->confirm) {
             if ($user->confirm->updated_at >= Date::now()->subHours('12')) {
                 Notifications::danger('You recently have used this service. Wait a few hours before the next attempt. If you have not received a letter, it is recommended to check the folder "Spam" your mailbox');
@@ -98,18 +101,31 @@ class AuthController extends Controller
                 return redirect()->back()->withInput();
             }
 
-            $user->update(['hash' => randomString()]);
-
-            $user->confirm()->touch();
+            $user->confirm()->update(['hash' => $hash]);
+        } else {
+            $confirm->create(['email' => request('email'), 'hash' => $hash]);
         }
 
-        $confirm->create(['email' => request('email')]);
-
-        $mailClass->register($user);
+        $mailClass->register($user, $hash);
 
         Notifications::success('Success. Check your mailbox');
 
-        return redirect()->route('index');
+        return redirect()->route('login');
+    }
+
+    public function registerConfirmation($token, User $user, RegisterConfirm $confirm)
+    {
+        $confirm = $confirm->where('hash', $token)->with('user')->first();
+
+        if ($confirm->updated_at >= Date::now()->subHours('24') && $confirm->user->status == 'pending') {
+            $confirm->user()->update(['status' => 'active']);
+
+            Notifications::success('You successfully confirmed your registration');
+        }
+
+        Notifications::error('Error. Perhaps the allotted time is up for registration. On the login page you can request a follow-up letter to confirm your registration');
+
+        return redirect()->route('login');
     }
 
 }

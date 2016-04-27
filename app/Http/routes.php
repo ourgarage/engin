@@ -21,6 +21,7 @@ Route::group(['middleware' => ['guest']], function () {
     Route::post('/register', 'Auth\AuthController@registerPost')->name('register.post');
 
     Route::post('/register/resend', 'Auth\AuthController@registerResendConfirmEmailPost')->name('register.resend.email');
+    Route::get('/register/confirm/{token?}', 'Auth\AuthController@registerConfirmation')->name('register.confirmation');
 
 });
 

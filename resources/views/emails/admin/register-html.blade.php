@@ -14,7 +14,7 @@
         НЕ СМЕРДЖЕНО).</p>
     <p>For full use of all resources, please confirm your email address by clicking on the link</p>
 
-    <a href="{{ route('index-admin', $user->hash) }}"
+    <a href="{{ route('register.confirmation', $hash) }}"
         style="display:block;text-align:center; margin: 2.3em; text-decoration: none;">
         <span style="background: #0087ff; padding: 1em 1.8em; border-radius: .26em; font-size: 1.1em;color: #FFFFFF; text-transform: uppercase; font-weight: 600;">
             Confirm email

@@ -8,7 +8,12 @@ class RegisterConfirm extends Model
 {
 
     protected $fillable = [
-        'email'
+        'email', 'hash'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User', 'email', 'email');
+    }
 
 }
