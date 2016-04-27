@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Classes\MailClass;
+use App\Http\Requests\ResendRegisterConfirmEmailPostRequest;
 use App\Http\Requests\UserRegisterPostRequest;
+use App\Models\RegisterConfirm;
 use App\Models\User;
 use Notifications;
 use Validator;
@@ -12,6 +14,7 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Request;
 use Illuminate\Support\Facades\Auth;
+use Jenssegers\Date\Date;
 
 class AuthController extends Controller
 {
@@ -33,14 +36,21 @@ class AuthController extends Controller
     {
         \Title::append('Login');
 
-        return view('auth.register-complete');
+        return view('auth.login');
     }
 
     public function loginPost()
     {
-        Auth::attempt(request()->only(['email', 'password']), request('remember'));
+        if (Auth::attempt(['email' => request('email'), 'password' => request('password'), 'status' => 'active'], request('remember'))) {
+            Notifications::success('Successfully login');
 
-        return redirect()->route('index-admin');
+            return redirect()->route('index');
+        } else {
+            Notifications::danger('<p>Access error. The reasons may be incorrect email password pair or unconfirmed registration</p>
+                <p>Please use the <a href="' . route('password-reset') . '">password reset service</a> or <a href="javascript:void(0)" id="resendConfirmEmail">re-sending an email to confirm your registration</a></p>');
+
+            return redirect()->back()->withInput();
+        }
     }
 
     public function showRegistrationForm()
@@ -50,14 +60,13 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
-    public function registerPost(Request $request, MailClass $mailClass)
+    public function registerPost(UserRegisterPostRequest $errors, MailClass $mailClass)
     {
-//        UserRegisterPostRequest $errors,
         $user = User::create([
-                'name' => $request::get('name'),
-                'email' => $request::get('email'),
-                'password' => bcrypt($request::get('password')),
-                'hash' => randomString()
+            'name' => request('name'),
+            'email' => request('email'),
+            'password' => bcrypt(request('password')),
+            'hash' => randomString()
         ]);
 
         if (!$user instanceof Model) {
@@ -65,9 +74,6 @@ class AuthController extends Controller
             $mailClass->register($user);
 
             Notifications::success('Success');
-
-//        Auth::guard($this->getGuard())->login($this->create($request->all()));
-//        Auth::attempt(request()->only(['email', 'password']), request('remember'));
 
             return redirect()->route('registration-complete');
 
@@ -79,6 +85,31 @@ class AuthController extends Controller
 
         }
 
+    }
+
+    public function registerResendConfirmEmailPost(ResendRegisterConfirmEmailPostRequest $error, User $user, RegisterConfirm $confirm, MailClass $mailClass)
+    {
+        $user = $user::where('email', request('email'))->with('confirm')->first();
+
+        if ($user->confirm) {
+            if ($user->confirm->updated_at >= Date::now()->subHours('12')) {
+                Notifications::danger('You recently have used this service. Wait a few hours before the next attempt. If you have not received a letter, it is recommended to check the folder "Spam" your mailbox');
+
+                return redirect()->back()->withInput();
+            }
+
+            $user->update(['hash' => randomString()]);
+
+            $user->confirm()->touch();
+        }
+
+        $confirm->create(['email' => request('email')]);
+
+        $mailClass->register($user);
+
+        Notifications::success('Success. Check your mailbox');
+
+        return redirect()->route('index');
     }
 
 }

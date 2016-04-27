@@ -3,10 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\Validator;
-use Notifications;
 use App\Http\Requests\Request;
+use Notifications;
 
-class UserRegisterPostRequest extends Request
+class ResendRegisterConfirmEmailPostRequest extends Request
 {
 
 
@@ -15,13 +15,11 @@ class UserRegisterPostRequest extends Request
         return true;
     }
 
+
     public function rules()
     {
         $rules = [
-            'name' => 'required|min:4|max:26',
-            'email' => 'required|email|unique:users,email|min:6|max:300',
-            'password' => 'required|confirmed|min:6|max:300',
-            'rules' => 'required',
+            'email' => 'required|email|exists:users,email,status,pending'
         ];
 
         return $rules;

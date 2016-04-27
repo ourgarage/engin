@@ -20,6 +20,8 @@ Route::group(['middleware' => ['guest']], function () {
     Route::get('/register', 'Auth\AuthController@showRegistrationForm')->name('register');
     Route::post('/register', 'Auth\AuthController@registerPost')->name('register.post');
 
+    Route::post('/register/resend', 'Auth\AuthController@registerResendConfirmEmailPost')->name('register.resend.email');
+
 });
 
 Route::get('/test1234', 'HomeController@getTest1234')->name('test1234');
