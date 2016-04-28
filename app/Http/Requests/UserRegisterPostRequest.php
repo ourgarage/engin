@@ -19,7 +19,7 @@ class UserRegisterPostRequest extends Request
     {
         $rules = [
             'name' => 'required|min:4|max:26',
-            'email' => 'required|email|unique:users,email|min:6|max:300',
+            'email' => 'required|email|unique:users,email|max:300',
             'password' => 'required|confirmed|min:6|max:300',
             'rules' => 'required',
         ];

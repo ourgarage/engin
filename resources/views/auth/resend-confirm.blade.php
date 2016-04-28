@@ -24,10 +24,4 @@
     </div>
 </div>
 
-<script>
-    $(document).ready(function () {
-        $('#resendConfirmEmail').on('click', function () {
-            $('#resendConfirmForm').modal('show');
-        })
-    });
-</script>
+<script src="/js/resend-confirm-email.js"></script>

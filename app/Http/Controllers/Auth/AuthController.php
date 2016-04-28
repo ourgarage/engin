@@ -68,22 +68,18 @@ class AuthController extends Controller
             'password' => bcrypt(request('password')),
         ]);
 
-        $confirm = $confirm->create(['email' => $user->email, 'hash' => randomString()]);
+        $confirm = $confirm->create(['email' => $user->email, 'hash' => str_random()]);
 
-        if (!$user instanceof Model) {
+        if (!$user) {
+            Notifications::error('Error. Please try later');
 
+            return redirect()->back()->withInput();
+        } else {
             $mailClass->register($user, $confirm->hash);
 
             Notifications::success('Success');
 
             return redirect()->route('login');
-
-        } else {
-
-            Notifications::error('Error. Please try later');
-
-            return redirect()->back()->withInput();
-
         }
 
     }
@@ -92,7 +88,7 @@ class AuthController extends Controller
     {
         $user = $user::where('email', request('email'))->with('confirm')->first();
 
-        $hash = randomString();
+        $hash = str_random();
 
         if ($user->confirm) {
             if ($user->confirm->updated_at >= Date::now()->subHours('12')) {
@@ -113,11 +109,11 @@ class AuthController extends Controller
         return redirect()->route('login');
     }
 
-    public function registerConfirmation($token, User $user, RegisterConfirm $confirm)
+    public function registerConfirmation($email, $token, User $user, RegisterConfirm $confirm)
     {
-        $confirm = $confirm->where('hash', $token)->with('user')->first();
+        $confirm = $confirm->where('hash', $token)->where('email', $email)->with('user')->first();
 
-        if ($confirm->updated_at >= Date::now()->subHours('24') && $confirm->user->status == 'pending') {
+        if ($confirm && $confirm->updated_at >= Date::now()->subHours('24') && $confirm->user->status == 'pending') {
             $confirm->user()->update(['status' => 'active']);
 
             Auth::login($confirm->user);

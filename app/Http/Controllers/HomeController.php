@@ -17,9 +17,4 @@ class HomeController extends Controller
         return view('site.pages.index');
     }
 
-    public function getTest1234()
-    {
-        $user = \App\Models\User::find(2);
-        return view('emails.admin.register-html', ['user' => $user]);
-    }
 }
