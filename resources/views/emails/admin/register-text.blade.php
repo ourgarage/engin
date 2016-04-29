@@ -2,7 +2,7 @@
     НЕ СМЕРДЖЕНО).</p>
 <p>For full use of all resources, please confirm your email address by clicking on the link</p>
 
-<a href="{{ route('register.confirmation', [$user->email, $hash]) }}">
+<a href="{{ route('register.confirmation', [$user->email, $token]) }}">
     <span>Confirm email</span>
 </a>
 
