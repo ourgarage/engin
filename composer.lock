@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1245fdb05c6cd13adbff3f93521bc3ce",
-    "content-hash": "08d45b344982b588b0a03d4f9722987f",
+    "hash": "011b9cb687e8e8511f8ef875a38a4c54",
+    "content-hash": "29e80c9181e7e38496f6e731d8ede3ae",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -323,6 +323,75 @@
                 "seo"
             ],
             "time": "2015-12-25 21:56:37"
+        },
+        {
+            "name": "graham-campbell/exceptions",
+            "version": "v8.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
+                "reference": "91eacead72ec6c02bb231e3ed401bc228271fa74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/91eacead72ec6c02bb231e3ed401bc228271fa74",
+                "reference": "91eacead72ec6c02bb231e3ed401bc228271fa74",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "5.1.*|5.2.*|5.3.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*",
+                "paragonie/random_compat": "^1.1|^2.0",
+                "php": ">=5.5.9",
+                "psr/log": "^1.0",
+                "symfony/debug": "^2.7|^3.0",
+                "symfony/http-foundation": "^2.7|^3.0"
+            },
+            "require-dev": {
+                "filp/whoops": "^1.1|^2.0",
+                "graham-campbell/testbench": "^3.1",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "suggest": {
+                "filp/whoops": "Enables use of the debug displayer."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "8.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\Exceptions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                }
+            ],
+            "description": "Provides A Powerful Error Response System For Both Development And Production",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Laravel Exceptions",
+                "Laravel-Exceptions",
+                "error",
+                "errors",
+                "exception",
+                "exceptions",
+                "framework",
+                "laravel",
+                "whoops"
+            ],
+            "time": "2016-04-26 14:23:03"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -968,12 +1037,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ourgarage/static-pages.git",
-                "reference": "3f5338352570d7d1178485959fb410560cf463a1"
+                "reference": "2b8b061c0bfa49c2b1c5a7674a382f0380e022bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ourgarage/static-pages/zipball/3f5338352570d7d1178485959fb410560cf463a1",
-                "reference": "3f5338352570d7d1178485959fb410560cf463a1",
+                "url": "https://api.github.com/repos/ourgarage/static-pages/zipball/2b8b061c0bfa49c2b1c5a7674a382f0380e022bb",
+                "reference": "2b8b061c0bfa49c2b1c5a7674a382f0380e022bb",
                 "shasum": ""
             },
             "type": "package",

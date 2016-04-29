@@ -2,16 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
-use Validator;
+use Auth;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
-//    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
-
     public function __construct()
     {
         \Title::prepend('Admin');
@@ -19,7 +15,7 @@ class AuthController extends Controller
 
     public function logout()
     {
-        \Auth::guard('web')->logout();
+        Auth::guard('web')->logout();
         
         return redirect()->guest(route('login'));
     }
@@ -31,9 +27,18 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function loginPost()
+    public function loginPost(\Request $request)
     {
-        \Auth::attempt(request()->only(['email', 'password']), request('remember'));
+        if (!Auth::attempt($request->only(['email', 'password']), request()->has('remember'))) {
+            if ($request->ajax() || $request->wantsJson()) {
+                return new JsonResponse(['Not authorized'], 403);
+            }
+
+            //@todo: add notification
+            return redirect(null, 403)->route('login');
+        }
+
+        //@todo: Add notification
 
         return redirect()->route('index-admin');
     }
