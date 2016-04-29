@@ -15,7 +15,7 @@ Route::group(['middleware' => ['guest']], function () {
     Route::post('/password/email', 'Auth\PasswordController@sendResetLinkEmail')->name('password-email.post');
     Route::post('/password/reset', 'Auth\PasswordController@reset')->name('password-reset.post');
 
-    Route::get('/password/reset/{token?}', 'Auth\PasswordController@showResetForm')->name('password-reset');
+    Route::get('/password/reset/{token?}/{email?}', 'Auth\PasswordController@showResetForm')->name('password-reset');
 
     Route::get('/register', 'Auth\AuthController@showRegistrationForm')->name('register');
     Route::post('/register', 'Auth\AuthController@registerPost')->name('register.post');

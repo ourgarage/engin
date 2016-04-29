@@ -17,5 +17,15 @@ class MailClass
         });
     }
 
+    public function passwordReset($email, $hash)
+    {
+        Mail::queue(['emails.admin.password-reset-html', 'emails.admin.password-reset-text'],
+            ['email' => $email, 'hash' => $hash], function ($m) use ($email) {
+
+                $m->to($email)->subject('Password reset');
+
+            });
+    }
+
 
 }

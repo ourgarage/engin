@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RegisterConfirm extends Model
+class UserHelp extends Model
 {
 
     protected $fillable = [
-        'email', 'hash'
+        'email', 'token', 'reg_confirm', 'psw_reset'
     ];
 
     public function user()

@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Classes\MailClass;
 use App\Http\Requests\ResendRegisterConfirmEmailPostRequest;
 use App\Http\Requests\UserRegisterPostRequest;
-use App\Models\RegisterConfirm;
 use App\Models\User;
+use App\Models\UserHelp;
 use Notifications;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -42,12 +42,13 @@ class AuthController extends Controller
     public function loginPost()
     {
         if (Auth::attempt(['email' => request('email'), 'password' => request('password'), 'status' => 'active'], request('remember'))) {
-            Notifications::success('Successfully login');
+            Notifications::success('Successfully login', 'alert');
 
             return redirect()->route('index');
         } else {
-            Notifications::danger('<p>Access error. The reasons may be incorrect email password pair or unconfirmed registration</p>
-                <p>Please use the <a href="' . route('password-reset') . '">password reset service</a> or <a href="javascript:void(0)" id="resendConfirmEmail">re-sending an email to confirm your registration</a></p>');
+            Notifications::error('<p>Access error. The reasons may be incorrect email password pair or unconfirmed registration</p>
+                <p>Please use the <a href="' . route('password-reset') . '">password reset service</a> or <a href="javascript:void(0)" 
+                id="resendConfirmEmail">re-sending an email to confirm your registration</a></p>', 'page');
 
             return redirect()->back()->withInput();
         }
@@ -60,7 +61,7 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
-    public function registerPost(UserRegisterPostRequest $errors, MailClass $mailClass, RegisterConfirm $confirm)
+    public function registerPost(UserRegisterPostRequest $errors, MailClass $mailClass, UserHelp $help)
     {
         $user = User::create([
             'name' => request('name'),
@@ -68,60 +69,72 @@ class AuthController extends Controller
             'password' => bcrypt(request('password')),
         ]);
 
-        $confirm = $confirm->create(['email' => $user->email, 'hash' => str_random()]);
-
         if (!$user) {
-            Notifications::error('Error. Please try later');
+            Notifications::error('Error. Please try later', 'alert');
 
             return redirect()->back()->withInput();
         } else {
-            $mailClass->register($user, $confirm->hash);
+            $help = $help->create([
+                'email' => $user->email,
+                'token' => str_random(),
+                'reg_confirm' => Date::now()
+            ]);
 
-            Notifications::success('Success');
+            $mailClass->register($user, $help->token);
+
+            Notifications::success('Success', 'alert');
 
             return redirect()->route('login');
         }
 
     }
 
-    public function registerResendConfirmEmailPost(ResendRegisterConfirmEmailPostRequest $error, User $user, RegisterConfirm $confirm, MailClass $mailClass)
+    public function registerResendConfirmEmailPost(ResendRegisterConfirmEmailPostRequest $errors, User $user, UserHelp $help, MailClass $mailClass)
     {
-        $user = $user::where('email', request('email'))->with('confirm')->first();
+        $user = $user::where('email', request('email'))->with('userHelp')->first();
 
-        $hash = str_random();
+        $token = str_random();
 
-        if ($user->confirm) {
-            if ($user->confirm->updated_at >= Date::now()->subHours('12')) {
-                Notifications::danger('You recently have used this service. Wait a few hours before the next attempt. If you have not received a letter, it is recommended to check the folder "Spam" your mailbox');
+        if ($user->userHelp) {
+            if ($user->userHelp->reg_confirm >= Date::now()->subHours('12')) {
+                Notifications::danger('You recently have used this service. Wait a few hours before the next attempt. 
+                If you have not received a letter, it is recommended to check the folder "Spam" your mailbox', 'page');
 
                 return redirect()->back()->withInput();
             }
 
-            $user->confirm()->update(['hash' => $hash]);
+            $user->userHelp()->update([
+                'token' => $token,
+                'reg_confirm' => Date::now()
+            ]);
         } else {
-            $confirm->create(['email' => request('email'), 'hash' => $hash]);
+            $help->create([
+                'email' => request('email'),
+                'token' => $token,
+                'reg_confirm' => Date::now()
+            ]);
         }
 
-        $mailClass->register($user, $hash);
+        $mailClass->register($user, $token);
 
-        Notifications::success('Success. Check your mailbox');
+        Notifications::success('Success. Check your mailbox', 'alert');
 
         return redirect()->route('login');
     }
 
-    public function registerConfirmation($email, $token, User $user, RegisterConfirm $confirm)
+    public function registerConfirmation($email, $token, User $user, UserHelp $help)
     {
-        $confirm = $confirm->where('hash', $token)->where('email', $email)->with('user')->first();
+        $help = $help->where('token', $token)->where('email', $email)->with('user')->first();
 
-        if ($confirm && $confirm->updated_at >= Date::now()->subHours('24') && $confirm->user->status == 'pending') {
-            $confirm->user()->update(['status' => 'active']);
+        if ($help && $help->reg_confirm >= Date::now()->subHours('24') && $help->user->status == 'pending') {
+            $help->user()->update(['status' => 'active']);
 
-            Auth::login($confirm->user);
+            Auth::login($help->user);
 
-            Notifications::success('You successfully confirmed your registration');
+            Notifications::success('You successfully confirmed your registration', 'alert');
         }
 
-        Notifications::error('Error. Perhaps the allotted time is up for registration. On the login page you can request a follow-up letter to confirm your registration');
+        Notifications::error('Error. Perhaps the allotted time is up for registration. On the login page you can request a follow-up letter to confirm your registration', 'page');
 
         return redirect()->route('index');
     }

@@ -24,9 +24,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function confirm()
+    public function userHelp()
     {
-        return $this->hasOne('App\Models\RegisterConfirm', 'email', 'email');
+        return $this->hasOne('App\Models\UserHelp', 'email', 'email');
     }
 
 }

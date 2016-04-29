@@ -7,17 +7,23 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Password Reset Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller is responsible for handling password reset requests
-    | and uses a simple trait to include this behavior. You're free to
-    | explore this trait and override any methods you wish to tweak.
-    |
-    */
 
-    use ResetsPasswords;
-    
+//    use ResetsPasswords;
+
+    public function __construct()
+    {
+        \Title::prepend('Admin');
+    }
+
+    public function showResetForm($token = null, $email = null)
+    {
+        if (is_null($token) || is_null($email)) {
+            \Title::append('Password reset');
+
+            return view('auth.passwords.email');
+        }
+
+        
+    }
+
 }
