@@ -13,7 +13,6 @@ class MailClass
             ['user' => $user, 'token' => $token], function ($m) use ($user) {
 
             $m->to($user->email, $user->name)->subject('Register');
-
         });
     }
 
@@ -22,9 +21,8 @@ class MailClass
         Mail::queue(['emails.admin.password-reset-html', 'emails.admin.password-reset-text'],
             ['email' => $email, 'token' => $token], function ($m) use ($email) {
 
-                $m->to($email)->subject('Password reset');
-
-            });
+            $m->to($email)->subject('Password reset');
+        });
     }
 
 
