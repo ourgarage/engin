@@ -18,7 +18,6 @@ use Jenssegers\Date\Date;
 
 class AuthController extends Controller
 {
-//    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     public function __construct()
     {

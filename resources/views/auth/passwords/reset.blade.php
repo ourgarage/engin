@@ -1,11 +1,5 @@
 @extends('auth.main')
 
-@section('css')
-
-    <link href="/packages/adminLTE/dist/css/AdminLTE.min.css" rel="stylesheet" type='text/css'>
-
-@endsection
-
 @section('body')
 
     <div class="container">

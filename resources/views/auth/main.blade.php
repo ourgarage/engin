@@ -18,6 +18,8 @@
 
 <body>
 
+@include('basis.notifications-top')
+
 <div class="container-fluid">
 
     <div class="row">

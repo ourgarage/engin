@@ -1,5 +1,5 @@
 @If(Notifications::byGroup('top')->has())
-    <p>
+    <div class="notification-top text-center">
         {!! Notifications::byGroup('top')->toHTML() !!}
-    </p>
+    </div>
 @endif
