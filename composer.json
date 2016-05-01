@@ -10,7 +10,8 @@
         "barryvdh/laravel-debugbar": "*",
         "barryvdh/laravel-ide-helper": "^2.1",
         "gaaarfild/laravel-title": "1.*",
-        "ourgarage/static-pages": "dev-develop"
+        "ourgarage/static-pages": "dev-develop",
+        "graham-campbell/exceptions": "^8.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

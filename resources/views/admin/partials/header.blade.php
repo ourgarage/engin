@@ -17,70 +17,11 @@
 
             <ul class="nav navbar-nav">
 
-                <li class="dropdown messages-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-envelope-o"></i>
-                        <span class="label label-success">4</span>
+                <li class="">
+                    <a href="{{ route('logout') }}">
+                        <i class="fa fa-power-off"></i>
+                        Log out
                     </a>
-                    <ul class="dropdown-menu">
-                        <li class="header"></li>
-                        <li>
-                            <ul class="menu">
-                                <li>
-                                    <a href="#">
-
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="footer">
-                            <a href="#"></a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="dropdown notifications-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-bell-o"></i>
-                        <span class="label label-warning">10</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header"></li>
-                        <li>
-                            <ul class="menu">
-                                <li>
-                                    <a href="#">
-
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="footer">
-                            <a href="#"></a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="dropdown tasks-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-flag-o"></i>
-                        <span class="label label-danger">9</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header"></li>
-                        <li>
-                            <ul class="menu">
-                                <li>
-                                    <a href="#">
-
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="footer">
-                            <a href="#"></a>
-                        </li>
-                    </ul>
                 </li>
 
             </ul>
