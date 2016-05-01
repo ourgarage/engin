@@ -19,7 +19,7 @@
 .notification-top .alert-error {
   background: #dd4b39 !important;
 }
-.notification-top .alert-danger {
+.notification-top .alert-warning {
   background: #f0ad4e !important;
 }
 .notification-top .alert-success {
