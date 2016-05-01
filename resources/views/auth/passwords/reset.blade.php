@@ -14,6 +14,9 @@
                 <div class="login-logo">
                     <a href="/packages/adminLTE/index2.html"><b>Admin</b>LTE</a>
                 </div>
+
+                @include('basis.notifications-page')
+
                 <div class="login-box-body">
                     <p class="login-box-msg">Reset Password</p>
                     <form role="form" method="POST" action="{{ route('password-reset.post') }}">

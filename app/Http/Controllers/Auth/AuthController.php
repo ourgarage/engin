@@ -42,7 +42,7 @@ class AuthController extends Controller
     public function loginPost()
     {
         if (Auth::attempt(['email' => request('email'), 'password' => request('password'), 'status' => 'active'], request('remember'))) {
-            Notifications::success('Successfully login', 'alert');
+            Notifications::success('Successfully login', 'top');
 
             return redirect()->route('index');
         } else {
@@ -70,7 +70,7 @@ class AuthController extends Controller
         ]);
 
         if (!$user) {
-            Notifications::error('Error. Please try later', 'alert');
+            Notifications::error('Error. Please try later', 'top');
 
             return redirect()->back()->withInput();
         } else {
@@ -82,7 +82,7 @@ class AuthController extends Controller
 
             $mailClass->register($user, $help->token);
 
-            Notifications::success('Success', 'alert');
+            Notifications::success('Success', 'top');
 
             return redirect()->route('login');
         }
@@ -117,7 +117,7 @@ class AuthController extends Controller
 
         $mailClass->register($user, $token);
 
-        Notifications::success('Success. Check your mailbox', 'alert');
+        Notifications::success('Success. Check your mailbox', 'top');
 
         return redirect()->route('login');
     }
@@ -131,7 +131,7 @@ class AuthController extends Controller
 
             Auth::login($help->user);
 
-            Notifications::success('You successfully confirmed your registration', 'alert');
+            Notifications::success('You successfully confirmed your registration', 'top');
         }
 
         Notifications::error('Error. Perhaps the allotted time is up for registration. On the login page you can request a follow-up letter to confirm your registration', 'page');

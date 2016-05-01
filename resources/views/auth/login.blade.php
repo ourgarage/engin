@@ -16,6 +16,10 @@
                 <div class="login-logo">
                     <a href="/packages/adminLTE/index2.html"><b>Admin</b>LTE</a>
                 </div>
+
+                @include('basis.notifications-page')
+                @include('basis.notifications-top')
+
                 <div class="login-box-body">
                     <p class="login-box-msg">Sign in to start your session</p>
                     <form role="form" method="POST" action="{{ route('login.post') }}">
