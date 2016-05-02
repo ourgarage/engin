@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Classes\MailClass;
+use App\Classes\MailSend;
 use App\Http\Requests\ResendRegisterConfirmEmailPostRequest;
 use App\Http\Requests\UserRegisterPostRequest;
 use App\Models\User;
@@ -41,12 +41,12 @@ class AuthController extends Controller
     public function loginPost()
     {
         if (Auth::attempt(['email' => request('email'), 'password' => request('password'), 'status' => 'active'], request('remember'))) {
-            Notifications::success('Successfully login', 'top');
+            Notifications::success('Logged in successfully', 'top');
 
             return redirect()->route('index');
         } else {
             Notifications::error('Access error. The reasons may be incorrect email password pair or unconfirmed registration<br>
-                Please use the <a href="' . route('password-reset') . '">password reset service</a> or <a href="javascript:void(0)" 
+                Please use the <a href="' . route('password-reset.email') . '">password reset service</a> or <a href="javascript:void(0)" 
                 id="resendConfirmEmail">re-sending an email to confirm your registration</a>', 'page');
 
             return redirect()->back()->withInput();
@@ -60,7 +60,7 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
-    public function registerPost(UserRegisterPostRequest $errors, MailClass $mailClass, UserHelp $help)
+    public function registerPost(UserRegisterPostRequest $errors, MailSend $mailSend, UserHelp $help)
     {
         $user = User::create([
             'name' => request('name'),
@@ -68,7 +68,7 @@ class AuthController extends Controller
             'password' => bcrypt(request('password')),
         ]);
 
-        if (!$user) {
+        if (is_null($user)) {
             Notifications::error('Error. Please try later', 'top');
 
             return redirect()->back()->withInput();
@@ -79,7 +79,7 @@ class AuthController extends Controller
                 'reg_confirm' => Date::now()
             ]);
 
-            $mailClass->register($user, $help->token);
+            $mailSend->register($user, $help->token);
 
             Notifications::success('Success. Check your mailbox', 'top');
 
@@ -88,16 +88,18 @@ class AuthController extends Controller
 
     }
 
-    public function registerResendConfirmEmailPost(ResendRegisterConfirmEmailPostRequest $errors, User $user, UserHelp $help, MailClass $mailClass)
+    public function registerResendConfirmEmailPost(ResendRegisterConfirmEmailPostRequest $errors, User $user, UserHelp $help, MailSend $mailSend)
     {
-        $user = $user::where('email', request('email'))->with('userHelp')->first();
+        $user = $user->with('userHelp')
+            ->where('email', request('email'))
+            ->first();
 
         $token = str_random();
 
-        if ($user->userHelp) {
+        if (!is_null($user->userHelp)) {
             if ($user->userHelp->reg_confirm >= Date::now()->subHours('12')) {
                 Notifications::danger('You recently have used this service. Wait a few hours before the next attempt. 
-                If you have not received a letter, it is recommended to check the folder "Spam" your mailbox', 'page');
+                If you have not received a letter, it is recommended to check the folder "Spam" in your mailbox', 'page');
 
                 return redirect()->back()->withInput();
             }
@@ -114,26 +116,29 @@ class AuthController extends Controller
             ]);
         }
 
-        $mailClass->register($user, $token);
+        $mailSend->register($user, $token);
 
-        Notifications::success('Success. Check your mailbox', 'top');
+        Notifications::success('Success. Please check your mailbox', 'top');
 
         return redirect()->route('login');
     }
 
-    public function registerConfirmation($email, $token, User $user, UserHelp $help)
+    public function registerConfirmation($email, $token, UserHelp $help)
     {
-        $help = $help->where('token', $token)->where('email', $email)->with('user')->first();
+        $help = $help->with('user')
+            ->where('token', $token)
+            ->where('email', $email)
+            ->first();
 
-        if ($help && $help->reg_confirm >= Date::now()->subHours('24') && $help->user->status == 'pending') {
-            $help->user()->update(['status' => 'active']);
+        if (!is_null($help) && $help->reg_confirm >= Date::now()->subHours('24') && $help->user->status == User::STATUS_PENDING) {
+            $help->user()->update(['status' => User::STATUS_ACTIVE]);
 
             Auth::login($help->user);
 
             Notifications::success('You successfully confirmed your registration', 'top');
         }
 
-        Notifications::error('Error. Perhaps the allotted time is up for registration. On the login page you can request a follow-up letter to confirm your registration', 'page');
+        Notifications::error('Error. Perhaps this link is no longer valid. On the login page you can request a follow-up letter to confirm your registration', 'page');
 
         return redirect()->route('index');
     }

@@ -34,7 +34,7 @@ class PasswordResetSendEmailPostRequest extends Request
     public function formatErrors(Validator $validator)
     {
         foreach ($validator->errors()->all() as $error) {
-            Notifications::add($error, 'danger');
+            Notifications::danger($error, 'page');
         }
 
         return $validator->errors()->getMessages();

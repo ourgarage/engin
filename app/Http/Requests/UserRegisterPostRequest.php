@@ -21,7 +21,7 @@ class UserRegisterPostRequest extends Request
             'name' => 'required|min:4|max:26',
             'email' => 'required|email|unique:users,email|max:300',
             'password' => 'required|confirmed|min:6|max:300',
-            'rules' => 'required',
+            'rules' => 'accepted',
         ];
 
         return $rules;
@@ -37,7 +37,7 @@ class UserRegisterPostRequest extends Request
     public function formatErrors(Validator $validator)
     {
         foreach ($validator->errors()->all() as $error) {
-            Notifications::add($error, 'danger');
+            Notifications::danger($error, 'page');
         }
 
         return $validator->errors()->getMessages();

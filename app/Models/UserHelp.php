@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class UserHelp extends Model
 {
 
+    protected $table = 'user_help_requests';
+
     protected $fillable = [
         'email', 'token', 'reg_confirm', 'psw_reset'
     ];

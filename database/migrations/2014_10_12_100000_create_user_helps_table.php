@@ -3,16 +3,11 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserHelpsTable extends Migration
+class CreateUserHelpRequestsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::create('user_helps', function (Blueprint $table) {
+        Schema::create('user_help_requests', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email')->index();
             $table->string('token')->index();
@@ -22,13 +17,8 @@ class CreateUserHelpsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        Schema::drop('user_helps');
+        Schema::drop('user_help_requests');
     }
 }

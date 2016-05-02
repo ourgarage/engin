@@ -4,7 +4,7 @@ namespace App\Classes;
 
 use Mail;
 
-class MailClass
+class MailSend
 {
 
     public function register($user, $token)

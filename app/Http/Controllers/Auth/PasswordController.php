@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Classes\MailClass;
+use App\Classes\MailSend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PasswordResetSendEmailPostRequest;
 use App\Http\Requests\PasswordResetUpdateDataPostRequest;
@@ -19,17 +19,18 @@ class PasswordController extends Controller
         \Title::prepend('Admin');
     }
 
-    public function showResetForm($email = null, $token = null)
+    public function showSendEmailForResetForm()
     {
-        if (is_null($token) && is_null($email)) {
-            \Title::append('Password reset');
+        \Title::append('Password reset');
 
-            return view('auth.passwords.email');
-        }
+        return view('auth.passwords.email');
+    }
 
-        $help = UserHelp::where('email', $email)
+    public function showResetForm($email, $token)
+    {
+        $help = UserHelp::with('user')
+            ->where('email', $email)
             ->where('token', $token)
-            ->with('user')
             ->first();
 
         if ($help && $help->psw_reset > Date::now()->subHour()) {
@@ -37,7 +38,7 @@ class PasswordController extends Controller
 
             return view('auth.passwords.reset', ['token' => $token]);
         } else {
-            Notifications::error('Ссылка, по которой вы перешли, не действительна', 'top');
+            Notifications::error('The link you followed is invalid', 'top');
 
             return redirect()->route('index');
         }
@@ -49,9 +50,9 @@ class PasswordController extends Controller
 
         $token = str_random();
 
-        if ($lastHelp) {
+        if (!is_null($lastHelp)) {
             if ($lastHelp->psw_reset > Date::now()->subHours('12')) {
-                Notifications::danger('С предыдущего запроса прошло менее ХХ часов, попробуйте позже.', 'page');
+                Notifications::danger('it took less than 12 hours With previous request, try again later.', 'page');
 
                 return redirect()->route('login');
             } else {
@@ -75,9 +76,9 @@ class PasswordController extends Controller
 
     protected function sendEmailAndRedirect($email, $token)
     {
-        $mailClass = new MailClass();
+        $mailSend = new MailSend();
 
-        $mailClass->passwordReset($email, $token);
+        $mailSend->passwordReset($email, $token);
 
         Notifications::success('Success. Check your mailbox', 'top');
 
@@ -96,7 +97,7 @@ class PasswordController extends Controller
             'password' => bcrypt(request('password'))
         ]);
 
-        Notifications::success('Пароль успешно изменен', 'top');
+        Notifications::success('Password successfully changed', 'top');
 
         return redirect()->route('login');
     }
