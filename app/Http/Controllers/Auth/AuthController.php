@@ -45,9 +45,9 @@ class AuthController extends Controller
 
             return redirect()->route('index');
         } else {
-            Notifications::error('<p>Access error. The reasons may be incorrect email password pair or unconfirmed registration</p>
-                <p>Please use the <a href="' . route('password-reset') . '">password reset service</a> or <a href="javascript:void(0)" 
-                id="resendConfirmEmail">re-sending an email to confirm your registration</a></p>', 'page');
+            Notifications::error('Access error. The reasons may be incorrect email password pair or unconfirmed registration<br>
+                Please use the <a href="' . route('password-reset') . '">password reset service</a> or <a href="javascript:void(0)" 
+                id="resendConfirmEmail">re-sending an email to confirm your registration</a>', 'page');
 
             return redirect()->back()->withInput();
         }
@@ -81,9 +81,9 @@ class AuthController extends Controller
 
             $mailClass->register($user, $help->token);
 
-            Notifications::success('Success', 'top');
+            Notifications::success('Success. Check your mailbox', 'top');
 
-            return redirect()->route('login');
+            return redirect()->route('index');
         }
 
     }

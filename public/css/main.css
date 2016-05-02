@@ -28,3 +28,14 @@
 .notification-top .alert-info {
   background: #5bc0de !important;
 }
+.notification-page {
+  padding-bottom: .9em;
+}
+.notification-page .alert {
+  font-family: Helvetica, Arial, Tahoma, Verdana, Lucida, sans-serif;
+  margin-bottom: .5em;
+  color: #5c6664 !important;
+}
+.notification-page .alert a {
+  color: #00a7d0 !important;
+}

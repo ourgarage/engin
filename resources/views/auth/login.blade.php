@@ -11,8 +11,8 @@
     <div class="container">
         <div class="row">
             <div class="login-box">
-                <div class="login-logo">
-                    <a href="/packages/adminLTE/index2.html"><b>Admin</b>LTE</a>
+                <div class="page-logo">
+                    <span class="icon-gitios"></span>
                 </div>
 
                 @include('basis.notifications-page')
