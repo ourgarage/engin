@@ -7,17 +7,18 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
 
+    protected $table = 'users';
+
     protected $fillable = [
-        'name', 'email', 'password'
+        'name', 'email', 'password', 'status', 'token', 'last_restore'
     ];
 
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token'
     ];
 
-    public function userHelp()
-    {
-        return $this->hasOne('App\Models\UserHelp', 'email', 'email');
-    }
+    const STATUS_ACTIVE = 'active';
+
+    const STATUS_INACTIVE = 'inactive';
 
 }
