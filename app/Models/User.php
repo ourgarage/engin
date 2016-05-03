@@ -7,12 +7,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
 
-    const STATUS_PENDING = 'pending';
-
-    const STATUS_ACTIVE = 'active';
-
     protected $fillable = [
-        'name', 'email', 'password', 'status'
+        'name', 'email', 'password'
     ];
 
     protected $hidden = [

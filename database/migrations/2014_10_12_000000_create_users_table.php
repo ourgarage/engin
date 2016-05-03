@@ -13,7 +13,6 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('status')->default(User::STATUS_PENDING);
             $table->rememberToken();
             $table->timestamps();
         });
