@@ -16,6 +16,13 @@ class LeftMenuComposer
                 'icon' => 'fa fa-th',
                 'active' => 'index-admin',
             ],
+
+            [
+                'url' => route(config('static-pages.url')),
+                'caption' => config('static-pages.caption'),
+                'icon' => config('static-pages.icon'),
+                'active' => config('static-pages.active'),
+            ],
         ];
 
         $view->with('items', $items);
