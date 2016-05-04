@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-
-use Notifications;
 use App\Http\Controllers\Controller;
+use Notifications;
 use Auth;
 use Illuminate\Http\JsonResponse;
 
 class AuthController extends Controller
-
+{
+    
     public function __construct()
     {
         \Title::prepend(trans('auth.title.prepend'));
