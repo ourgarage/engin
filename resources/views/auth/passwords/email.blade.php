@@ -12,7 +12,7 @@
                 @include('basis.notifications-page')
 
                 <div class="login-box-body">
-                    <p class="login-box-msg">Reset Password</p>
+                    <p class="login-box-msg">{{ trans('password.form.password-email-title') }}</p>
                     <form role="form" method="POST" action="{{ route('password-email.post') }}">
                         {!! csrf_field() !!}
                         <div class="form-group has-feedback">
@@ -27,10 +27,13 @@
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary btn-block btn-flat fa-envelope">
-                                    Send Password Reset Link
+                                <button type="submit" class="btn btn-primary btn-block btn-flat">
+                                    {{ trans('password.button.password-email-submit') }}
                                 </button>
                             </div>
+                        </div>
+                        <div class="form-description">
+                            {{ trans('password.form.password-email-description') }}
                         </div>
                     </form>
                 </div>

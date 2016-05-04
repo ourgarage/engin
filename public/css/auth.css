@@ -11,3 +11,8 @@ body {
   font-size: 2.5em;
   color: #858585;
 }
+.form-description {
+  padding-top: .5em;
+  font-size: .95em;
+  color: #918f97;
+}
