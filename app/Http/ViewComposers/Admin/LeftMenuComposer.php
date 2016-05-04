@@ -17,13 +17,24 @@ class LeftMenuComposer
                 'active' => 'index-admin',
             ],
 
-            [
-                'url' => route(config('static-pages.url')),
-                'caption' => config('static-pages.caption'),
-                'icon' => config('static-pages.icon'),
-                'active' => config('static-pages.active'),
-            ],
         ];
+
+        $packages = ['static-pages'];
+
+        foreach ($packages as $package) {
+
+            if (config()->has($package)) {
+
+                $items[] = [
+                    'url' => route(config($package . '.url')),
+                    'caption' => config($package . '.caption'),
+                    'icon' => config($package . '.icon'),
+                    'active' => config($package . '.active'),
+                ];
+
+            }
+
+        }
 
         $view->with('items', $items);
     }
