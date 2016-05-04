@@ -9,7 +9,7 @@ use Illuminate\Http\JsonResponse;
 
 class AuthController extends Controller
 {
-    
+
     public function __construct()
     {
         \Title::prepend(trans('auth.title.prepend'));
@@ -29,10 +29,10 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function loginPost(\Request $request)
+    public function loginPost()
     {
-        if (!Auth::attempt($request->only(['email', 'password']), request()->has('remember'))) {
-            if ($request->ajax() || $request->wantsJson()) {
+        if (!Auth::attempt(request()->only(['email', 'password']), request()->has('remember'))) {
+            if (request()->ajax() || request()->wantsJson()) {
                 return new JsonResponse(['Not authorized'], 403);
             }
 

@@ -16,6 +16,8 @@
 
 <body>
 
+@include('basis.notifications-top')
+
 <div class="container-fluid">
     <div class="row">
         <div class="hold-transition skin-blue sidebar-mini">
