@@ -164,6 +164,7 @@ return [
         Gaaarfild\LaravelTitle\LaravelTitleServiceProvider::class,
         Gaaarfild\LaravelNotifications\LaravelNotificationsServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
+        GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
 
         /*
          * Our Service Providers...

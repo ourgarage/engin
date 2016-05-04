@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+
 use Notifications;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use Auth;
+use Illuminate\Http\JsonResponse;
 
 class AuthController extends Controller
-{
 
     public function __construct()
     {
@@ -28,17 +29,21 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function loginPost()
+    public function loginPost(\Request $request)
     {
-        if (Auth::attempt(['email' => request('email'), 'password' => request('password')], request('remember'))) {
-            Notifications::success(trans('auth.notification.login-success'), 'top');
+        if (!Auth::attempt($request->only(['email', 'password']), request()->has('remember'))) {
+            if ($request->ajax() || $request->wantsJson()) {
+                return new JsonResponse(['Not authorized'], 403);
+            }
 
-            return redirect()->route('index-admin');
-        } else {
             Notifications::error(trans('auth.notification.login-error'), 'page');
 
-            return redirect()->back()->withInput();
+            return redirect(null, 403)->route('login');
         }
+
+        Notifications::success(trans('auth.notification.login-success'), 'top');
+
+        return redirect()->route('index-admin');
     }
 
 }

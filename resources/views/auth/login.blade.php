@@ -52,9 +52,6 @@
 @endsection
 
 @section('js')
-
     <script src="/packages/adminLTE/plugins/iCheck/icheck.min.js"></script>
-
     <script src="/js/icheck-square-blue.js"></script>
-
 @endsection
