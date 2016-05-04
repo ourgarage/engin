@@ -16,14 +16,9 @@
                     <form role="form" method="POST" action="{{ route('password-email.post') }}">
                         {!! csrf_field() !!}
                         <div class="form-group has-feedback">
-                            <input type="email" name="email" class="form-control" placeholder="Email"
+                            <input type="email" name="email" class="form-control" placeholder="{{ trans('password.form.password-email-placeholder') }}"
                                    value="{{ old('email') }}">
                             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                            @if ($errors->has('email'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                            @endif
                         </div>
                         <div class="row">
                             <div class="col-md-8 col-md-offset-4">

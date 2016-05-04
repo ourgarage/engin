@@ -16,7 +16,8 @@
 .notification-top .alert {
   border-color: transparent;
 }
-.notification-top .alert-error {
+.notification-top .alert-error,
+.notification-top .alert-danger {
   background: #dd4b39 !important;
 }
 .notification-top .alert-warning {

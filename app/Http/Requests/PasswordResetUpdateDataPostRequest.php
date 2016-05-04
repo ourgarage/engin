@@ -19,7 +19,7 @@ class PasswordResetUpdateDataPostRequest extends Request
     {
         $rules = [
             'token' => 'required',
-            'email' => 'required|email|exists:user_helps,email,token,' . request('token') . '',
+            'email' => 'required|email',
             'password' => 'required|confirmed|min:6|max:300'
         ];
 

@@ -34,7 +34,7 @@ class AuthController extends Controller
         if (Auth::attempt(['email' => request('email'), 'password' => request('password')], request('remember'))) {
             Notifications::success(trans('auth.notification.login-success'), 'top');
 
-            return redirect()->route('index');
+            return redirect()->route('index-admin');
         } else {
             Notifications::error(trans('auth.notification.login-error'), 'page');
 
