@@ -1,18 +1,16 @@
 <p>
-    Password reset
+    {{ trans('email.password-reset.title') }}
 </p>
 
 
-<p>Click here to reset your password</p>
+<p>{{ trans('email.password-reset.description') }}</p>
 
 <a href="{{ route('password-reset', [$email, $token]) }}">
     <span>
-        Reset
+        {{ trans('email.password-reset.link-for-reset') }}
     </span>
 </a>
 
 <p>
-    Unless you were the initiator of password reset on the site <a href="{{ route('index') }}">ВСТАВИТЬ НАЗВАНИЕ</a>,
-    then no response from you is not
-    required
+    {!! trans('email.password-reset.footer', ['link' => route('index'), 'site' => env('VARIABLE_NAME_FULL')]) !!}
 </p>

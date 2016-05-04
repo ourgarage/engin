@@ -12,7 +12,7 @@ class MailSend
         Mail::queue(['emails.admin.password-reset-html', 'emails.admin.password-reset-text'],
             ['email' => $email, 'token' => $token], function ($m) use ($email) {
 
-            $m->to($email)->subject('Password reset');
+            $m->to($email)->subject(trans('email.password-reset.subject'));
         });
     }
 

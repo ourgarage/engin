@@ -15,6 +15,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('status')->default(User::STATUS_ACTIVE);
             $table->string('token')->nullable();
+            $table->string('roles')->default(User::ROLE_ADMIN);
             $table->timestamp('last_restore')->nullable();
             $table->rememberToken();
             $table->timestamps();

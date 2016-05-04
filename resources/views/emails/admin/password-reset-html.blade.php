@@ -4,18 +4,18 @@
     <p style="padding: 1em 0 0 0;
     font-weight: 600;
     font-size: 1.3em">
-        Password reset
+        {{ trans('email.password-reset.title') }}
     </p>
 @endsection
 
 @section('body')
 
-    <p>Click here to reset your password</p>
+    <p>{{ trans('email.password-reset.description') }}</p>
 
     <a href="{{ route('password-reset', [$email, $token]) }}"
        style="display:block;text-align:center; margin: 2.3em; text-decoration: none;">
         <span style="background: #0087ff; padding: 1em 1.8em; border-radius: .26em; font-size: 1.1em;color: #FFFFFF; text-transform: uppercase; font-weight: 600;">
-            Reset
+            {{ trans('email.password-reset.link-for-reset') }}
         </span>
     </a>
 
@@ -27,7 +27,6 @@
         color: #676870;
         font-size: .85em;
         ">
-        Unless you were the initiator of password reset on the site <a href="{{ route('index') }}">ВСТАВИТЬ НАЗВАНИЕ</a>, then no response from you is not
-        required
+        {!! trans('email.password-reset.footer', ['link' => route('index'), 'site' => env('VARIABLE_NAME_FULL')]) !!}
     </p>
 @endsection

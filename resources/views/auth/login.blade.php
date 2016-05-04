@@ -12,7 +12,7 @@
         <div class="row">
             <div class="login-box">
                 <div class="page-logo">
-                    <span class="icon-gitios"></span>
+                    <img src="{{ env('VARIABLE_LOGO_FULL') }}" alt="logo">
                 </div>
 
                 @include('basis.notifications-page')
