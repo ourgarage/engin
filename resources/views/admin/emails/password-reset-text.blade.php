@@ -12,5 +12,5 @@
 </a>
 
 <p>
-    {!! trans('email.password-reset.footer', ['link' => route('index'), 'site' => env('VARIABLE_NAME_FULL')]) !!}
+    {!! trans('email.password-reset.footer', ['link' => route('index'), 'site' => env('VARIABLE_NAME_FULL')config('project-constants.name_full')]) !!}
 </p>

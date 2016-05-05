@@ -27,6 +27,6 @@
         color: #676870;
         font-size: .85em;
         ">
-        {!! trans('email.password-reset.footer', ['link' => route('index'), 'site' => env('VARIABLE_NAME_FULL')]) !!}
+        {!! trans('email.password-reset.footer', ['link' => route('index'), 'site' => config('project-constants.name_full')]) !!}
     </p>
 @endsection

@@ -13,8 +13,6 @@ use Notifications;
 class PasswordController extends Controller
 {
 
-    private $password_reset_limit = 10; //Minutes
-
     public function __construct()
     {
         \Title::prepend(trans('password.title.prepend'));
@@ -33,8 +31,8 @@ class PasswordController extends Controller
 
         $token = str_random();
 
-        if ($user->last_restore > Date::now()->subMinutes($this->password_reset_limit)) {
-            Notifications::danger(trans('password.notification.password-email-error', ['minutes' => $this->password_reset_limit]), 'page');
+        if ($user->last_restore > Date::now()->subMinutes(config('project-constants.password_reset_limit'))) {
+            Notifications::danger(trans('password.notification.password-email-error', ['minutes' => config('project-constants.password_reset_limit')]), 'page');
 
             return redirect()->back()->withInput();
         } else {
@@ -57,7 +55,7 @@ class PasswordController extends Controller
             ->where('token', $token)
             ->first();
 
-        if (!is_null($user) && $user->last_restore > Date::now()->subMinutes($this->password_reset_limit)) {
+        if (!is_null($user) && $user->last_restore > Date::now()->subMinutes(config('project-constants.password_reset_limit'))) {
             \Title::append(trans('password.title.password-form'));
 
             return view('admin.auth.passwords.reset', ['token' => $token]);
