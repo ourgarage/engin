@@ -4,11 +4,11 @@
 
 <head>
 
-    @include('basis.meta')
+    @include('admin.basis.meta')
 
     <title>{{ \Title::render() }}</title>
 
-    @include('basis.css')
+    @include('admin.basis.css')
 
     @yield('css')
 
@@ -18,7 +18,7 @@
 
 <body>
 
-@include('basis.notifications-top')
+@include('admin.basis.notifications-top')
 
 <div class="container-fluid">
 
@@ -30,7 +30,7 @@
 
 </div>
 
-@include('basis.js')
+@include('admin.basis.js')
 
 @yield('js')
 

@@ -1,2 +1,8 @@
 /*COLORS*/
 /*Example*/
+.admin-dashboard .main-header .logo-mini img {
+  max-width: 50%;
+}
+.admin-dashboard .main-header .logo-lg img {
+  max-width: 78%;
+}

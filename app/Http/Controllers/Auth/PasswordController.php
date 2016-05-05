@@ -24,7 +24,7 @@ class PasswordController extends Controller
     {
         \Title::append(trans('password.title.password-email'));
 
-        return view('auth.passwords.email');
+        return view('admin.auth.passwords.email');
     }
 
     public function sendResetLinkEmail(PasswordResetSendEmailPostRequest $errors, User $user, MailSend $mailSend)
@@ -60,7 +60,7 @@ class PasswordController extends Controller
         if (!is_null($user) && $user->last_restore > Date::now()->subMinutes($this->password_reset_limit)) {
             \Title::append(trans('password.title.password-form'));
 
-            return view('auth.passwords.reset', ['token' => $token]);
+            return view('admin.auth.passwords.reset', ['token' => $token]);
         } else {
             Notifications::error(trans('password.notification.password-form-error'), 'top');
 

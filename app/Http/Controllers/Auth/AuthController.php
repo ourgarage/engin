@@ -26,7 +26,7 @@ class AuthController extends Controller
     {
         \Title::append(trans('auth.title.login'));
 
-        return view('auth.login');
+        return view('admin.auth.login');
     }
 
     public function loginPost()

@@ -1,4 +1,4 @@
-@extends('auth.main')
+@extends('admin.auth.main')
 
 @section('body')
 
@@ -9,7 +9,7 @@
                     <img src="{{ env('VARIABLE_LOGO_FULL') }}" alt="logo">
                 </div>
 
-                @include('basis.notifications-page')
+                @include('admin.basis.notifications-page')
 
                 <div class="login-box-body">
                     <p class="login-box-msg">{{ trans('password.form.password-email-title') }}</p>
