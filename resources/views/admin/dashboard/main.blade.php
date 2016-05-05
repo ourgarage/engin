@@ -26,9 +26,17 @@
 
     @include('admin.dashboard.partials.left-menu')
 
-
     <div class="content-wrapper">
-        @yield('body')
+        <section class="content-header">
+            <h1>
+                @yield('body-title')
+            </h1>
+        </section>
+        <section class="content">
+            <div class="box">
+                @yield('body')
+            </div>
+        </section>
     </div>
 
     @include('admin.dashboard.partials.footer')

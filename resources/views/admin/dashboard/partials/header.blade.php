@@ -19,8 +19,8 @@
             <ul class="nav navbar-nav">
                 <li>
                     <a href="{{ route('logout') }}">
-                        <i class="fa fa-power-off"></i>
-                        Log out
+                        <i class="fa fa-power-off fa-fw"></i>
+                        {{ trans('dashboard.header.logout') }}
                     </a>
                 </li>
             </ul>

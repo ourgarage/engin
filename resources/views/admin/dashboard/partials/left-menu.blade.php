@@ -2,18 +2,21 @@
     <section class="sidebar">
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ config('project-constants.logo_mini') }}" class="img-circle" alt="User Image">
+                <img src="{{ config('project-constants.admin_avatar') }}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <p>{{ $user->name }}</p>
+                <span><i class="fa fa-hashtag text-success"></i> {{ $user->id }}</span>
             </div>
         </div>
         <ul class="sidebar-menu">
-            <li class="header">MAIN NAVIGATION</li>
+            <li class="header text-uppercase">
+                {{ trans('dashboard.left-menu.title') }}
+            </li>
             <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                <a href="{{ route('users-admin') }}">
+                    <i class="fa fa-users fa-fw"></i>
+                    <span>{{ trans('dashboard.left-menu.users-manage') }}</span>
                 </a>
             </li>
         </ul>
