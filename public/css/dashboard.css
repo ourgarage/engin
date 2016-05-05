@@ -8,5 +8,6 @@
 }
 .admin-dashboard .main-sidebar .sidebar .user-panel .image img {
   width: 3.9em;
+  max-width: 100%;
   background: white;
 }
