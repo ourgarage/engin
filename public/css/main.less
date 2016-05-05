@@ -1,6 +1,14 @@
 @import "collection/variables";
 @import "collection/mixins";
 
+/*>>>>TABLE FIX OVERFLOW AUTO>>>>*/
+@-moz-document url-prefix() {
+    fieldset {
+        display: table-cell;
+    }
+}
+/*<<<<TABLE FIX OVERFLOW AUTO<<<<*/
+
 .notification-top {
     position: fixed;
     top: 0;
