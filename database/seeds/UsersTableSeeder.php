@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use \App\Models\User;
+use Jenssegers\Date\Date;
 
 class UsersTableSeeder extends Seeder
 {
@@ -12,7 +13,8 @@ class UsersTableSeeder extends Seeder
             'name' => 'Administrator',
             'email' => 'administrator@example.local',
             'password' => bcrypt('123456'),
-            'roles' => User::ROLE_SUPERADMIN
+            'roles' => User::ROLE_SUPERADMIN,
+            'created_at' => Date::now()
         ]);
     }
 }

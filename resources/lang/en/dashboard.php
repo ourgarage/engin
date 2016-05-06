@@ -20,14 +20,22 @@ return [
 
     'left-menu' => [
         'title' => 'Navigation menu',
-        'users-manage' => 'Users manage',
+        'management' => 'Admins management',
     ],
 
     'footer' => [
     ],
 
-    'users' => [
-        'title' => 'Users manage',
+    'management' => [
+        'title' => 'Admins management',
+        'table' => [
+            'name' => 'Name',
+            'email' => 'Email',
+            'status' => 'Status',
+            'role' => 'Role',
+            'created' => 'Joined',
+            'options' => 'Options',
+        ],
     ],
 
 ];
