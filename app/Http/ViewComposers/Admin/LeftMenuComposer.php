@@ -16,7 +16,6 @@ class LeftMenuComposer
                 'icon' => 'fa fa-th',
                 'active' => 'index-admin',
             ],
-
         ];
 
         $packages = ['static-pages'];
