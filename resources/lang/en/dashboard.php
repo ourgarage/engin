@@ -5,7 +5,6 @@ return [
     'title' => [
         'prepend' => 'Admin',
         'index' => 'Dashboard',
-        'users-manage' => 'Users',
     ],
 
     'button' => [
@@ -20,22 +19,10 @@ return [
 
     'left-menu' => [
         'title' => 'Navigation menu',
-        'management' => 'Admins management',
+        'administrators' => 'Administrators',
     ],
 
     'footer' => [
-    ],
-
-    'management' => [
-        'title' => 'Admins management',
-        'table' => [
-            'name' => 'Name',
-            'email' => 'Email',
-            'status' => 'Status',
-            'role' => 'Role',
-            'created' => 'Joined',
-            'options' => 'Options',
-        ],
     ],
 
 ];

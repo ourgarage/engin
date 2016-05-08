@@ -25,14 +25,5 @@ class DashboardController extends Controller
 
         return view('admin.dashboard.index', ['user' => $this->user]);
     }
-
-    public function usersManage(User $user)
-    {
-        $admins = $user->orderBy('updated_at', 'desc')->take(20)->get();
-
-        \Title::append(trans('dashboard.title.users-manage'));
-
-        return view('admin.dashboard.users-manage', ['user' => $this->user, 'admins' => $admins]);
-    }
-
+    
 }

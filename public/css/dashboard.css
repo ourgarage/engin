@@ -11,3 +11,9 @@
   max-width: 100%;
   background: white;
 }
+.admin-dashboard .content-wrapper .users-index .for-form-inline form {
+  display: inline-block;
+}
+.admin-dashboard .content-wrapper .users-create .register-box {
+  margin-top: 1em !important;
+}

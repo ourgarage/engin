@@ -4,7 +4,10 @@ Route::get('/', 'HomeController@index')->name('index');
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
     Route::get('/', 'Admin\DashboardController@index')->name('index-admin');
-    Route::get('/users', 'Admin\DashboardController@usersManage')->name('users-admin');
+
+    Route::resource('users', 'Admin\UsersController');
+
+    Route::post('/users/status-update/{id}', 'Admin\UsersController@updateStatus')->name('status-update-admin');
 
 });
 
