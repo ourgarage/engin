@@ -107,7 +107,7 @@ class UsersController extends Controller
             'email' => request('email')
         ]);
 
-        if (request('change_password') == 'on') {
+        if (request()->has('change_password')) {
             $user->update([
                 'password' => bcrypt(request('change_password'))
             ]);
@@ -144,5 +144,21 @@ class UsersController extends Controller
         Notifications::success(trans('users.notification.user-delete'), 'top');
 
         return redirect()->back();
+    }
+
+    public function searchUsers(User $user)
+    {
+        if (!is_null(request('email'))) {
+            $admins = $user->where('email', 'LIKE', '%' . e(request('email')) . '%')
+                ->paginate(20);
+        }
+
+        \Title::append(trans('users.title.search'));
+
+        return view('admin.dashboard.users.search', [
+            'user' => $this->user,
+            'admins' => $admins,
+            'searchValue' => request('email')
+        ]);
     }
 }

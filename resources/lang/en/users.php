@@ -6,6 +6,7 @@ return [
         'index' => 'Administrators',
         'create' => 'Create',
         'edit' => 'Edit',
+        'search' => 'Search',
     ],
 
     'button' => [
@@ -15,13 +16,13 @@ return [
     'notification' => [
         'status-change-update' => 'Administrator status successfully changed',
         'user-created-success' => 'Administrator created successfully',
-        'user-delete' => 'Administrator successfully delete',
-        'user-update' => 'Administrator successfully update',
+        'user-delete' => 'Administrator successfully deleted',
+        'user-update' => 'Administrator successfully updated',
     ],
 
-
-    'index' => [
-        'title' => 'Administrators',
+    'search' => [
+        'placeholder' => 'Email for search',
+        'no-results' => 'No results',
         'table' => [
             'name' => 'Name',
             'email' => 'Email',
@@ -29,6 +30,16 @@ return [
             'created' => 'Joined',
             'options' => 'Options',
         ],
+    ],
+
+    'tooltip' => [
+        'status' => 'Change status',
+        'edit' => 'Administrator edit',
+        'delete' => 'Administrator delete',
+    ],
+
+    'index' => [
+        'title' => 'Administrators',
     ],
 
     'create' => [
