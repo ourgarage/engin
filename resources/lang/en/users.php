@@ -14,10 +14,10 @@ return [
     ],
 
     'notification' => [
-        'status-change-update' => 'Administrator status successfully changed',
-        'user-created-success' => 'Administrator created successfully',
-        'user-delete' => 'Administrator successfully deleted',
-        'user-update' => 'Administrator successfully updated',
+        'status-change-update' => 'Administrator\'s status successfully changed',
+        'user-created-success' => 'Administrator\'s created successfully',
+        'user-delete' => 'Administrator\'s successfully deleted',
+        'user-update' => 'Administrator\'s successfully updated',
     ],
 
     'search' => [
@@ -43,7 +43,7 @@ return [
     ],
 
     'create' => [
-        'title' => 'Administrator creation',
+        'title' => 'New administrator creation',
         'form' => [
             'name' => 'Name',
             'email' => 'Email',

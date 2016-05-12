@@ -20,4 +20,9 @@ class User extends Authenticatable
     const STATUS_INACTIVE = 'inactive';
     const ROLE_SUPERADMIN = 'superadmin';
     const ROLE_ADMIN = 'admin';
+
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
 }

@@ -55,7 +55,7 @@ class UsersController extends Controller
         $user->create([
             'name' => request('name'),
             'email' => request('email'),
-            'password' => bcrypt(request('email')),
+            'password' => request('password'),
         ]);
 
         Notifications::success(trans('users.notification.user-created-success'), 'top');
@@ -106,7 +106,7 @@ class UsersController extends Controller
         ];
 
         if (request()->has('change_password')) {
-            $update = array_add($update, 'password', bcrypt(request('change_password')));
+            $update = array_add($update, 'password', request('password'));
         }
 
         $user->update($update);
