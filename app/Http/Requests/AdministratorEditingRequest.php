@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Notifications;
 use App\Http\Requests\Request;
 
-class AdministratorCreationPostRequest extends Request
+class AdministratorEditingRequest extends Request
 {
 
 
@@ -19,8 +19,8 @@ class AdministratorCreationPostRequest extends Request
     {
         $rules = [
             'name' => 'required|max:300',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6|max:300',
+            'email' => 'required|email',
+            'password' => 'required_if:change_password,on|min:6|max:300',
         ];
 
         return $rules;
@@ -44,3 +44,4 @@ class AdministratorCreationPostRequest extends Request
 
 
 }
+

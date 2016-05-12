@@ -14,8 +14,6 @@ class DashboardController extends Controller
 
     public function __construct()
     {
-        $this->user = Auth::user();
-
         \Title::prepend(trans('dashboard.title.prepend'));
     }
 
@@ -23,7 +21,7 @@ class DashboardController extends Controller
     {
         \Title::append(trans('dashboard.title.index'));
 
-        return view('admin.dashboard.index', ['user' => $this->user]);
+        return view('admin.dashboard.index', ['user' => Auth::user()]);
     }
     
 }

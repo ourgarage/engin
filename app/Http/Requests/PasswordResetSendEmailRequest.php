@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Notifications;
 use App\Http\Requests\Request;
 
-class AdministratorEditingPostRequest extends Request
+class PasswordResetSendEmailRequest extends Request
 {
 
 
@@ -18,9 +18,7 @@ class AdministratorEditingPostRequest extends Request
     public function rules()
     {
         $rules = [
-            'name' => 'required|max:300',
-            'email' => 'required|email',
-            'password' => 'required_if:change_password,on|min:6|max:300',
+            'email' => 'required|email|exists:users,email'
         ];
 
         return $rules;
@@ -44,4 +42,3 @@ class AdministratorEditingPostRequest extends Request
 
 
 }
-

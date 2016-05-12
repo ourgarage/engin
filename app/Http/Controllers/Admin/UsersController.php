@@ -15,8 +15,6 @@ class UsersController extends Controller
 
     public function __construct()
     {
-        $this->user = Auth::user();
-
         \Title::prepend(trans('dashboard.title.prepend'));
     }
 
@@ -31,7 +29,7 @@ class UsersController extends Controller
 
         \Title::append(trans('users.title.index'));
 
-        return view('admin.dashboard.users.index', ['user' => $this->user, 'admins' => $admins]);
+        return view('admin.dashboard.users.index', ['user' => Auth::user(), 'admins' => $admins]);
     }
 
     /**
@@ -43,7 +41,7 @@ class UsersController extends Controller
     {
         \Title::append(trans('users.title.create'));
 
-        return view('admin.dashboard.users.create', ['user' => $this->user]);
+        return view('admin.dashboard.users.create', ['user' => Auth::user()]);
     }
 
     /**
@@ -52,7 +50,7 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Requests\AdministratorCreationPostRequest $errors, User $user)
+    public function store(Requests\AdministratorCreationRequest $errors, User $user)
     {
         $user->create([
             'name' => request('name'),
@@ -88,7 +86,7 @@ class UsersController extends Controller
 
         \Title::append(trans('users.title.edit'));
 
-        return view('admin.dashboard.users.edit', ['user' => $this->user, 'admin' => $admin]);
+        return view('admin.dashboard.users.edit', ['user' => Auth::user(), 'admin' => $admin]);
     }
 
     /**
@@ -102,16 +100,16 @@ class UsersController extends Controller
     {
         $user = $user->where('id', $id);
 
-        $user->update([
+        $update = [
             'name' => request('name'),
             'email' => request('email')
-        ]);
+        ];
 
         if (request()->has('change_password')) {
-            $user->update([
-                'password' => bcrypt(request('change_password'))
-            ]);
+            $update = array_add($update, 'password', bcrypt(request('change_password')));
         }
+
+        $user->update($update);
 
         Notifications::success(trans('users.notification.user-update'), 'top');
 
@@ -156,7 +154,7 @@ class UsersController extends Controller
         \Title::append(trans('users.title.search'));
 
         return view('admin.dashboard.users.search', [
-            'user' => $this->user,
+            'user' => Auth::user(),
             'admins' => $admins,
             'searchValue' => request('email')
         ]);

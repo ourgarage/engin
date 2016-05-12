@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Notifications;
 use App\Http\Requests\Request;
 
-class PasswordResetSendEmailPostRequest extends Request
+class AdministratorCreationRequest extends Request
 {
 
 
@@ -18,7 +18,9 @@ class PasswordResetSendEmailPostRequest extends Request
     public function rules()
     {
         $rules = [
-            'email' => 'required|email|exists:users,email'
+            'name' => 'required|max:300',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6|max:300',
         ];
 
         return $rules;

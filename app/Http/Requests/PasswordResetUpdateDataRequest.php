@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Notifications;
 use App\Http\Requests\Request;
 
-class PasswordResetUpdateDataPostRequest extends Request
+class PasswordResetUpdateDataRequest extends Request
 {
 
 

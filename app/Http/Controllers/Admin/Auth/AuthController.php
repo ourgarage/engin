@@ -38,7 +38,7 @@ class AuthController extends Controller
 
             Notifications::error(trans('auth.notification.login-error'), 'page');
 
-            return redirect(null, 403)->route('login')->withInput();
+            return redirect()->route('login')->withInput();
         }
 
         Notifications::success(trans('auth.notification.login-success'), 'top');

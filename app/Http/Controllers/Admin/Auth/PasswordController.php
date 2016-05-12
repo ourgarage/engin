@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin\Auth;
 
 use App\Classes\MailSend;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\PasswordResetSendEmailPostRequest;
-use App\Http\Requests\PasswordResetUpdateDataPostRequest;
+use App\Http\Requests\PasswordResetSendEmailRequest;
+use App\Http\Requests\PasswordResetUpdateDataRequest;
 use App\Models\User;
 use Jenssegers\Date\Date;
 use Notifications;
@@ -25,7 +25,7 @@ class PasswordController extends Controller
         return view('admin.auth.passwords.email');
     }
 
-    public function sendResetLinkEmail(PasswordResetSendEmailPostRequest $errors, User $user, MailSend $mailSend)
+    public function sendResetLinkEmail(PasswordResetSendEmailRequest $errors, User $user, MailSend $mailSend)
     {
         $user = $user->where('email', request('email'))->first();
 
@@ -66,7 +66,7 @@ class PasswordController extends Controller
         }
     }
 
-    public function resetPost(PasswordResetUpdateDataPostRequest $errors, User $user)
+    public function resetPost(PasswordResetUpdateDataRequest $errors, User $user)
     {
         $user = $user->where('email', request('email'))
             ->where('token', request('token'))

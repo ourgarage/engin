@@ -18,7 +18,7 @@
                     <td>{{ $admin->name }}</td>
                     <td>{{ $admin->email }}</td>
                     <td class="text-capitalize">{{ $admin->roles }}</td>
-                    <td>{{ dateFormat_dMY($admin->created_at) }}</td>
+                    <td>{{ dateFormat($admin->created_at) }}</td>
                     <td class="for-form-inline">
                         <form action="{{ route('status-update-admin', ['id' => $admin->id]) }}"
                               method="POST">
