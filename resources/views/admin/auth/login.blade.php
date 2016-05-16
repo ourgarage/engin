@@ -12,7 +12,7 @@
         <div class="row">
             <div class="login-box">
                 <div class="page-logo">
-                    <img src="{{ config('project-constants.logo_full') }}" alt="logo">
+                    <img src="{{ config('project-values.logo_full') }}" alt="logo">
                 </div>
 
                 @include('admin.basis.notifications-page')
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                     </form>
-                    <a href="{{ url('/password/reset') }}">{{ trans('auth.button.login-forgot-password') }}</a>
+                    <a href="{{ route('password-reset.email') }}">{{ trans('auth.button.login-forgot-password') }}</a>
                 </div>
             </div>
         </div>

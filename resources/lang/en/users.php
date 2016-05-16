@@ -34,8 +34,8 @@ return [
 
     'tooltip' => [
         'status' => 'Change status',
-        'edit' => 'Administrator edit',
-        'delete' => 'Administrator delete',
+        'edit' => 'Edit',
+        'delete' => 'Delete',
     ],
 
     'index' => [
@@ -53,11 +53,11 @@ return [
     ],
 
     'edit' => [
-        'title' => 'Administrator editing',
+        'title' => 'Edit administrator',
         'form' => [
             'submit' => 'Update',
             'change_password' => 'Change password',
         ],
     ],
-
+    
 ];

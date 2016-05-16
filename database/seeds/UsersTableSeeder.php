@@ -8,7 +8,7 @@ class UsersTableSeeder extends Seeder
 
     public function run()
     {
-        DB::table('users')->insert([
+        User::create([
             'name' => 'Administrator',
             'email' => 'administrator@example.local',
             'password' => '123456',
