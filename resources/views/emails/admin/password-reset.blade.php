@@ -1,4 +1,4 @@
-@extends('admin.emails.main')
+@extends('emails.admin.main')
 
 @section('title')
     <p style="padding: 1em 0 0 0;

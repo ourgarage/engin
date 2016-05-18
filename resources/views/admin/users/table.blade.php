@@ -1,4 +1,4 @@
-@if(!is_null($admins) && !$admins->isEmpty())
+@if(!$admins->isEmpty())
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>
@@ -34,7 +34,6 @@
                             @endif
                         </form>
                         <form action="{{ route('admin.users.edit', ['id' => $admin->id]) }}" method="GET">
-                            {{ csrf_field() }}
                             <button type="submit" class="btn btn-xs btn-warning" data-toggle="tooltip" data-placement="top"
                                     title="{{ trans('users.tooltip.edit') }}"><i class="fa fa-pencil"></i>
                             </button>

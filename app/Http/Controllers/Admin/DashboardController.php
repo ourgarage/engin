@@ -21,7 +21,7 @@ class DashboardController extends Controller
     {
         \Title::append(trans('dashboard.title.index'));
 
-        return view('admin.dashboard.index', ['user' => Auth::user()]);
+        return view('admin.index', ['user' => Auth::user()]);
     }
     
 }

@@ -29,7 +29,7 @@ class UsersController extends Controller
 
         \Title::append(trans('users.title.index'));
 
-        return view('admin.dashboard.users.index', ['user' => Auth::user(), 'admins' => $admins]);
+        return view('admin.users.index', ['user' => Auth::user(), 'admins' => $admins]);
     }
 
     /**
@@ -41,7 +41,7 @@ class UsersController extends Controller
     {
         \Title::append(trans('users.title.create'));
 
-        return view('admin.dashboard.users.create', ['user' => Auth::user()]);
+        return view('admin.users.create', ['user' => Auth::user()]);
     }
 
     /**
@@ -86,7 +86,7 @@ class UsersController extends Controller
 
         \Title::append(trans('users.title.edit'));
 
-        return view('admin.dashboard.users.edit', ['user' => Auth::user(), 'admin' => $admin]);
+        return view('admin.users.edit', ['user' => Auth::user(), 'admin' => $admin]);
     }
 
     /**
@@ -151,7 +151,7 @@ class UsersController extends Controller
 
         \Title::append(trans('users.title.search'));
 
-        return view('admin.dashboard.users.search', [
+        return view('admin.users.search', [
             'user' => Auth::user(),
             'admins' => $admins,
             'searchValue' => request('email')

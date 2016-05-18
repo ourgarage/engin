@@ -22,9 +22,9 @@
 
 <div class="wrapper">
 
-    @include('admin.dashboard.partials.header')
+    @include('admin.partials.header')
 
-    @include('admin.dashboard.partials.left-menu')
+    @include('admin.partials.left-menu')
 
     <div class="content-wrapper">
         <section class="content-header">
@@ -39,7 +39,7 @@
         </section>
     </div>
 
-    @include('admin.dashboard.partials.footer')
+    @include('admin.partials.footer')
 
 </div>
 
