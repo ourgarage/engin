@@ -3,6 +3,7 @@
 namespace App\Http\ViewComposers\Admin;
 
 use Illuminate\Contracts\View\View;
+use App\Services\PackageLoaderService;
 
 class LeftMenuComposer
 {
@@ -18,6 +19,7 @@ class LeftMenuComposer
             ],
         ];
 
-        $view->with('items', $items);
+        $view->with('items', PackageLoaderService::menuPackages());
+
     }
 }

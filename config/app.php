@@ -168,7 +168,7 @@ return [
          * Our Service Providers...
          */
         App\Providers\ComposerServiceProvider::class,
-
+        Ourgarage\StaticPages\StaticPagesServiceProvider::class,
     ],
 
     /*
