@@ -3,6 +3,7 @@
 namespace App\Http\ViewComposers\Admin;
 
 use Illuminate\Contracts\View\View;
+use App\Services\PackageLoaderService;
 
 class LeftMenuComposer
 {
@@ -18,23 +19,7 @@ class LeftMenuComposer
             ],
         ];
 
-        $packages = ['static-pages'];
+        $view->with('items', PackageLoaderService::menuPackages());
 
-        foreach ($packages as $package) {
-
-            if (config()->has($package)) {
-
-                $items[] = [
-                    'url' => route(config($package . '.url')),
-                    'caption' => config($package . '.caption'),
-                    'icon' => config($package . '.icon'),
-                    'active' => config($package . '.active'),
-                ];
-
-            }
-
-        }
-
-        $view->with('items', $items);
     }
 }
