@@ -1,5 +1,5 @@
 <div class="search-form">
-    <form action="{{ route('users-search-admin') }}" method="GET">
+    <form action="{{ route('admin-users-search') }}" method="GET">
         <div class="input-group col-xs-12 col-md-6">
             <input type="text" name="email" class="form-control"
                    value="{{ app('request')->input('email') }}" placeholder="{{ trans('users.search.placeholder') }}">

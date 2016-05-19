@@ -14,7 +14,7 @@
             @include('admin.basis.notifications-page')
 
             <div class="login-box-body">
-                <form action="{{ route('admin.users.store') }}" method="POST">
+                <form action="{{ route('admin-users-store') }}" method="POST">
                     {!! csrf_field() !!}
                     <div class="form-group has-feedback">
                         <input type="text" name="name" class="form-control"

@@ -20,7 +20,7 @@
             @include('admin.basis.notifications-page')
 
             <div class="login-box-body">
-                <form action="{{ route('admin.users.update', ['id' => $admin->id]) }}" method="POST">
+                <form action="{{ route('admin-users-update', ['id' => $admin->id]) }}" method="POST">
                     {!! csrf_field() !!}
                     {{ method_field('PUT') }}
                     <div class="form-group has-feedback">

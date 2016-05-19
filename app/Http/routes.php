@@ -5,11 +5,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
     Route::get('/', 'Admin\DashboardController@index')->name('index-admin');
 
-    Route::get('/users/search', 'Admin\UsersController@searchUsers')->name('users-search-admin');
-
-    Route::resource('users', 'Admin\UsersController');
-
-    Route::post('/users/status-update/{id}', 'Admin\UsersController@updateStatus')->name('status-update-admin');
+//    Route::resource('users', 'Admin\UsersController');
+    Route::get('/users', 'Admin\UsersController@index')->name('admin-users-index');
+    Route::get('/users/create', 'Admin\UsersController@create')->name('admin-users-create');
+    Route::post('/users', 'Admin\UsersController@store')->name('admin-users-store');
+    Route::get('/users/{id}/edit', 'Admin\UsersController@edit')->name('admin-users-edit');
+    Route::put('/users/{id}', 'Admin\UsersController@update')->name('admin-users-update');
+    Route::delete('/users/{id}', 'Admin\UsersController@destroy')->name('admin-users-destroy');
+    Route::post('/users/status-update/{id}', 'Admin\UsersController@updateStatus')->name('admin-users-status-update');
+    Route::get('/users/search', 'Admin\UsersController@searchUsers')->name('admin-users-search');
 
 });
 

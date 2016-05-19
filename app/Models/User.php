@@ -18,6 +18,7 @@ class User extends Authenticatable
 
     const STATUS_ACTIVE = 'active';
     const STATUS_INACTIVE = 'inactive';
+    
     const ROLE_SUPERADMIN = 'superadmin';
     const ROLE_ADMIN = 'admin';
 

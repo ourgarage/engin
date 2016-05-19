@@ -14,7 +14,7 @@
                 {{ trans('dashboard.left-menu.title') }}
             </li>
             <li class="treeview">
-                <a href="{{ route('admin.users.index') }}">
+                <a href="{{ route('admin-users-index') }}">
                     <i class="fa fa-users fa-fw"></i>
                     <span>{{ trans('dashboard.left-menu.administrators') }}</span>
                 </a>

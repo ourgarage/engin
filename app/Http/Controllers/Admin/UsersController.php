@@ -11,8 +11,6 @@ use Notifications;
 
 class UsersController extends Controller
 {
-    private $user;
-
     public function __construct()
     {
         \Title::prepend(trans('dashboard.title.prepend'));
@@ -60,7 +58,7 @@ class UsersController extends Controller
 
         Notifications::success(trans('users.notification.user-created-success'), 'top');
 
-        return redirect()->route('admin.users.index');
+        return redirect()->route('admin-users-index');
     }
 
     /**
@@ -111,7 +109,7 @@ class UsersController extends Controller
 
         Notifications::success(trans('users.notification.user-update'), 'top');
 
-        return redirect()->route('admin.users.index');
+        return redirect()->route('admin-users-index');
     }
 
     public function updateStatus($id, User $user)
