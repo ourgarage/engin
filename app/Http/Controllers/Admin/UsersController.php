@@ -96,20 +96,18 @@ class UsersController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id, User $user)
+    public function update($id)
     {
-        $user = $user->where('id', $id);
+        $user = User::find($id);
 
-        $update = [
-            'name' => request('name'),
-            'email' => request('email')
-        ];
+        $user->name = request('name');
+        $user->email = request('email');
 
         if (request()->has('change_password')) {
-            $update = array_add($update, 'password', request('password'));
+            $user->password = request('password');
         }
 
-        $user->update($update);
+        $user->save();
 
         Notifications::success(trans('users.notification.user-update'), 'top');
 
