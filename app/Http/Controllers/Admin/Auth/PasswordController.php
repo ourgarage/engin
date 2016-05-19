@@ -32,7 +32,7 @@ class PasswordController extends Controller
         $token = str_random();
 
         if ($user->last_restore > Date::now()->subMinutes(config('project-values.password_reset_limit'))) {
-            Notifications::danger(trans('password.notification.password-email-error', ['minutes' => config('project-values.password_reset_limit')]), 'page');
+            Notifications::danger(trans_choice('password.notification.password-email-error', config('project-values.password_reset_limit'), ['minutes' => config('project-values.password_reset_limit')]), 'page');
 
             return redirect()->back()->withInput();
         } else {

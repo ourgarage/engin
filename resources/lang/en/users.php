@@ -15,7 +15,7 @@ return [
 
     'notification' => [
         'status-change-update' => 'Administrator\'s status successfully changed',
-        'user-created-success' => 'Administrator\'s created successfully',
+        'user-created-success' => 'New administrator\'s created successfully',
         'user-delete' => 'Administrator\'s successfully deleted',
         'user-update' => 'Administrator\'s successfully updated',
     ],

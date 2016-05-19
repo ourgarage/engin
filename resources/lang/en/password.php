@@ -23,7 +23,7 @@ return [
     ],
 
     'notification' => [
-        'password-email-error' => 'it took less than :minutes minutes with previous request, please try again later.',
+        'password-email-error' => '{1} it took less than :minutes minute with previous request, please try again later.|[2,Inf] it took less than :minutes minutes with previous request, please try again later.',
         'password-email-success' => 'A letter has been sent successfully. Please check your mailbox.',
         'password-form-error' => 'The link you followed is invalid',
         'password-form-success' => 'Password successfully changed',

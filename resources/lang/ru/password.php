@@ -11,10 +11,10 @@ return [
     'form' => [
         'password-email-title' => 'Сброс пароля',
         'password-email-placeholder' => 'Email',
-        'password-email-description' => 'In your email you will receive a letter containing a link to reset your password. Reference lifetime is 10 minutes.',
-        'password-form-title' => 'Password reset',
-        'password-password-placeholder' => 'Password',
-        'password-confirmation-placeholder' => 'Retype password',
+        'password-email-description' => 'На ваш эл.адрес отправлено письмо содержащее ссылку для сброса пароля. Срок службы ссылки составляет 10 минут.',
+        'password-form-title' => 'Сброс пароля',
+        'password-password-placeholder' => 'Пароль',
+        'password-confirmation-placeholder' => 'Повтор пароля',
     ],
 
     'button' => [
@@ -23,7 +23,7 @@ return [
     ],
 
     'notification' => [
-        'password-email-error' => 'С предыдущего запроса прошло менее :minutes минут. Пожалуйста, повторите попытку позже.',
+        'password-email-error' => '{1} С предыдущего запроса прошло менее :minutes минуты. Пожалуйста, повторите попытку позже.|[2,Inf] С предыдущего запроса прошло менее :minutes минут. Пожалуйста, повторите попытку позже.',
         'password-email-success' => 'Письмо успешно отправленно. Пожалуйста, проверьте ваш ящик эл.почты',
         'password-form-error' => 'Ссылка по которой вы перешли более не активна',
         'password-form-success' => 'Пароль успешно изменен',
