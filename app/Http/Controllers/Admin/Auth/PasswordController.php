@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Auth;
 
-use App\Classes\MailSend;
+use App\Events\PasswordReset;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PasswordResetSendEmailRequest;
 use App\Http\Requests\PasswordResetUpdateDataRequest;
@@ -25,7 +25,7 @@ class PasswordController extends Controller
         return view('admin.auth.passwords.email');
     }
 
-    public function sendResetLinkEmail(PasswordResetSendEmailRequest $errors, User $user, MailSend $mailSend)
+    public function sendResetLinkEmail(PasswordResetSendEmailRequest $errors, User $user)
     {
         $user = $user->where('email', request('email'))->first();
 
@@ -41,7 +41,7 @@ class PasswordController extends Controller
                 'last_restore' => Date::now()
             ]);
 
-            $mailSend->passwordReset(request('email'), $token);
+            event(new PasswordReset($user));
 
             Notifications::success(trans('password.notification.password-email-success'), 'top');
 
