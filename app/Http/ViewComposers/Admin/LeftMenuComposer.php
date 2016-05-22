@@ -18,6 +18,8 @@ class LeftMenuComposer
             ],
         ];
 
-        $view->with('items', $items);
+        $user = \Auth::user();
+
+        $view->with(['items' => $items, 'user' => $user]);
     }
 }

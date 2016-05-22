@@ -26,7 +26,7 @@ class UsersController extends Controller
 
         \Title::append(trans('users.title.index'));
 
-        return view('admin.users.index', ['user' => Auth::user(), 'admins' => $admins]);
+        return view('admin.users.index', ['admins' => $admins]);
     }
 
     /**
@@ -36,14 +36,16 @@ class UsersController extends Controller
     {
         \Title::append(trans('users.title.create'));
 
-        return view('admin.users.create', ['user' => Auth::user()]);
+        return view('admin.users.create-or-update');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created or updated resource in storage.
      */
-    public function store(Requests\AdministratorCreationRequest $errors, User $user)
+    public function store($id = null)
     {
+
+        dd($id);
         $user->create([
             'name' => request('name'),
             'email' => request('email'),
@@ -53,26 +55,6 @@ class UsersController extends Controller
         Notifications::success(trans('users.notification.user-created-success'), 'top');
 
         return redirect()->route('admin-users-index');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id, User $user)
-    {
-        $admin = $user->find($id);
-
-        \Title::append(trans('users.title.edit'));
-
-        return view('admin.users.edit', ['user' => Auth::user(), 'admin' => $admin]);
     }
 
     /**
@@ -94,6 +76,18 @@ class UsersController extends Controller
         Notifications::success(trans('users.notification.user-update'), 'top');
 
         return redirect()->route('admin-users-index');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit($id, User $user)
+    {
+        $admin = $user->find($id);
+
+        \Title::append(trans('users.title.edit'));
+
+        return view('admin.users.create-or-update', ['admin' => $admin]);
     }
 
     public function updateStatus($id, User $user)
@@ -130,10 +124,6 @@ class UsersController extends Controller
 
         \Title::append(trans('users.title.search'));
 
-        return view('admin.users.search', [
-            'user' => Auth::user(),
-            'admins' => $admins,
-            'searchValue' => request('email')
-        ]);
+        return view('admin.users.search', ['admins' => $admins, 'searchValue' => request('email')]);
     }
 }
