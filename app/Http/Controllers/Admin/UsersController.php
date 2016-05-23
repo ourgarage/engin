@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use Auth;
+use Validator;
 use Notifications;
 
 class UsersController extends Controller
@@ -44,36 +44,43 @@ class UsersController extends Controller
      */
     public function store($id = null)
     {
+        if (is_null($id)) {
+            $v = Validator::make(request()->all(), [
+                'name' => 'required|max:255',
+                'email' => 'required|email|unique:users,email',
+                'password' => 'required|min:6|max:300'
+            ]);
 
-        dd($id);
-        $user->create([
-            'name' => request('name'),
-            'email' => request('email'),
-            'password' => request('password'),
-        ]);
+            if ($v->fails())
+            {
+                foreach ($v->errors()->all() as $error) {
+                    Notifications::danger($error, 'page');
+                }
 
-        Notifications::success(trans('users.notification.user-created-success'), 'top');
+                return redirect()->back()->withErrors($v->errors());
+            }
 
-        return redirect()->route('admin-users-index');
-    }
+            User::create([
+                'name' => request('name'),
+                'email' => request('email'),
+                'password' => request('password'),
+            ]);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update($id)
-    {
-        $user = User::find($id);
+            Notifications::success(trans('users.notification.user-created-success'), 'top');
+        } else {
+            $user = User::find($id);
 
-        $user->name = request('name');
-        $user->email = request('email');
+            $user->name = request('name');
+            $user->email = request('email');
 
-        if (request()->has('change_password')) {
-            $user->password = request('password');
+            if (request()->has('change_password')) {
+                $user->password = request('password');
+            }
+
+            $user->save();
+
+            Notifications::success(trans('users.notification.user-update'), 'top');
         }
-
-        $user->save();
-
-        Notifications::success(trans('users.notification.user-update'), 'top');
 
         return redirect()->route('admin-users-index');
     }
