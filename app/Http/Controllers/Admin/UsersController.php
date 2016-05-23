@@ -36,7 +36,7 @@ class UsersController extends Controller
     {
         \Title::append(trans('users.title.create'));
 
-        return view('admin.users.create-or-update');
+        return view('admin.users.user');
     }
 
     /**
@@ -94,7 +94,7 @@ class UsersController extends Controller
 
         \Title::append(trans('users.title.edit'));
 
-        return view('admin.users.create-or-update', ['admin' => $admin]);
+        return view('admin.users.user', ['admin' => $admin]);
     }
 
     public function updateStatus($id, User $user)
