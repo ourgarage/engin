@@ -48,7 +48,7 @@ class Handler extends ExceptionHandler
      * @return \Illuminate\Http\Response
      *
      */
-    
+
     public function render($request, Exception $e)
     {
 
@@ -136,4 +136,5 @@ class Handler extends ExceptionHandler
 
         return $statusCode;
     }
+
 }
