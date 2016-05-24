@@ -6,10 +6,10 @@
 <body style="padding: 1em; background: #e9eaed;">
 <div style="background: #ffffff; padding: 1em;">
     <div style="background: #3870a9; border-radius: .26em .26em 0 0; padding: 2.3em 0;">
-        <img src="{{ asset(config('project.logo_mini')) }}" alt="logo"
+        <img src="{{ asset(config('site.logo_mini')) }}" alt="logo"
              style="max-width: 75vw; height: 4em; display: block; margin: 0 auto;">
         <p style="text-align: center; margin: 1em 0 0 0; color: #f4f4f4; text-transform: uppercase">
-            {{ config('project.name_full') }}
+            {{ config('site.name_full') }}
         </p>
     </div>
     <div>

@@ -31,8 +31,8 @@ class PasswordController extends Controller
 
         $token = str_random();
 
-        if ($user->last_restore > Date::now()->subMinutes(config('project.password_reset_limit'))) {
-            Notifications::danger(trans_choice('password.notification.password-email-error', config('project.password_reset_limit'), ['minutes' => config('project.password_reset_limit')]), 'page');
+        if ($user->last_restore > Date::now()->subMinutes(config('site.password_reset_limit'))) {
+            Notifications::danger(trans_choice('password.notification.password-email-error', config('site.password_reset_limit'), ['minutes' => config('site.password_reset_limit')]), 'page');
 
             return redirect()->back()->withInput();
         } else {
@@ -55,7 +55,7 @@ class PasswordController extends Controller
             ->where('token', $token)
             ->first();
 
-        if (!is_null($user) && $user->last_restore > Date::now()->subMinutes(config('project.password_reset_limit'))) {
+        if (!is_null($user) && $user->last_restore > Date::now()->subMinutes(config('site.password_reset_limit'))) {
             \Title::append(trans('password.title.password-form'));
 
             return view('admin.auth.passwords.reset', ['token' => $token]);

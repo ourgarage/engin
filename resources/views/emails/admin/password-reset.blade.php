@@ -27,6 +27,6 @@
         color: #676870;
         font-size: .85em;
         ">
-        {!! trans('email.password-reset.footer', ['link' => route('index'), 'site' => config('project.name_full')]) !!}
+        {!! trans('email.password-reset.footer', ['link' => route('index'), 'site' => config('site.name_full')]) !!}
     </p>
 @endsection

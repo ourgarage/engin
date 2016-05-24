@@ -2,9 +2,9 @@
 
 return [
 
-    'name' => env('VARIABLE_NAME', 'site'),
+    'name' => env('SITE_NAME', 'site'),
 
-    'name_full' => env('VARIABLE_NAME_FULL', 'site.com'),
+    'name_full' => env('SITE_NAME_FULL', 'site.com'),
 
     'logo_mini' => '/images/logo/logo_2.png',
 
