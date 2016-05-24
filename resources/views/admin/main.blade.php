@@ -4,57 +4,49 @@
 
 <head>
 
-    @include('basis.meta')
+    @include('admin.basis.meta')
 
     <title>{{ \Title::render() }}</title>
 
-    @include('basis.css')
+    @include('admin.basis.css')
 
     @yield('css')
 
+    <link href='/css/dashboard.css' rel='stylesheet' type='text/css'>
+
 </head>
 
-<body>
+<body class="hold-transition skin-blue sidebar-mini admin-dashboard">
 
-<div class="container-fluid">
+@include('admin.basis.notifications-top')
 
-    <div class="row">
+<div class="wrapper">
 
-        <div class="hold-transition skin-blue sidebar-mini">
+    @include('admin.partials.header')
 
-            <div class="wrapper">
+    @include('admin.partials.left-menu')
 
-                @include('admin.partials.header')
-
-                @include('admin.partials.left-menu')
-
-                <div class="content-wrapper">
-
-                    <section class="content-header">
-                        <h1></h1>
-                    </section>
-
-                    <section class="content">
-                        @yield('body')
-                    </section>
-
-                </div>
-
-                @include('admin.partials.footer')
-
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                @yield('body-title')
+            </h1>
+        </section>
+        <section class="content">
+            <div class="box">
+                @yield('body')
             </div>
-
-        </div>
-
+        </section>
     </div>
+
+    @include('admin.partials.footer')
 
 </div>
 
-@include('basis.js')
+@include('admin.basis.js')
 
 @yield('js')
 
 </body>
 
 </html>
-

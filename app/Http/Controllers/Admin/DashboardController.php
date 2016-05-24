@@ -3,20 +3,25 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use Notifications;
+use Auth;
 
 class DashboardController extends Controller
 {
 
+    private $user;
+
     public function __construct()
     {
-        \Title::prepend('Admin');
+        \Title::prepend(trans('dashboard.title.prepend'));
     }
 
     public function index()
     {
-        \Title::append('General');
+        \Title::append(trans('dashboard.title.index'));
 
-        return view('admin.dashboard.index');
+        return view('admin.dashboard.index', ['user' => Auth::user()]);
     }
-
+    
 }

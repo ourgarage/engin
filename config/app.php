@@ -162,6 +162,8 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Gaaarfild\LaravelTitle\LaravelTitleServiceProvider::class,
+        Gaaarfild\LaravelNotifications\LaravelNotificationsServiceProvider::class,
+        Jenssegers\Date\DateServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
 
         /*
@@ -216,6 +218,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Title' => Gaaarfild\LaravelTitle\TitleFacade::class,
+        'Notifications' => Gaaarfild\LaravelNotifications\NotificationsFacade::class,
+        'Date' => Jenssegers\Date\Date::class,
 
     ],
 
