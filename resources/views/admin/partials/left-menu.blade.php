@@ -2,7 +2,7 @@
     <section class="sidebar">
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ config('project-values.admin_avatar') }}" class="img-circle" alt="User Image">
+                <img src="{{ config('project.admin_avatar') }}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>{{ $user->name }}</p>

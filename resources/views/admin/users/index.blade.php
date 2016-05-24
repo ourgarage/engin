@@ -13,7 +13,7 @@
     @include('admin.users.search-form')
 
     <div class="users-index">
-        @include('admin.users.table', ['admins', $admins])
+        @include('admin.users._users-table', ['admins', $admins])
     </div>
 
 @endsection

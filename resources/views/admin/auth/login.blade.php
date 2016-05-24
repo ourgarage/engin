@@ -12,7 +12,7 @@
         <div class="row">
             <div class="login-box">
                 <div class="page-logo">
-                    <img src="{{ config('project-values.logo_full') }}" alt="logo">
+                    <img src="{{ config('project.logo_full') }}" alt="logo">
                 </div>
 
                 @include('admin.basis.notifications-page')

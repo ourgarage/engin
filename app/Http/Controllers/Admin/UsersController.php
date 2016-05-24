@@ -42,24 +42,9 @@ class UsersController extends Controller
     /**
      * Store a newly created or updated resource in storage.
      */
-    public function store($id = null)
+    public function store(Requests\AdminCreateRequest $errors, $id = null)
     {
         if (is_null($id)) {
-            $v = Validator::make(request()->all(), [
-                'name' => 'required|max:255',
-                'email' => 'required|email|unique:users,email',
-                'password' => 'required|min:6|max:300'
-            ]);
-
-            if ($v->fails())
-            {
-                foreach ($v->errors()->all() as $error) {
-                    Notifications::danger($error, 'page');
-                }
-
-                return redirect()->back()->withErrors($v->errors());
-            }
-
             User::create([
                 'name' => request('name'),
                 'email' => request('email'),
@@ -124,9 +109,9 @@ class UsersController extends Controller
 
     public function searchUsers(User $user)
     {
-        if (!is_null(request('email'))) {
-            $admins = $user->where('email', 'LIKE', '%' . e(request('email')) . '%')
-                ->paginate(20);
+        if (!is_null(request('q'))) {
+            $admins = $user->where('email', 'LIKE', '%' . e(request('q')) . '%')
+                ->orWhere('name', 'LIKE', '%' . e(request('q')) . '%')->paginate(20);
         }
 
         \Title::append(trans('users.title.search'));
