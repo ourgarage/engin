@@ -17,7 +17,7 @@ class LeftMenuComposer
                 'active' => 'index-admin',
             ],
         ];
-
+        dd(config('packages'));
         $view->with(['items' => $items, 'user' => auth()->user()]);
     }
 }
