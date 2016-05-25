@@ -3,6 +3,7 @@
 namespace App\Http\ViewComposers\Admin;
 
 use Illuminate\Contracts\View\View;
+use App\Services\PackageLoaderService;
 
 class LeftMenuComposer
 {
@@ -17,7 +18,7 @@ class LeftMenuComposer
                 'active' => 'index-admin',
             ],
         ];
-        dd(config('packages'));
+        dd( config('packages') );
         $view->with(['items' => $items, 'user' => auth()->user()]);
     }
 }
