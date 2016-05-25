@@ -8,23 +8,23 @@ class PackageLoaderService
 {
     function __construct()
     {
-        //i don't know, need it or not..
+        //I don't know that there should be...
     }
     public static function listPackages()
     {
-        $packages = array_pluck(config('packages'), 'name');
-        return $packages;
+        $packagesList = array_pluck(config('packages'), 'name');
+        return $packagesList;
     }
     public static function menuPackages()
     {
-        $packages = PackageLoaderService::listPackages();
-        foreach ($packages as $package) {
-            if (config()->has($package)) {
+        $packagesList = PackageLoaderService::listPackages();
+        foreach ($packagesList as $package) {
+            if (config()->has('packages.' . $package)) {
                 $items[] = [
-                    'url' => route(config($package . '.url')),
-                    'caption' => config($package . '.caption'),
-                    'icon' => config($package . '.icon'),
-                    'active' => config($package . '.active'),
+                    'url' => route(config('packages.' . $package . '.url')),
+                    'caption' => config('packages.' . $package . '.caption'),
+                    'icon' => config('packages.' . $package . '.icon'),
+                    'active' => config('packages.' . $package . '.active'),
                 ];
             }
         }

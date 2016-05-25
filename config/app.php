@@ -171,7 +171,6 @@ return [
          */
         App\Providers\ComposerServiceProvider::class,
         Ourgarage\StaticPages\StaticPagesServiceProvider::class,
-        Ourgarage\Gallery\GalleryServiceProvider::class,
 
     ],
 

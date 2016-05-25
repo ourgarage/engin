@@ -18,7 +18,10 @@ class LeftMenuComposer
                 'active' => 'index-admin',
             ],
         ];
-        dd( config('packages') );
+
+        $packageItems = PackageLoaderService::menuPackages();
+        $items = array_merge_recursive($items, $packageItems);
+
         $view->with(['items' => $items, 'user' => auth()->user()]);
     }
 }
