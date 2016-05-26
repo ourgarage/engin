@@ -3,6 +3,7 @@
 namespace App\Http\ViewComposers\Admin;
 
 use Illuminate\Contracts\View\View;
+use App\Services\PackageLoaderService;
 
 class LeftMenuComposer
 {
@@ -18,6 +19,9 @@ class LeftMenuComposer
             ],
         ];
 
+        $packageItems = PackageLoaderService::menuPackages();
+        $items = array_merge_recursive($items, $packageItems);
+        
         $view->with(['items' => $items, 'user' => auth()->user()]);
     }
 }
