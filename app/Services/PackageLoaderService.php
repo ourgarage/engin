@@ -8,14 +8,12 @@ class PackageLoaderService
     {
         $packagesList = array_pluck(config('packages'), 'name');
         foreach ($packagesList as $package) {
-            if (config()->has('packages.' . $package)) {
-                $items[] = [
-                    'url' => route(config('packages.' . $package . '.url')),
-                    'caption' => config('packages.' . $package . '.caption'),
-                    'icon' => config('packages.' . $package . '.icon'),
-                    'active' => config('packages.' . $package . '.active'),
-                ];
-            }
+            $items[] = [
+                'url' => route(config('packages.' . $package . '.url')),
+                'caption' => config('packages.' . $package . '.caption'),
+                'icon' => config('packages.' . $package . '.icon'),
+                'active' => config('packages.' . $package . '.active'),
+            ];
         }
 
         return $items;
