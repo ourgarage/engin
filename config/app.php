@@ -165,6 +165,8 @@ return [
         Gaaarfild\LaravelNotifications\LaravelNotificationsServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
+        Ourgarage\StaticPages\StaticPagesServiceProvider::class,
+        Ourgarage\Contacts\ContactsServiceProvider::class,
 
         /*
          * Our Service Providers...

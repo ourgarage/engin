@@ -11,6 +11,7 @@
         "barryvdh/laravel-ide-helper": "^2.1",
         "gaaarfild/laravel-title": "1.*",
         "ourgarage/static-pages": "dev-develop",
+        "ourgarage/contacts": "dev-master",
         "gaaarfild/laravel-notifications": "~1.0",
         "jenssegers/date": "~3.0",
         "graham-campbell/exceptions": "^8.4"
@@ -25,8 +26,12 @@
     },
     "repositories": [
         {
-            "type": "vcs",
-            "url": "https://github.com/ourgarage/static-pages.git"
+            "type": "git",
+            "url": "git@github.com:ourgarage/static-pages.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:ourgarage/contacts.git"
         }
     ],
     "autoload": {
