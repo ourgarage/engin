@@ -26,12 +26,12 @@
     },
     "repositories": [
         {
-            "type": "vcs",
-            "url": "https://github.com/ourgarage/static-pages.git"
+            "type": "git",
+            "url": "git@github.com:ourgarage/static-pages.git"
         },
         {
-            "type": "vcs",
-            "url": "https://github.com/ourgarage/contacts.git"
+            "type": "git",
+            "url": "git@github.com:ourgarage/contacts.git"
         }
     ],
     "autoload": {

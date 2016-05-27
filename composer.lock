@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dc66547be8dd640c20f8898a7c89d701",
-    "content-hash": "46d07c2281667c2291485ed6b104d0b8",
+    "hash": "075bdc653f0b71e520816fdff7f03283",
+    "content-hash": "9d8a55a0c3a1bfa1e8a310f50f78940c",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -641,16 +641,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.33",
+            "version": "v5.2.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "4120808d2e841ba5a94c5e0443e9696ae4fa9bfe"
+                "reference": "6a26f3bb6a6e00c53654a661221643ad1b98e146"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/4120808d2e841ba5a94c5e0443e9696ae4fa9bfe",
-                "reference": "4120808d2e841ba5a94c5e0443e9696ae4fa9bfe",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/6a26f3bb6a6e00c53654a661221643ad1b98e146",
+                "reference": "6a26f3bb6a6e00c53654a661221643ad1b98e146",
                 "shasum": ""
             },
             "require": {
@@ -766,7 +766,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-05-25 18:35:42"
+            "time": "2016-05-26 21:59:46"
         },
         {
             "name": "league/flysystem",
@@ -1137,7 +1137,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ourgarage/contacts.git",
+                "url": "git@github.com:ourgarage/contacts.git",
                 "reference": "b866acd73f167f5d3ad0121aa097e1ba7f6c5f26"
             },
             "dist": {
@@ -1173,7 +1173,7 @@
             "version": "dev-develop",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ourgarage/static-pages.git",
+                "url": "git@github.com:ourgarage/static-pages.git",
                 "reference": "f736c3ff7a81bcc4615564212a613b14f80a837e"
             },
             "dist": {
