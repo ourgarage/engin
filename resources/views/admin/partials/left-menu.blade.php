@@ -22,7 +22,7 @@
             @endforeach
             <li class="treeview">
                 <a href="{{ route('admin-users-index') }}">
-                    <i class="fa fa-users fa-fw"></i>
+                    <i class="fa fa-users"></i>
                     <span>{{ trans('dashboard.left-menu.administrators') }}</span>
                 </a>
             </li>

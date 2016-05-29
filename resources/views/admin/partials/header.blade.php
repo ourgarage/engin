@@ -1,10 +1,10 @@
 <header class="main-header">
     <a href="{{ route('index-admin') }}" class="logo">
             <span class="logo-mini">
-                <img src="{{ config('site.logo_mini') }}" alt="logo">
+                <img src="{{ config('site.logo_mini_white_1') }}" alt="logo">
             </span>
             <span class="logo-lg">
-                <img src="{{ config('site.logo_full') }}" alt="logo">
+                <img src="{{ config('site.logo_full_white_1') }}" alt="logo">
             </span>
     </a>
 
