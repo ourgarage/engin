@@ -13,6 +13,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::post('/users/status-update/{id}', 'Admin\UsersController@updateStatus')->name('admin-users-status-update');
     Route::get('/users/search', 'Admin\UsersController@searchUsers')->name('admin-users-search');
 
+    Route::post('/upload/file', 'UploadFilesController@uploadFiles');
+
 });
 
 Route::get('/logout', 'Admin\Auth\AuthController@logout')->name('logout');

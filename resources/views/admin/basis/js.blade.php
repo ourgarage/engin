@@ -4,3 +4,6 @@
 <script src="/packages/adminLTE/plugins/fastclick/fastclick.min.js"></script>
 <script src="/packages/adminLTE/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <script src="/js/main.js"></script>
+<script src="/packages/trumbowyg/dist/trumbowyg.min.js"></script>
+<script src="/packages/trumbowyg/dist/plugins/upload/trumbowyg.upload.js"></script>
+<script src="/packages/static-pages/static-pages.js"></script>
