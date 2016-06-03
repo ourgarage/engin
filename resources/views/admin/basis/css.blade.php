@@ -4,3 +4,4 @@
 <link href="/packages/adminLTE/dist/css/AdminLTE.min.css" rel="stylesheet" type='text/css'>
 <link href="/packages/adminLTE/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css">
 <link href='/css/main.css' rel='stylesheet' type='text/css'>
+<link href='/packages/static-pages/static-pages.css' rel='stylesheet' type='text/css'>
