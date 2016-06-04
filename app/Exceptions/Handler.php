@@ -3,15 +3,11 @@
 namespace App\Exceptions;
 
 use Exception;
-use HttpRequestException;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use GrahamCampbell\Exceptions\ExceptionHandler;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
@@ -46,95 +42,9 @@ class Handler extends ExceptionHandler
      * @param  \Illuminate\Http\Request  $request
      * @param  \Exception  $e
      * @return \Illuminate\Http\Response
-     *
      */
-
     public function render($request, Exception $e)
     {
-
-        if (config('app.debug')) {
-            return $this->handleInDebugMode($request, $e);
-        }
-
-        return $this->handleInProductionMode($request, $e);
+        return parent::render($request, $e);
     }
-
-    private function handleInDebugMode(Request $request, Exception $e)
-    {
-        if ($this->isRequestException($e))
-        {
-            return parent::render($request, $e);
-        }
-
-        if ($request->ajax() || $request->wantsJson()) {
-            return new JsonResponse(
-                [
-                    'success' => false,
-                    'message' => $e->getMessage(),
-                    'file' => $e->getFile(),
-                    'line' => $e->getLine(),
-                    'code' => $e->getCode(),
-                    'statusCode' => $this->getStatusCode($e),
-                ],
-                $this->getStatusCode($e)
-            );
-        }
-
-        return $this->renderExceptionWithWhoops($e);
-    }
-
-    private function handleInProductionMode(Request $request, Exception $e)
-    {
-        if ($this->isRequestException($e)) {
-            return parent::render($request, $e);
-        }
-
-        if ($this->isNotFountException($e)) {
-            if ($request->ajax() || $request->wantsJson()) {
-                return new JsonResponse(['404: ' . $e->getMessage()], 404);
-            }
-            return response()->view("errors.404", ['exception' => $e], 404);
-        }
-
-        if ($request->ajax() || $request->wantsJson()) {
-            return new JsonResponse([$this->getStatusCode($e) . ': ' . $e->getMessage()], $this->getStatusCode($e));
-        }
-
-        return response()->view("errors.500", ['exception' => $e], $this->getStatusCode($e));
-    }
-
-    private function renderExceptionWithWhoops(Exception $e)
-    {
-        $whoops = new \Whoops\Run;
-        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
-
-        return new \Illuminate\Http\Response(
-            $whoops->handleException($e),
-            $e->getStatusCode(),
-            $e->getHeaders()
-        );
-    }
-
-    private function isNotFountException($e)
-    {
-        return $e instanceof NotFoundHttpException;
-    }
-
-    private function isRequestException($e)
-    {
-        return $e instanceof HttpRequestException;
-    }
-
-    private function getStatusCode(Exception $e)
-    {
-        $statusCode = 500;
-
-        if ($this->isHttpException($e)) {
-            /** @var HttpException $e */
-            $statusCode = $e->getStatusCode();
-        }
-
-        return $statusCode;
-    }
-
 }
