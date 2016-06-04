@@ -164,7 +164,6 @@ return [
         Gaaarfild\LaravelTitle\LaravelTitleServiceProvider::class,
         Gaaarfild\LaravelNotifications\LaravelNotificationsServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
-        GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         Ourgarage\StaticPages\StaticPagesServiceProvider::class,
         Ourgarage\Contacts\ContactsServiceProvider::class,
 
@@ -172,8 +171,7 @@ return [
          * Our Service Providers...
          */
         App\Providers\ComposerServiceProvider::class,
-        Ourgarage\StaticPages\StaticPagesServiceProvider::class,
-
+        
     ],
 
     /*
