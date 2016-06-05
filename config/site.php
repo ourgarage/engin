@@ -5,8 +5,6 @@ return [
     'name' => env('SITE_NAME', 'site'),
     'name_full' => env('SITE_NAME_FULL', 'site.com'),
 
-//    'logo_mini' => '/images/logo/logo_2.png',
-//    'logo_full' => '/images/logo/logo_1.png',
     'logo_full_color_1' => '/images/logo/full_color_1.png',
     'logo_full_white_1' => '/images/logo/full_white_1.png',
     'logo_full_black_1' => '/images/logo/full_black_1.png',
