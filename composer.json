@@ -13,7 +13,8 @@
         "ourgarage/static-pages": "dev-develop",
         "ourgarage/contacts": "dev-master",
         "gaaarfild/laravel-notifications": "~1.0",
-        "jenssegers/date": "~3.0"
+        "jenssegers/date": "~3.0",
+        "intervention/image": "2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

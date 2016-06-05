@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Index Page</title>
-    <link rel="stylesheet" href="/packages/bootstrap/css/bootstrap.min.css">
+    <link href="/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     @yield('body')
