@@ -2,7 +2,7 @@
 
 @section('css')
 
-    <link href="/packages/adminLTE/plugins/iCheck/square/blue.css" rel="stylesheet" type='text/css'>
+    <link href="/libs/adminLTE/plugins/iCheck/square/blue.css" rel="stylesheet" type='text/css'>
 
 @endsection
 
@@ -52,6 +52,6 @@
 @endsection
 
 @section('js')
-    <script src="/packages/adminLTE/plugins/iCheck/icheck.min.js"></script>
+    <script src="/libs/adminLTE/plugins/iCheck/icheck.min.js"></script>
     <script src="/js/icheck-square-blue.js"></script>
 @endsection

@@ -2,7 +2,7 @@
 
 @section('css')
     @if(isset($admin))
-        <link href="/packages/adminLTE/plugins/iCheck/square/blue.css" rel="stylesheet" type='text/css'>
+        <link href="/libs/adminLTE/plugins/iCheck/square/blue.css" rel="stylesheet" type='text/css'>
     @endif
 @endsection
 
@@ -66,7 +66,7 @@
 
 @section('js')
     @if(isset($admin))
-        <script src="/packages/adminLTE/plugins/iCheck/icheck.min.js"></script>
+        <script src="/libs/adminLTE/plugins/iCheck/icheck.min.js"></script>
         <script src="/js/icheck-square-blue.js"></script>
     @endif
 @endsection
