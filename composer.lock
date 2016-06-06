@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "972fd01a903df50005ae12352f3d3b9d",
+    "hash": "02e9e663e41b6251433512fcd78d3d40",
     "content-hash": "5e64c966a197b8c09b06029052251f29",
     "packages": [
         {
@@ -577,22 +577,22 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.2.1",
+            "version": "v3.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/date.git",
-                "reference": "000caf2e52c5029a746c244390e304413abbbd28"
+                "reference": "2550344143b9de9b4b4ecbe64477d6eed5717b84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/date/zipball/000caf2e52c5029a746c244390e304413abbbd28",
-                "reference": "000caf2e52c5029a746c244390e304413abbbd28",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/2550344143b9de9b4b4ecbe64477d6eed5717b84",
+                "reference": "2550344143b9de9b4b4ecbe64477d6eed5717b84",
                 "shasum": ""
             },
             "require": {
                 "nesbot/carbon": "^1.0",
                 "php": ">=5.4",
-                "symfony/translation": "^2.0|^3.0"
+                "symfony/translation": "^2.7|^3.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.0|^5.0",
@@ -630,7 +630,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2016-04-07 12:00:23"
+            "time": "2016-06-05 16:39:48"
         },
         {
             "name": "jeremeamia/SuperClosure",

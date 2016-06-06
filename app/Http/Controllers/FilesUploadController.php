@@ -6,11 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
+use app\DTO\ImageResizeDTO;
 
 class FilesUploadController extends Controller
 {
 
-    public function upload(Request $request)
+    /*public function upload(Request $request)
     {
         $callback = $_GET['CKEditorFuncNum'];
         $error = '';
@@ -22,6 +23,11 @@ class FilesUploadController extends Controller
         $http_path = '/upload/' . $filename . "." . $extension;
 
         return "<script type=\"text/javascript\">window.parent.CKEDITOR.tools.callFunction(" . $callback . ",  \"" . $http_path . "\", \"" . $error . "\" );</script>";
+    }*/
+
+    public function upload(ImageResizeDTO $dto)
+    {
+
     }
 
 }
