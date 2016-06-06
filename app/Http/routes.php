@@ -15,6 +15,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
 });
 
+Route::match(['get','post'],'/uploader','FilesUploadController@upload');
+
 Route::get('/logout', 'Admin\Auth\AuthController@logout')->name('logout');
 
 Route::group(['middleware' => ['guest']], function () {
