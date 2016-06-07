@@ -31,6 +31,7 @@ class FilesUploadController extends Controller
     {
         $newImage = Image::make($dto->getImage())->resize($dto->getWidth(), $dto->getHeight(), function ($constraint) {
             $constraint->aspectRatio();
+            $constraint->upsize();
         });
 
         return $this->saveImage($dto, $newImage);
@@ -38,9 +39,14 @@ class FilesUploadController extends Controller
 
     public function saveImage(ImageResizeDTO $dto, $newImage)
     {
-        $newImage->save($dto->getPath() . $dto->getFilename(), 95);
+        if ($newImage->save($dto->getPath() . $dto->getFilename(), 95)) {
+            $message = '';
+        } else {
+            $message = trans('uploads.error');
+        }
 
-        return "<script type=\"text/javascript\">window.parent.CKEDITOR.tools.callFunction(" . $dto->getCallback() . ",  \"" . $dto->getFolder() . $dto->getFilename() . "\");</script>";
+        return "<script type=\"text/javascript\">window.parent.CKEDITOR.tools.callFunction(" . $dto->getCallback() . ",  \"" . $dto->getFolder() . $dto->getFilename() . "\", \"".$message."\");</script>";
+
     }
 
 }
