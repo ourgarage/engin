@@ -4,9 +4,14 @@ namespace app\DTO;
 
 class ImageResizeDTO
 {
-    private $width = 0;
-    private $height = 0;
-    private $watermark = null;
+
+    private $width;
+    private $height;
+    private $path;
+    private $image;
+    private $filename;
+    private $callback;
+    private $folder;
 
     public function getWidth()
     {
@@ -30,4 +35,58 @@ class ImageResizeDTO
         return $this;
     }
 
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    public function setPath($path)
+    {
+        $this->path = $path;
+        return $this;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+        return $this;
+    }
+
+    public function getFilename()
+    {
+        return $this->filename;
+    }
+
+    public function setFilename($filename)
+    {
+        $this->filename = $filename;
+        return $this;
+    }
+
+    public function getCallback()
+    {
+        return $this->callback;
+    }
+
+    public function setCallback($callback)
+    {
+        $this->callback = $callback;
+        return $this;
+    }
+
+    public function getFolder()
+    {
+        return $this->folder;
+    }
+
+    public function setFolder($folder)
+    {
+        $this->folder = $folder;
+        return $this;
+    }
 }
