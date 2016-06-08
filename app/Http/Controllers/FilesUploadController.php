@@ -45,7 +45,7 @@ class FilesUploadController extends Controller
             $message = trans('uploads.error');
         }
 
-        return "<script type=\"text/javascript\">window.parent.CKEDITOR.tools.callFunction(" . $dto->getCallback() . ",  \"" . $dto->getFolder() . $dto->getFilename() . "\", \"".$message."\");</script>";
+        return "<script type=\"text/javascript\">window.parent.CKEDITOR.tools.callFunction(" . $dto->getCallback() . ",  \"" . $dto->getFolder() . $dto->getFilename() . "\", \"" . $message . "\");</script>";
 
     }
 
