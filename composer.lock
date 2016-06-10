@@ -321,20 +321,20 @@
         },
         {
             "name": "gaaarfild/laravel-notifications",
-            "version": "v1.2.0",
+            "version": "v1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gaaarfild/laravel-notifications.git",
-                "reference": "39e16a0b50db9beb12769bc0b46163d006e44c9f"
+                "reference": "33c6fada22390c5acd37bd26c78fd1edeade3a05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gaaarfild/laravel-notifications/zipball/39e16a0b50db9beb12769bc0b46163d006e44c9f",
-                "reference": "39e16a0b50db9beb12769bc0b46163d006e44c9f",
+                "url": "https://api.github.com/repos/gaaarfild/laravel-notifications/zipball/33c6fada22390c5acd37bd26c78fd1edeade3a05",
+                "reference": "33c6fada22390c5acd37bd26c78fd1edeade3a05",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": ">=4.2",
+                "illuminate/support": ">=5.1.3 <5.3",
                 "php": ">=5.4.0"
             },
             "require-dev": {
@@ -361,7 +361,7 @@
                 "laravel",
                 "notifications"
             ],
-            "time": "2015-12-25 23:05:48"
+            "time": "2016-06-08 22:29:35"
         },
         {
             "name": "gaaarfild/laravel-title",
@@ -1256,13 +1256,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:ourgarage/static-pages.git",
-                "reference": "f736c3ff7a81bcc4615564212a613b14f80a837e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ourgarage/static-pages/zipball/f736c3ff7a81bcc4615564212a613b14f80a837e",
-                "reference": "f736c3ff7a81bcc4615564212a613b14f80a837e",
-                "shasum": ""
+                "reference": "721635d697d65995fea00624c1a94f528df17f51"
             },
             "type": "package",
             "autoload": {
@@ -1280,11 +1274,7 @@
                 }
             ],
             "description": "Package Static Pages for Engin CMS",
-            "support": {
-                "source": "https://github.com/ourgarage/static-pages/tree/develop",
-                "issues": "https://github.com/ourgarage/static-pages/issues"
-            },
-            "time": "2016-05-26 10:12:39"
+            "time": "2016-06-08 13:32:57"
         },
         {
             "name": "paragonie/random_compat",
