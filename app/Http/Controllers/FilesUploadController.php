@@ -24,7 +24,7 @@ class FilesUploadController extends Controller
         return $this->imageResize($dto);
     }
 
-    public function imageResize(ImageResizeDTO $dto)
+    protected function imageResize(ImageResizeDTO $dto)
     {
         $newImage = Image::make($dto->getImage())->resize($dto->getWidth(), $dto->getHeight(), function ($constraint) {
             $constraint->aspectRatio();
@@ -34,7 +34,7 @@ class FilesUploadController extends Controller
         return $this->saveImage($dto, $newImage);
     }
 
-    public function saveImage(ImageResizeDTO $dto, $newImage)
+    protected function saveImage(ImageResizeDTO $dto, $newImage)
     {
         $newImage->save($dto->getPath() . $dto->getFilename(), 95);
 
