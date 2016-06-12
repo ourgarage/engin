@@ -8,7 +8,7 @@ $.ajaxSetup({
     'use strict';
 
     var defaultOptions = {
-        serverPath: '/admin/contacts/image',
+        serverPath: myRoute,
         fileFieldName: 'fileToUpload',
         data: [],
         headers: {},
