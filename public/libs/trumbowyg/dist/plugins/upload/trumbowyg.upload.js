@@ -8,7 +8,7 @@ $.ajaxSetup({
     'use strict';
 
     var defaultOptions = {
-        serverPath: ImageUpload,
+        serverPath: imageUploadUrl,
         fileFieldName: 'fileToUpload',
         data: [],
         headers: {},
