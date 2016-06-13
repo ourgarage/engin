@@ -5,27 +5,32 @@ namespace App\DTO;
 class ImageResizeDTO
 {
     /**
-     * @var
+     * @var int
      */
     private $width;
+
     /**
-     * @var
+     * @var int
      */
     private $height;
+
     /**
-     * @var
+     * @var string
      */
     private $path;
+
     /**
-     * @var
+     * @var object
      */
     private $image;
+
     /**
-     * @var
+     * @var string
      */
     private $filename;
+
     /**
-     * @var
+     * @var int
      */
     private $quality;
 
