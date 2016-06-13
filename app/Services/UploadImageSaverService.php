@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use app\DTO\ImageResizeDTO;
+use App\DTO\ImageResizeDTO;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class UploadImageSaverService
