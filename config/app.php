@@ -166,6 +166,7 @@ return [
         Jenssegers\Date\DateServiceProvider::class,
         Ourgarage\StaticPages\StaticPagesServiceProvider::class,
         Ourgarage\Contacts\ContactsServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Our Service Providers...
@@ -221,7 +222,7 @@ return [
         'Title' => Gaaarfild\LaravelTitle\TitleFacade::class,
         'Notifications' => Gaaarfild\LaravelNotifications\NotificationsFacade::class,
         'Date' => Jenssegers\Date\Date::class,
-
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];
