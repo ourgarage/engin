@@ -1,6 +1,6 @@
 <?php
 
-namespace app\DTO;
+namespace App\DTO;
 
 class ImageResizeDTO
 {
@@ -9,8 +9,7 @@ class ImageResizeDTO
     private $path;
     private $image;
     private $filename;
-    private $callback;
-    private $folder;
+    private $quality;
 
     public function setWidth($width)
     {
@@ -67,25 +66,14 @@ class ImageResizeDTO
         return $this->filename;
     }
 
-    public function setCallback($callback)
+    public function setQuality($quality)
     {
-        $this->callback = $callback;
+        $this->quality = $quality;
         return $this;
     }
 
-    public function getCallback()
+    public function getQuality()
     {
-        return $this->callback;
-    }
-
-    public function setFolder($folder)
-    {
-        $this->folder = $folder;
-        return $this;
-    }
-
-    public function getFolder()
-    {
-        return $this->folder;
+        return $this->quality;
     }
 }
