@@ -9,7 +9,7 @@ $.ajaxSetup({
 
     var defaultOptions = {
         serverPath: imageUploadUrl,
-        fileFieldName: 'fileToUpload',
+        fileFieldName: 'uploadFile',
         data: [],
         headers: {},
         xhrFields: {},
