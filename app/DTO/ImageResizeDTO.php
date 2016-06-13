@@ -41,7 +41,7 @@ class ImageResizeDTO
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getWidth()
     {
@@ -60,7 +60,7 @@ class ImageResizeDTO
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getHeight()
     {
@@ -79,7 +79,7 @@ class ImageResizeDTO
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPath()
     {
@@ -98,7 +98,7 @@ class ImageResizeDTO
     }
 
     /**
-     * @return mixed
+     * @return object
      */
     public function getImage()
     {
@@ -117,7 +117,7 @@ class ImageResizeDTO
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getFilename()
     {
@@ -136,7 +136,7 @@ class ImageResizeDTO
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getQuality()
     {
