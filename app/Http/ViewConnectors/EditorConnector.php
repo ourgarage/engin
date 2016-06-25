@@ -6,9 +6,9 @@ class EditorConnector
 {
 
     const MODE_FULL = 'full';
-    const MODE_MINI = 'mini';
+    const MODE_LITE = 'lite';
 
-    public function connect($elementID, $siteLocale, $imageUploadUrl, $mode)
+    public function connect($elementID, $siteLocale, $imageUploadUrl, $mode = 'lite')
     {
         $data = [
             'elementID' => $elementID,
