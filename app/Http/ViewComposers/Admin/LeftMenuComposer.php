@@ -17,6 +17,13 @@ class LeftMenuComposer
                 'icon' => 'fa fa-th',
                 'active' => 'index-admin',
             ],
+
+            [
+                'url' => route('admin-site-get-settings'),
+                'caption' => 'Site Settings',
+                'icon' => 'fa fa-cog',
+                'active' => 'admin-site-get-settings',
+            ],
         ];
 
         $packageItems = PackageLoaderService::menuPackages();

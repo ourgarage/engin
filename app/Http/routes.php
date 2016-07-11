@@ -13,6 +13,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::post('/users/status-update/{id}', 'Admin\UsersController@updateStatus')->name('admin-users-status-update');
     Route::get('/users/search', 'Admin\UsersController@searchUsers')->name('admin-users-search');
 
+    Route::get('/site/settings', 'Admin\SiteSettingsController@getSettings')->name('admin-site-get-settings');
+    Route::post('/site/settings', 'Admin\SiteSettingsController@setSettings')->name('admin-site-set-settings');
+
 });
 
 Route::get('/logout', 'Admin\Auth\AuthController@logout')->name('logout');
