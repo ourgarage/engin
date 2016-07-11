@@ -23,7 +23,7 @@
                     </div>
                     <div class="col-md-8">
                         <input type="text" name="site_name" class="form-control"
-                               value="{{ conf('settings.site.name', 'Gitios') }}">
+                               value="{{ conf('settings.site.name', config('site.name')) }}">
                         <span class="glyphicon glyphicon-header form-control-feedback"></span>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-md-8">
                         <input type="text" name="domain" class="form-control"
-                               value="{{ conf('settings.site.domain', 'example.com') }}">
+                               value="{{ conf('settings.site.domain', config('site.domain')) }}">
                         <span class="glyphicon glyphicon-globe form-control-feedback"></span>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                     </div>
                     <div class="col-md-8">
                         <input type="text" name="slogan" class="form-control"
-                               value="{{ conf('settings.site.slogan', 'We can do it!') }}">
+                               value="{{ conf('settings.site.slogan', config('site.slogan')) }}">
                         <span class="glyphicon glyphicon-flag form-control-feedback"></span>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="col-md-8">
                         <input type="text" name="copyright" class="form-control"
-                               value="{{ conf('settings.site.copyright', 'All right reserved 2016') }}">
+                               value="{{ conf('settings.site.copyright', config('site.copyright')) }}">
                         <span class="glyphicon glyphicon-copyright-mark form-control-feedback"></span>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="col-md-8">
                         <input type="text" name="meta_keywords" class="form-control"
-                               value="{{ conf('settings.site.meta-keywords', 'Engine, CMS, Gitios') }}">
+                               value="{{ conf('settings.site.meta-keywords', config('site.meta-keywords')) }}">
                         <span class="glyphicon glyphicon-tags form-control-feedback"></span>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                     </div>
                     <div class="col-md-8">
                         <input type="text" name="meta_description" class="form-control"
-                               value="{{ conf('settings.site.meta-description', 'CMS Engin Core') }}">
+                               value="{{ conf('settings.site.meta-description', config('site.meta-description')) }}">
                         <span class="glyphicon glyphicon-tags form-control-feedback"></span>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     </div>
                     <div class="col-md-8">
                         <input type="text" name="meta_title" class="form-control"
-                               value="{{ conf('settings.site.meta-title', 'Gitios - CMS Engin Core') }}">
+                               value="{{ conf('settings.site.meta-title', config('site.meta-title')) }}">
                         <span class="glyphicon glyphicon-tag form-control-feedback"></span>
                     </div>
                 </div>
