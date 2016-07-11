@@ -17,11 +17,14 @@ return [
 
     'admin_avatar' => '/images/admin/admin_1.png',
 
-    'domain' => 'gitios.com',
-    'slogan' => 'We can do it!',
-    'copyright' => 'All right reserved 2016',
-    'meta-keywords' => 'Engine, CMS, Gitios',
-    'meta-description' => 'CMS Engin Core',
-    'meta-title' => 'Gitios - CMS Engin Core'
-
+    'default' => [
+        'name' => 'Gitios',
+        'domain' => 'gitios.com',
+        'slogan' => 'We can do it!',
+        'copyright' => 'All right reserved 2016',
+        'meta-keywords' => 'Engine, CMS, Gitios',
+        'meta-description' => 'CMS Engin Core',
+        'meta-title' => 'Gitios - CMS Engin Core',
+    ],
+    
 ];

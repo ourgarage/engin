@@ -18,9 +18,6 @@ class SiteSettingsController extends Controller
     {
         \Title::append(trans('settings.index.title'));
 
-        //$siteName = conf('settings.site.name', 'Gitios');
-        //dd ($siteName);
-
         return view('admin.settings.index');
     }
 
