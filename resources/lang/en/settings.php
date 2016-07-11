@@ -6,4 +6,18 @@ return [
         'title' => 'Site Settings',
     ],
 
+    'fields' => [
+        'site-name' => 'Name of the site',
+        'domain' => 'Domain',
+        'slogan' => 'Slogan',
+        'copyright' => 'Copyright',
+        'meta-title' => 'Meta title',
+        'meta-description' => 'Meta description',
+        'meta-keywords' => 'Meta keywords',
+    ],
+
+    'button' => [
+        'save' => 'Save',
+    ],
+
 ];
