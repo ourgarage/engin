@@ -20,4 +20,8 @@ return [
         'save' => 'Save',
     ],
 
+    'message' => [
+        'success' => 'Your settings has been successfully saved!',
+    ],
+
 ];
