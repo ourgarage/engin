@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Notifications;
+use App\Http\Requests\AdminSiteSettingsRequest;
 
 class SiteSettingsController extends Controller
 {
@@ -22,7 +23,7 @@ class SiteSettingsController extends Controller
         return view('admin.settings.index');
     }
 
-    public function setSettings()
+    public function setSettings(AdminSiteSettingsRequest $request)
     {
         $config = [
             'settings.site.name' => request('site_name'),
@@ -34,7 +35,7 @@ class SiteSettingsController extends Controller
             'settings.site.meta-title' => request('meta_title'),
         ];
 
-        $config = array_diff($config, ['']);
+        //$config = array_diff($config, ['']);
         conf()->put($config);
         Notifications::success(trans('settings.message.success'), 'top');
 
