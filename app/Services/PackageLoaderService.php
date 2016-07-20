@@ -13,6 +13,13 @@ class PackageLoaderService
                 'caption' => config('packages.' . $package . '.caption'),
                 'icon' => config('packages.' . $package . '.icon'),
                 'active' => config('packages.' . $package . '.active'),
+
+                'settings' => [
+                    'url' => config('packages.' . $package . '.settings.url'),
+                    'caption' => config('packages.' . $package . '.settings.caption'),
+                    'icon' => config('packages.' . $package . '.settings.icon'),
+                    'active' => config('packages.' . $package . '.settings.active'),
+                ],
             ];
         }
 

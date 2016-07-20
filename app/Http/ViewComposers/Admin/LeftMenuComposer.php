@@ -18,14 +18,14 @@ class LeftMenuComposer
                 'active' => 'index-admin',
             ],
 
-            [
-                'url' => route('admin-site-get-settings'),
-                'caption' => 'Site Settings',
+            /*[
+                'url' => '#',
+                'caption' => 'Settings',
                 'icon' => 'fa fa-cog',
                 'active' => 'admin-site-get-settings',
-            ],
+            ],*/
         ];
-
+//dd($items);
         $packageItems = PackageLoaderService::menuPackages();
         $items = array_merge_recursive($items, $packageItems);
         
