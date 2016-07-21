@@ -9,20 +9,28 @@ class PackageLoaderService
         $packagesList = array_pluck(config('packages'), 'name');
         foreach ($packagesList as $package) {
             $items[] = [
-                'url' => route(config('packages.' . $package . '.url')),
-                'caption' => config('packages.' . $package . '.caption'),
-                'icon' => config('packages.' . $package . '.icon'),
-                'active' => config('packages.' . $package . '.active'),
-
-                'settings' => [
-                    'url' => config('packages.' . $package . '.settings.url'),
-                    'caption' => config('packages.' . $package . '.settings.caption'),
-                    'icon' => config('packages.' . $package . '.settings.icon'),
-                    'active' => config('packages.' . $package . '.settings.active'),
-                ],
+                'url' => route(config('packages.' . $package . '.menu.url')),
+                'caption' => config('packages.' . $package . '.menu.caption'),
+                'icon' => config('packages.' . $package . '.menu.icon'),
+                'active' => config('packages.' . $package . '.menu.active'),
             ];
         }
 
         return $items;
+    }
+
+    public static function menuSettings()
+    {
+        $settingsList = array_pluck(config('packages'), 'name');
+        foreach ($settingsList as $settings) {
+            $setting[] = [
+                'url' => route(config('packages.' . $settings . '.menu-settings.url')),
+                'caption' => config('packages.' . $settings . '.menu-settings.caption'),
+                'icon' => config('packages.' . $settings . '.menu-settings.icon'),
+                'active' => config('packages.' . $settings . '.menu-settings.active'),
+            ];
+        }
+
+        return $setting;
     }
 }

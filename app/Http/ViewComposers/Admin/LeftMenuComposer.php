@@ -10,6 +10,18 @@ class LeftMenuComposer
 
     public function compose(View $view)
     {
+        $siteSetting = [
+            [
+                'url' => route('admin-site-get-settings'),
+                'caption' => 'Site Settings',
+                'icon' => 'fa fa-cog',
+                'active' => 'admin-site-get-settings',
+            ],
+        ];
+
+        $subItemsPackages = PackageLoaderService::menuSettings();
+        $subitems = array_merge_recursive($siteSetting, $subItemsPackages);
+
         $items = [
             [
                 'url' => route('index-admin'),
@@ -18,17 +30,19 @@ class LeftMenuComposer
                 'active' => 'index-admin',
             ],
 
-            /*[
+            [
                 'url' => '#',
                 'caption' => 'Settings',
-                'icon' => 'fa fa-cog',
+                'icon' => 'fa fa-cogs',
                 'active' => 'admin-site-get-settings',
-            ],*/
+
+                'subitems' => $subitems,
+            ],
         ];
-//dd($items);
+
         $packageItems = PackageLoaderService::menuPackages();
         $items = array_merge_recursive($items, $packageItems);
-        
+
         $view->with(['items' => $items, 'user' => auth()->user()]);
     }
 }
