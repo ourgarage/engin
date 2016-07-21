@@ -23,12 +23,14 @@ class PackageLoaderService
     {
         $settingsList = array_pluck(config('packages'), 'name');
         foreach ($settingsList as $settings) {
-            $setting[] = [
-                'url' => route(config('packages.' . $settings . '.menu-settings.url')),
-                'caption' => config('packages.' . $settings . '.menu-settings.caption'),
-                'icon' => config('packages.' . $settings . '.menu-settings.icon'),
-                'active' => config('packages.' . $settings . '.menu-settings.active'),
-            ];
+            if (!is_null(config('packages.' . $settings . '.menu-settings'))) {
+                $setting[] = [
+                    'url' => route(config('packages.' . $settings . '.menu-settings.url')),
+                    'caption' => config('packages.' . $settings . '.menu-settings.caption'),
+                    'icon' => config('packages.' . $settings . '.menu-settings.icon'),
+                    'active' => config('packages.' . $settings . '.menu-settings.active'),
+                ];
+            }
         }
 
         return $setting;
