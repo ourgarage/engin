@@ -34,8 +34,7 @@ class SiteSettingsController extends Controller
             'settings.site.meta-description' => request('meta_description'),
             'settings.site.meta-title' => request('meta_title'),
         ];
-
-        //$config = array_diff($config, ['']);
+        
         conf()->put($config);
         Notifications::success(trans('settings.message.success'), 'top');
 
