@@ -167,6 +167,7 @@ return [
         Ourgarage\StaticPages\StaticPagesServiceProvider::class,
         Ourgarage\Contacts\ContactsServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Gaaarfild\LaravelConf\LaravelConfServiceProvider::class,
 
         /*
          * Our Service Providers...
@@ -223,6 +224,7 @@ return [
         'Notifications' => Gaaarfild\LaravelNotifications\NotificationsFacade::class,
         'Date' => Jenssegers\Date\Date::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Conf' => Gaaarfild\LaravelConf\ConfFacade::class,
     ],
 
 ];
