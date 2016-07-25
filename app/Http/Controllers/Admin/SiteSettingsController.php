@@ -23,18 +23,23 @@ class SiteSettingsController extends Controller
         return view('admin.settings.index');
     }
 
-    public function setSettings(AdminSiteSettingsRequest $request)
+    public function saveSettings(AdminSiteSettingsRequest $request)
     {
+
         $config = [
-            'settings.site.name' => request('site_name'),
-            'settings.site.domain' => request('domain'),
-            'settings.site.slogan' => request('slogan'),
-            'settings.site.copyright' => request('copyright'),
-            'settings.site.meta-keywords' => request('meta_keywords'),
-            'settings.site.meta-description' => request('meta_description'),
-            'settings.site.meta-title' => request('meta_title'),
+            'settings' => [
+                'site' => [
+                    'name' => request('site_name'),
+                    'domain' => request('domain'),
+                    'slogan' => request('slogan'),
+                    'copyright' => request('copyright'),
+                    'meta-keywords' => request('meta_keywords'),
+                    'meta-description' => request('meta_description'),
+                    'meta-title' => request('meta_title')
+                ]
+            ]
         ];
-        
+
         conf()->put($config);
         Notifications::success(trans('settings.message.success'), 'top');
 

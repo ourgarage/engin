@@ -14,7 +14,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/users/search', 'Admin\UsersController@searchUsers')->name('admin-users-search');
 
     Route::get('/site/settings', 'Admin\SiteSettingsController@getSettings')->name('admin-site-get-settings');
-    Route::post('/site/settings', 'Admin\SiteSettingsController@setSettings')->name('admin-site-set-settings');
+    Route::post('/site/settings', 'Admin\SiteSettingsController@saveSettings')->name('admin-site-save-settings');
 
 });
 

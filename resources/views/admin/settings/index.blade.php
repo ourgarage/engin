@@ -14,7 +14,7 @@
 
         <div class="login-box-body">
 
-            <form class="form-horizontal" action="{{ route('admin-site-set-settings') }}" method="POST">
+            <form class="form-horizontal" action="{{ route('admin-site-save-settings') }}" method="POST">
                 {!! csrf_field() !!}
 
                 <div class="form-group has-feedback">
