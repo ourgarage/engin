@@ -1,5 +1,9 @@
 @extends('admin.main')
 
+@section('css')
+    @include('admin.settings.css')
+@endsection
+
 @section('body-title')
 
     {{ trans('settings.index.title') }}
