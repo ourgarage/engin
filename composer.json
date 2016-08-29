@@ -9,7 +9,12 @@
         "laravel/framework": "5.3.*",
         "garf/laravel-title": "2.*",
         "garf/laravel-conf": "3.*",
-        "garf/laravel-notifications": "2.*"
+        "garf/laravel-notifications": "2.*",
+        "ourgarage/static-pages": "dev-develop",
+        "ourgarage/contacts": "dev-master",
+        "jenssegers/date": "^3.2",
+        "intervention/image": "^2.3",
+        "barryvdh/laravel-debugbar": "^2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -18,6 +23,16 @@
         "symfony/css-selector": "3.1.*",
         "symfony/dom-crawler": "3.1.*"
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:ourgarage/static-pages.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:ourgarage/contacts.git"
+        }
+    ],
     "autoload": {
         "classmap": [
             "database"

@@ -184,6 +184,9 @@ return [
         Garf\LaravelTitle\LaravelTitleServiceProvider::class,
         Garf\LaravelNotifications\LaravelNotificationsServiceProvider::class,
         Garf\LaravelConf\LaravelConfServiceProvider::class,
+        Jenssegers\Date\DateServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 
@@ -237,6 +240,10 @@ return [
         'Title' => Garf\LaravelTitle\TitleFacade::class,
         'Notifications' => Garf\LaravelNotifications\NotificationsFacade::class,
         'Conf' => Garf\LaravelConf\ConfFacade::class,
+        'Date' => Jenssegers\Date\Date::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
     ],
 
 ];
