@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ed9df8b872992035f068a7fe461a635a",
+    "hash": "330c111385132ba77063a4025c71544b",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -159,6 +159,139 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "garf/laravel-conf",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/garf/laravel-conf.git",
+                "reference": "6febb2e2cf33f493fbec76e40f4e2c08c69ab3d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/garf/laravel-conf/zipball/6febb2e2cf33f493fbec76e40f4e2c08c69ab3d8",
+                "reference": "6febb2e2cf33f493fbec76e40f4e2c08c69ab3d8",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.2",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Garf\\LaravelConf\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dinar Garipov",
+                    "email": "garipov.dinar@gmail.com"
+                }
+            ],
+            "description": "Store additional configs in JSON or Database (write, read)",
+            "keywords": [
+                "config",
+                "json",
+                "laravel"
+            ],
+            "time": "2016-07-17 18:32:39"
+        },
+        {
+            "name": "garf/laravel-notifications",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/garf/laravel-notifications.git",
+                "reference": "e4789fa7de1739c3ae0e871ec15e7eb45fa6350e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/garf/laravel-notifications/zipball/e4789fa7de1739c3ae0e871ec15e7eb45fa6350e",
+                "reference": "e4789fa7de1739c3ae0e871ec15e7eb45fa6350e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.1.3 <5.4",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Garf\\LaravelNotifications\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dinar Garipov",
+                    "email": "garipov.dinar@gmail.com"
+                }
+            ],
+            "description": "Convenient flash notifications",
+            "keywords": [
+                "alert",
+                "laravel",
+                "notifications"
+            ],
+            "time": "2016-08-29 13:32:05"
+        },
+        {
+            "name": "garf/laravel-title",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/garf/laravel-title.git",
+                "reference": "2097b57c3ae377a06e4dde327d9cca3dd17f5790"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/garf/laravel-title/zipball/2097b57c3ae377a06e4dde327d9cca3dd17f5790",
+                "reference": "2097b57c3ae377a06e4dde327d9cca3dd17f5790",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.2",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Garf\\LaravelTitle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dinar Garipov",
+                    "email": "garipov.dinar@gmail.com"
+                }
+            ],
+            "description": "Convenient seo-titles assembler for your web application",
+            "keywords": [
+                "Page title",
+                "laravel",
+                "meta",
+                "seo"
+            ],
+            "time": "2016-07-17 18:28:39"
         },
         {
             "name": "jakub-onderka/php-console-color",

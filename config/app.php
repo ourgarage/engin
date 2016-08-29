@@ -178,6 +178,13 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Our packages
+         */
+        Garf\LaravelTitle\LaravelTitleServiceProvider::class,
+        Garf\LaravelNotifications\LaravelNotificationsServiceProvider::class,
+        Garf\LaravelConf\LaravelConfServiceProvider::class,
+
     ],
 
     /*
@@ -224,7 +231,12 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        /*
+         * Our packages
+         */
+        'Title' => Garf\LaravelTitle\TitleFacade::class,
+        'Notifications' => Garf\LaravelNotifications\NotificationsFacade::class,
+        'Conf' => Garf\LaravelConf\ConfFacade::class,
     ],
 
 ];
