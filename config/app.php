@@ -188,6 +188,8 @@ return [
         Jenssegers\Date\DateServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Ourgarage\Contacts\ContactsServiceProvider::class,
+        Ourgarage\StaticPages\StaticPagesServiceProvider::class,
 
     ],
 
