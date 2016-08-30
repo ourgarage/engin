@@ -2,18 +2,26 @@
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
-    |
-    */
+    'title' => [
+        'prepend' => 'Admin',
+        'login' => 'Login',
+    ],
 
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'form' => [
+        'login-title' => 'Sign in to start',
+        'login-email-placeholder' => 'Email',
+        'login-password-placeholder' => 'Password',
+        'login-remember' => 'Remember Me',
+    ],
+
+    'button' => [
+        'login-forgot-password' => 'I forgot my password',
+        'login-submit' => 'Sign In',
+    ],
+
+    'notification' => [
+        'login-success' => 'You have successfully logged',
+        'login-error' => 'You have entered wrong username and/or password',
+    ],
 
 ];

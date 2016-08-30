@@ -1,0 +1,32 @@
+/*COLORS*/
+/*Example*/
+.admin-dashboard .main-header .logo-mini img {
+  max-width: 50%;
+}
+.admin-dashboard .main-header .logo-lg img {
+  max-width: 78%;
+}
+.admin-dashboard .main-sidebar .sidebar .user-panel .image img {
+  width: 3.1em;
+  max-width: 100%;
+  background: white;
+}
+.admin-dashboard .content-wrapper .search-form {
+  padding: 2em 0;
+  background: #ecf0f5;
+}
+.admin-dashboard .content-wrapper .no-results {
+  font-size: 3.1em;
+  background: #ecf0f5;
+  padding: 2em 0;
+}
+.admin-dashboard .content-wrapper .no-results i,
+.admin-dashboard .content-wrapper .no-results p {
+  color: #c3c3c3;
+}
+.admin-dashboard .content-wrapper .users-index .for-form-inline form {
+  display: inline-block;
+}
+.admin-dashboard .content-wrapper .users-create .register-box {
+  margin-top: 1em !important;
+}
