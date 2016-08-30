@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "84e132f21d2ce4f4ff10b087dfb093b5",
-    "content-hash": "476b74562a749ccbee90f500535fd62b",
+    "hash": "01a4ac3fe352b3d05014523f88bafb3b",
+    "content-hash": "3e39bcb3b0ee3808bc705c1ef6808e44",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1163,11 +1163,14 @@
         },
         {
             "name": "ourgarage/contacts",
-            "version": "dev-master",
+            "version": "dev-ENG-25-Create-contacts-package",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ourgarage/contacts.git",
-                "reference": "ac54c21872b9782bd937ade35c23c4da9e7cd712"
+                "reference": "e5befdfb5b2a9d54821e84da5b2f654c416dc310"
+            },
+            "require": {
+                "intervention/image": "2.*"
             },
             "type": "package",
             "autoload": {
@@ -1185,7 +1188,7 @@
                 }
             ],
             "description": "Package contacts for GITIOS CMS",
-            "time": "2016-05-27 09:51:31"
+            "time": "2016-08-14 11:39:14"
         },
         {
             "name": "ourgarage/static-pages",
