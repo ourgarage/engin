@@ -7,7 +7,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Notifications;
 use App\Http\Requests\Request;
 
-class AdminCreateRequest extends Request
+class AdminCreateRequest extends FormRequest
 {
 
 
