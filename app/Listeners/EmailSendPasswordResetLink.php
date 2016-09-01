@@ -5,7 +5,6 @@ namespace App\Listeners;
 use App\Events\PasswordReset;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Mail;
 
 class EmailSendPasswordResetLink
 {

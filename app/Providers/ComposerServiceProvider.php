@@ -15,7 +15,6 @@ class ComposerServiceProvider extends ServiceProvider
     {
         // Cabinet
         view()->composer('admin.partials.left-menu', \App\Http\ViewComposers\Admin\LeftMenuComposer::class);
-
     }
 
     /**

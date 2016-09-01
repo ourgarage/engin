@@ -2,15 +2,18 @@
 
 namespace App\Events;
 
-use App\Events\Event;
+use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Broadcasting\PresenceChannel;
+use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class PasswordReset extends Event
+class PasswordReset
 {
-    public $user;
+    use InteractsWithSockets, SerializesModels;
 
-    use SerializesModels;
+    public $user;
 
     /**
      * Create a new event instance.

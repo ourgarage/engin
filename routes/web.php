@@ -1,10 +1,11 @@
 <?php
+
 Route::get('/', 'HomeController@index')->name('index');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
     Route::get('/', 'Admin\DashboardController@index')->name('index-admin');
-    
+
     Route::get('/users', 'Admin\UsersController@index')->name('admin-users-index');
     Route::get('/users/create', 'Admin\UsersController@create')->name('admin-users-create');
     Route::get('/users/{id}/edit', 'Admin\UsersController@edit')->name('admin-users-edit');

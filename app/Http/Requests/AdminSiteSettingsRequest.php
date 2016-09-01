@@ -2,11 +2,12 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Notifications;
 use App\Http\Requests\Request;
 
-class AdminSiteSettingsRequest extends Request
+class AdminSiteSettingsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
