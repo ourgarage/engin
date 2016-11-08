@@ -15,7 +15,7 @@
             </li>
 
             @foreach($items as $item)
-                <li class="{{ isset($left_menu_item) && $left_menu_item == request($item['active']) ? 'active' : '' }}">
+                <li class="{{ route($item['url']) == url()->current() ? 'active' : '' }}">
                     <a href="{{ route($item['url']) }}">
                         <i class="{{ $item['icon'] }}"></i> <span>{{ $item['caption'] }}</span>
                     </a>
@@ -31,7 +31,7 @@
                 </li>
             @endforeach
 
-            <li class="treeview">
+            <li class="treeview {{ route('admin-users-index') == url()->current() ? 'active' : '' }}">
                 <a href="{{ route('admin-users-index') }}">
                     <i class="fa fa-users"></i>
                     <span>{{ trans('dashboard.left-menu.administrators') }}</span>
