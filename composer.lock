@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5e2a3cefe6a0f2d1c85302cebe1dcfa7",
-    "content-hash": "496744cd0ec95b47806b55481691878a",
+    "hash": "1502db84ba4a84c9261a98d7a419c5ff",
+    "content-hash": "e604c3148187907afce7741a15087fdb",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1164,11 +1164,11 @@
         },
         {
             "name": "ourgarage/blog",
-            "version": "dev-Blog-start",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ourgarage/blog.git",
-                "reference": "db787d6a16272c6756dc0db531e2321ccf6b2c04"
+                "reference": "e21a65ce559235c9e93591197f4a0048187e354f"
             },
             "type": "package",
             "autoload": {
@@ -1186,7 +1186,7 @@
                 }
             ],
             "description": "Package Blog for Engin CMS",
-            "time": "2016-09-28 05:04:38"
+            "time": "2016-09-29 12:45:25"
         },
         {
             "name": "ourgarage/contacts",
