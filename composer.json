@@ -12,6 +12,7 @@
         "garf/laravel-notifications": "2.*",
         "ourgarage/static-pages": "dev-develop",
         "ourgarage/contacts": "dev-ENG-25-Create-contacts-package",
+        "ourgarage/blog": "dev-Blog-start",
         "jenssegers/date": "^3.2",
         "intervention/image": "^2.3",
         "barryvdh/laravel-debugbar": "^2.2"
@@ -31,6 +32,10 @@
         {
             "type": "git",
             "url": "git@github.com:ourgarage/contacts.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:ourgarage/blog.git"
         }
     ],
     "autoload": {

@@ -190,6 +190,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Ourgarage\Contacts\ContactsServiceProvider::class,
         Ourgarage\StaticPages\StaticPagesServiceProvider::class,
+        Ourgarage\Blog\BlogServiceProvider::class,
 
     ],
 
