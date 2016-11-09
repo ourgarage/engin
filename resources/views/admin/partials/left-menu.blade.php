@@ -15,15 +15,15 @@
             </li>
 
             @foreach($items as $item)
-                <li class="{{ isset($left_menu_item) && $left_menu_item == $item['active'] ? 'active' : '' }}">
-                    <a href="{{ $item['url'] }}">
+                <li class="{{ route($item['url']) == url()->current() ? 'active' : '' }}">
+                    <a href="{{ route($item['url']) }}">
                         <i class="{{ $item['icon'] }}"></i> <span>{{ $item['caption'] }}</span>
                     </a>
 
                     @if (isset($item['subitems']))
                         @foreach($item['subitems'] as $subitems)
                             <ul class="treeview-menu">
-                                <li><a href="{{ $subitems['url'] }}"><i
+                                <li><a href="{{ route($subitems['url']) }}"><i
                                                 class="{{ $subitems['icon'] }}"></i> {{ $subitems['caption'] }}</a></li>
                             </ul>
                         @endforeach
@@ -31,7 +31,7 @@
                 </li>
             @endforeach
 
-            <li class="treeview">
+            <li class="treeview {{ route('admin-users-index') == url()->current() ? 'active' : '' }}">
                 <a href="{{ route('admin-users-index') }}">
                     <i class="fa fa-users"></i>
                     <span>{{ trans('dashboard.left-menu.administrators') }}</span>

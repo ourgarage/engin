@@ -8,12 +8,8 @@ class PackageLoaderService
     {
         $packagesList = array_pluck(config('packages'), 'name');
         foreach ($packagesList as $package) {
-            $items[] = [
-                'url' => route(config('packages.'.$package.'.menu.url')),
-                'caption' => config('packages.'.$package.'.menu.caption'),
-                'icon' => config('packages.'.$package.'.menu.icon'),
-                'active' => config('packages.'.$package.'.menu.active'),
-            ];
+
+            $items[] = config('packages.' . $package . '.menu');
         }
 
         return $items;
@@ -23,13 +19,9 @@ class PackageLoaderService
     {
         $settingsList = array_pluck(config('packages'), 'name');
         foreach ($settingsList as $settings) {
-            if (!is_null(config('packages.'.$settings.'.menu-settings'))) {
-                $setting[] = [
-                    'url' => route(config('packages.'.$settings.'.menu-settings.url')),
-                    'caption' => config('packages.'.$settings.'.menu-settings.caption'),
-                    'icon' => config('packages.'.$settings.'.menu-settings.icon'),
-                    'active' => config('packages.'.$settings.'.menu-settings.active'),
-                ];
+
+            if (!is_null(config('packages.' . $settings . '.menu-settings'))) {
+                $setting[] = config('packages.' . $settings . '.menu-settings');
             }
         }
 

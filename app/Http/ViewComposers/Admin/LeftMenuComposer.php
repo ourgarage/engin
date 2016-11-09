@@ -12,7 +12,7 @@ class LeftMenuComposer
     {
         $siteSetting = [
             [
-                'url' => route('admin-site-get-settings'),
+                'url' => 'admin-site-get-settings',
                 'caption' => 'Site Settings',
                 'icon' => 'fa fa-cog',
                 'active' => 'admin-site-get-settings',
@@ -24,14 +24,14 @@ class LeftMenuComposer
 
         $items = [
             [
-                'url' => route('index-admin'),
+                'url' => 'index-admin',
                 'caption' => 'Dashboard',
                 'icon' => 'fa fa-th',
                 'active' => 'index-admin',
             ],
 
             [
-                'url' => '#',
+                'url' => 'admin-site-get-settings',
                 'caption' => 'Settings',
                 'icon' => 'fa fa-cogs',
                 'active' => 'admin-site-get-settings',
