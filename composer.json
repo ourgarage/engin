@@ -13,7 +13,6 @@
         "ourgarage/static-pages": "dev-master",
         "ourgarage/contacts": "dev-ENG-25-Create-contacts-package",
         "ourgarage/blog": "dev-master",
-        "jenssegers/date": "^3.2",
         "intervention/image": "^2.3",
         "barryvdh/laravel-debugbar": "^2.2"
     },
