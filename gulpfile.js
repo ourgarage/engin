@@ -7,4 +7,6 @@ elixir(function(mix) {
     mix.copy('node_modules/font-awesome/fonts', 'public/libs/font-awesome/fonts');
     mix.copy('node_modules/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css', 'public/libs/awesome-bootstrap-checkbox');
     mix.copy('node_modules/tinymce', 'public/libs/tinymce');
+    mix.copy('node_modules/vue/dist', 'public/libs/vue');
+    mix.copy('node_modules/vue-resource/dist', 'public/libs/vue-resource');
 });
