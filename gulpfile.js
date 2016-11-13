@@ -10,4 +10,5 @@ elixir(function(mix) {
     mix.copy('node_modules/vue/dist', 'public/libs/vue');
     mix.copy('node_modules/vue-resource/dist', 'public/libs/vue-resource');
     mix.copy('node_modules/bootstrap-datepicker/dist', 'public/libs/bootstrap-datepicker');
+    mix.copy('node_modules/spinline/src', 'public/libs/spinline');
 });
