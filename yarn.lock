@@ -209,13 +209,7 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-bootstrap-datepicker:
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/bootstrap-datepicker/-/bootstrap-datepicker-1.6.4.tgz#889ebeced8eaa2ff15ec1f273e4b07531cc43da0"
-  dependencies:
-    jquery ">=1.7.1"
-
-bootstrap@^3.3.7:
+bootstrap@^3.3, bootstrap@^3.3.7:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
 
@@ -542,6 +536,15 @@ end-of-stream@1.0.0:
   resolved "https://registry.yarnpkg.com/end-of-stream/-/end-of-stream-1.0.0.tgz#d4596e702734a93e40e9af864319eabd99ff2f0e"
   dependencies:
     once "~1.3.0"
+
+eonasdan-bootstrap-datetimepicker:
+  version "4.17.43"
+  resolved "https://registry.yarnpkg.com/eonasdan-bootstrap-datetimepicker/-/eonasdan-bootstrap-datetimepicker-4.17.43.tgz#a8e69addab70452b48fec8b9c9b479da8d1eb4d5"
+  dependencies:
+    bootstrap "^3.3"
+    jquery "^1.8.3 || ^2.0"
+    moment "^2.10"
+    moment-timezone "^0.4.0"
 
 errno@^0.1.1:
   version "0.1.4"
@@ -1367,7 +1370,11 @@ jodid25519@^1.0.0:
   dependencies:
     jsbn "~0.1.0"
 
-jquery@^3.1.1, jquery@>=1.7.1:
+"jquery@^1.8.3 || ^2.0":
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.2.4.tgz#2c89d6889b5eac522a7eea32c14521559c6cbf02"
+
+jquery@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.1.1.tgz#347c1c21c7e004115e0a4da32cece041fad3c8a3"
 
@@ -1807,6 +1814,16 @@ mkdirp@^0.5.0, mkdirp@^0.5.1, "mkdirp@>=0.5 0":
 modify-filename@^1.0.0, modify-filename@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/modify-filename/-/modify-filename-1.1.0.tgz#9a2dec83806fbb2d975f22beec859ca26b393aa1"
+
+moment-timezone@^0.4.0:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.4.1.tgz#81f598c3ad5e22cdad796b67ecd8d88d0f5baa06"
+  dependencies:
+    moment ">= 2.6.0"
+
+moment@^2.10, "moment@>= 2.6.0":
+  version "2.16.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.16.0.tgz#f38f2c97c9889b0ee18fc6cc392e1e443ad2da8e"
 
 ms@0.7.2:
   version "0.7.2"
@@ -2450,8 +2467,8 @@ spdx-license-ids@^1.0.2:
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-1.2.2.tgz#c9df7a3424594ade6bd11900d596696dc06bac57"
 
 spinline:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/spinline/-/spinline-1.1.0.tgz#f01b90601002376c432bd80062d9bb2b0bd3ea20"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/spinline/-/spinline-1.2.0.tgz#d0c741f49d10cd1997f55b0b98bc8aae699c03f0"
 
 sshpk@^1.7.0:
   version "1.10.1"

@@ -9,6 +9,6 @@ elixir(function(mix) {
     mix.copy('node_modules/tinymce', 'public/libs/downloaded/tinymce');
     mix.copy('node_modules/vue/dist', 'public/libs/downloaded/vue');
     mix.copy('node_modules/vue-resource/dist', 'public/libs/downloaded/vue-resource');
-    mix.copy('node_modules/bootstrap-datepicker/dist', 'public/libs/downloaded/bootstrap-datepicker');
+    mix.copy('node_modules/eonasdan-bootstrap-datetimepicker/build', 'public/libs/downloaded/eonasdan-bootstrap-datetimepicker');
     mix.copy('node_modules/spinline/src', 'public/libs/downloaded/spinline');
 });

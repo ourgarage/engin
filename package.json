@@ -11,10 +11,10 @@
   "dependencies": {
     "awesome-bootstrap-checkbox": "^1.0.0-alpha.4",
     "bootstrap": "^3.3.7",
-    "bootstrap-datepicker": "^1.6.4",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.43",
     "font-awesome": "^4.7.0",
     "jquery": "^3.1.1",
-    "spinline": "^1.1.0",
+    "spinline": "^1.2.0",
     "tinymce": "^4.4.3",
     "vue": "^2.0.5",
     "vue-resource": "^1.0.3"
