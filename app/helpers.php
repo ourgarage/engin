@@ -1,10 +1,11 @@
 <?php
 
-use Jenssegers\Date\Date;
+use Carbon\Carbon;
 
-//Date Format 'd M Y' (1 Dec 2005)
+//Default date format 'Y-m-d' (2016-11-14)
 
-function df($date, $format = 'd M Y')
+function df($date)
 {
-    return Date::parse($date)->format($format);
+    $format = conf('settings.site.date_format', config('site.date_format'));
+    return Carbon::parse($date)->format($format);
 }

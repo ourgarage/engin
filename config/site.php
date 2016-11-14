@@ -27,4 +27,6 @@ return [
         'meta-title' => 'Gitios - CMS Engin Core',
     ],
 
+    'date_format' => 'Y-m-d'
+
 ];
