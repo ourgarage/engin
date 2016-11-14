@@ -5,10 +5,10 @@
     "dev": "gulp watch"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "laravel-elixir": "^6.0.0-9"
+    "gulp": "^3.9.1"
   },
   "dependencies": {
+    "laravel-elixir": "^6.0.0-9",
     "admin-lte": "^2.3.8",
     "awesome-bootstrap-checkbox": "^1.0.0-alpha.4",
     "bootstrap": "^3.3.7",
