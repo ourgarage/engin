@@ -7,5 +7,5 @@ Homestead.json
 /.idea/*
 _ide_helper.php
 /public/packages/*
-/public/libs/downloaded/*
+/public/libs/*
 yarn-error.log
