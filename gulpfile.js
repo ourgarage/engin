@@ -13,7 +13,5 @@ elixir(function(mix) {
     mix.copy('node_modules/spinline/src', 'public/libs/spinline');
     mix.copy('node_modules/admin-lte/dist', 'public/libs/adminLTE/dist');
     mix.copy('node_modules/admin-lte/plugins', 'public/libs/adminLTE/plugins');
-    mix.copy('node_modules/moment/locale', 'public/libs/moment/locale');
-    mix.copy('node_modules/moment/min', 'public/libs/moment/min');
     mix.copy('node_modules/moment/src', 'public/libs/moment/src');
 });
