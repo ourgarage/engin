@@ -4,9 +4,9 @@ use Carbon\Carbon;
 use App\Constant\Dates;
 
 /**
- * @param $date
+ * @param date $date
  * @param string $format
- * @return mixed
+ * @return date
  */
 function df($date, $format = Dates::FORMAT_LONG)
 {
