@@ -6,6 +6,8 @@ return [
         'title' => 'Site Settings',
     ],
 
+    'date_format' => 'Y-m-d',
+
     'fields' => [
         'site-name' => 'Name of the site',
         'domain' => 'Domain',
