@@ -6,8 +6,6 @@ return [
         'title' => 'Настройки сайта',
     ],
 
-    'date_format' => 'd.m.Y',
-
     'fields' => [
         'site-name' => 'Название сайта',
         'domain' => 'Домен',
