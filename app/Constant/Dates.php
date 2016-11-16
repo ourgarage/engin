@@ -12,4 +12,6 @@ class Dates
     const FORMAT_FULL = 'full';
 
     const FORMAT_TIME = 'time';
+
+    const TYPE_AGO = 'ago';
 }
