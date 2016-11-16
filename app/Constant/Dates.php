@@ -5,11 +5,11 @@ namespace App\Constant;
 
 class Dates
 {
-    const FORMAT_LONG = 0;
+    const FORMAT_LONG = 'long';
 
-    const FORMAT_SHORT = 1;
+    const FORMAT_SHORT = 'short';
 
-    const FORMAT_FULL = 2;
+    const FORMAT_FULL = 'full';
 
-    const FORMAT_TIME = 3;
+    const FORMAT_TIME = 'time';
 }

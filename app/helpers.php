@@ -18,6 +18,6 @@ function df($date, $format = Dates::FORMAT_LONG)
     ];
 
     $key = isset($mapping[$format]) ? $mapping[$format] : $mapping[Dates::FORMAT_LONG];
-//dd(trans($key));
+
     return Carbon::parse($date)->format(trans($key));
 }
