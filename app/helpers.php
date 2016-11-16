@@ -12,8 +12,6 @@ function df($date, $format = Dates::FORMAT_LONG)
 {
     $date = Carbon::parse($date);
     if ($format === Dates::TYPE_AGO) {
-        Carbon::setLocale(app()->getLocale());
-
         return $date->diffForHumans();
     }
 
