@@ -21,6 +21,8 @@ function df($date, $format = Dates::FORMAT_LONG)
     $key = isset($mapping[$format]) ? $mapping[$format] : $mapping[Dates::FORMAT_LONG];
 
     if ($key === Dates::TYPE_AGO) {
+        Carbon::setLocale(app()->getLocale());
+
         return Carbon::parse($date)->diffForHumans();
     }
 
