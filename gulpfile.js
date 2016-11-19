@@ -14,4 +14,6 @@ elixir(function(mix) {
     mix.copy('node_modules/admin-lte/dist', 'public/libs/adminLTE/dist');
     mix.copy('node_modules/admin-lte/plugins', 'public/libs/adminLTE/plugins');
     mix.copy('node_modules/moment/min/moment-with-locales.min.js', 'public/libs/moment');
+    mix.copy('node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js', 'public/libs/bootstrap-tagsinput');
+    mix.copy('node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css', 'public/libs/bootstrap-tagsinput');
 });
