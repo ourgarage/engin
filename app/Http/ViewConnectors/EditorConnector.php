@@ -6,6 +6,7 @@ class EditorConnector
 {
 
     const MODE_FULL = 'full';
+    const MODE_MEDIUM = 'medium';
     const MODE_LITE = 'lite';
 
     public function connect($elementID, $siteLocale, $imageUploadUrl, $mode = self::MODE_LITE)
