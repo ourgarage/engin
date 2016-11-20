@@ -1,12 +1,16 @@
 function attachTinyMCE(elementID, siteLocale, mode, image) {
-    var defaultToolbar = 'undo redo | styleselect | bold italic | link image | alignjustify alignleft aligncenter alignright | bullist, numlist, outdent, indent';
+    var defaultToolbar = 'undo redo | styleselect | bold italic | link | alignjustify alignleft aligncenter alignright | bullist, numlist, outdent, indent';
     var defaultPlugins = '';
 
     tinymce.init({
         selector: elementID,
         language: siteLocale,
         convert_urls: false,
-        fontsize_formats: "8pt 10pt 11pt 12pt 14pt 16pt 18pt 24pt 36pt"
+        fontsize_formats: "8pt 10pt 11pt 12pt 14pt 16pt 18pt 24pt 36pt",
+
+        file_browser_callback: function(field_name, url, type, win) {
+            win.document.getElementById('#my_form_input').value = 'my browser value';
+        }
     });
 
     if (image) {
