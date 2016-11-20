@@ -9,7 +9,6 @@ function attachHTMLEditorSimple(elementID, siteLocale, routeURL) {
 }
 
 function attachHTMLEditorColorImageUpload(elementID, siteLocale) {
-    siteLocale = 'fr';
     tinymce.init({
         selector: elementID,
         language: siteLocale
