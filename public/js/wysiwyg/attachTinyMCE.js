@@ -6,8 +6,11 @@ function attachWysiwygLite(elementID, siteLocale) {
 }
 
 function attachWysiwygFull(elementID, siteLocale) {
+    siteLocale = 'ru';
+
     tinymce.init({
-        selector: elementID,
-        language: siteLocale
+        selector: elementID
     });
+
+    tinymce.settings.language = siteLocale;
 }
