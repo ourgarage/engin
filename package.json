@@ -16,6 +16,7 @@
     "jquery": "^3.1.1",
     "laravel-elixir": "^6.0.0-9",
     "moment": "^2.16.0",
+    "ourgarage-tinymce-languages": "https://github.com/ourgarage/tinymce-languages",
     "spinline": "^1.2.0",
     "tinymce": "^4.4.3",
     "vue": "^2.0.5",

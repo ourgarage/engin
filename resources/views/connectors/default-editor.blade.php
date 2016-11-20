@@ -1,4 +1,4 @@
-<script src="/libs/trumbowyg/dist/trumbowyg.min.js" type="text/javascript"></script>
+<script src="/libs/tinymce/tinymce.min.js" type="text/javascript"></script>
 
 @if($siteLocale != 'en')
     <script src="/libs/trumbowyg/dist/langs/{{ $siteLocale }}.min.js" type="text/javascript"></script>
@@ -12,5 +12,3 @@
 
 <script src="/js/trumbowyg/attachHTMLEditor.js" type="text/javascript"></script>
 <script>attachHTMLEditorColorImageUpload("{{ $elementID }}", "{{ $siteLocale }}");</script>
-
-

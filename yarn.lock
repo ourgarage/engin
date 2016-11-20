@@ -2038,6 +2038,10 @@ osenv@^0.1.3, osenv@0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
 
+"ourgarage-tinymce-languages@https://github.com/ourgarage/tinymce-languages":
+  version "1.0.0"
+  resolved "https://github.com/ourgarage/tinymce-languages#89a8da5a5255132f7b52272c6dfc06e621b946b9"
+
 parse-filepath@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/parse-filepath/-/parse-filepath-1.0.1.tgz#159d6155d43904d16c10ef698911da1e91969b73"
