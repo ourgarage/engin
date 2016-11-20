@@ -1,8 +1,7 @@
-function attachWysiwygLite(elementID, siteLocale) {
-    //
-}
-
-function attachWysiwygFull(elementID, siteLocale, mode) {
+function attachTinyMCE(elementID, siteLocale, mode, image) {
+    var defaultToolbar = 'undo redo | styleselect | bold italic | link image | alignjustify alignleft aligncenter alignright | bullist, numlist, outdent, indent';
+    var defaultPlugins = '';
+    
     tinymce.init({
         selector: elementID,
         language: siteLocale,
@@ -10,17 +9,25 @@ function attachWysiwygFull(elementID, siteLocale, mode) {
         fontsize_formats: "8pt 10pt 11pt 12pt 14pt 16pt 18pt 24pt 36pt"
     });
 
+    if (image) {
+        defaultPlugins += ' image imagetools';
+        defaultToolbar += ' image';
+    }
+
     if (mode == 'full') {
-        tinymce.settings.plugins = 'code save textcolor advlist autolink link image lists charmap print preview table pagebreak spellchecker';
+        tinymce.settings.plugins = defaultPlugins + ' code save textcolor advlist autolink link lists charmap print preview table pagebreak spellchecker';
         tinymce.settings.toolbar = [
-            'undo redo fontfamily | styleselect | alignleft aligncenter alignright | bullist numlist outdent indent | table | bold italic underline strikethrough | fontselect fontsizeselect | forecolor backcolor | subscript superscript | link image | removeformat | ',
-            'code print preview save'
+            defaultToolbar + ' fontfamily styleselect table | underline strikethrough | fontselect fontsizeselect | forecolor backcolor | subscript superscript | link | removeformat | code print preview save'
         ];
     }
     if (mode == 'medium') {
-        tinymce.settings.plugins = 'textcolor advlist autolink link lists charmap pagebreak spellchecker';
-        tinymce.settings.toolbar = ['undo redo fontfamily | styleselect | alignleft aligncenter alignright | bullist numlist outdent indent | bold italic underline strikethrough | fontselect fontsizeselect | forecolor backcolor | subscript superscript | link | removeformat'];
+        tinymce.settings.plugins = defaultPlugins + ' textcolor advlist autolink link lists charmap pagebreak spellchecker';
+        tinymce.settings.toolbar = [
+            defaultToolbar +
+            ' fontfamily styleselect underline strikethrough | fontselect fontsizeselect | forecolor backcolor | subscript superscript | link | removeformat'];
     }
-
-    // tinymce.settings.language = siteLocale;
+    if (mode == 'lite') {
+        tinymce.settings.plugins = defaultPlugins;
+        tinymce.settings.toolbar = [defaultToolbar];
+    }
 }
