@@ -9,8 +9,11 @@ function attachTinyMCE(elementID, siteLocale, mode, image) {
         fontsize_formats: "8pt 10pt 11pt 12pt 14pt 16pt 18pt 24pt 36pt",
 
         file_browser_callback: function(field_name, url, type, win) {
-            win.document.getElementById('#my_form_input').value = 'my browser value';
-        }
+            $('#dcdcdddcc').click();
+            win.document.getElementById('#dcdcdddcc').value = 'my browser value';
+        },
+        file_browser_callback_types: 'image',
+        images_upload_url: ''
     });
 
     if (image) {
