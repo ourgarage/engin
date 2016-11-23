@@ -1,6 +1,6 @@
 <?php
 
-namespace Ourgarage\Contacts\DTO;
+namespace App\DTO;
 
 class ImageResizeDTO
 {
