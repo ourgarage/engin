@@ -11,7 +11,7 @@
         "garf/laravel-conf": "3.*",
         "garf/laravel-notifications": "2.*",
         "ourgarage/static-pages": "dev-master",
-        "ourgarage/contacts": "dev-ENG-25-Create-contacts-package",
+        "ourgarage/contacts": "dev-master",
         "ourgarage/blog": "dev-master",
         "intervention/image": "^2.3",
         "barryvdh/laravel-debugbar": "^2.2"
