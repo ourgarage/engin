@@ -6,14 +6,7 @@ function attachTinyMCE(elementID, siteLocale, mode, image) {
         selector: elementID,
         language: siteLocale,
         convert_urls: false,
-        fontsize_formats: "8pt 10pt 11pt 12pt 14pt 16pt 18pt 24pt 36pt",
-
-        file_browser_callback: function(field_name, url, type, win) {
-            $('#dcdcdddcc').click();
-            win.document.getElementById('#dcdcdddcc').value = 'my browser value';
-        },
-        file_browser_callback_types: 'image',
-        images_upload_url: ''
+        fontsize_formats: "8pt 10pt 11pt 12pt 14pt 16pt 18pt 24pt 36pt"
     });
 
     if (image) {
