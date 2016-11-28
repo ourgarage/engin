@@ -26,5 +26,4 @@ return [
         'meta-description' => 'CMS Engin Core',
         'meta-title' => 'Gitios - CMS Engin Core',
     ],
-
 ];
