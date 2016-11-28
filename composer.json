@@ -13,6 +13,7 @@
         "ourgarage/static-pages": "dev-master",
         "ourgarage/contacts": "dev-ENG-25-Create-contacts-package",
         "ourgarage/blog": "dev-master",
+        "ourgarage/gallery": "dev-master",
         "intervention/image": "^2.3",
         "barryvdh/laravel-debugbar": "^2.2"
     },
@@ -35,6 +36,10 @@
         {
             "type": "git",
             "url": "git@github.com:ourgarage/blog.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:ourgarage/gallery.git"
         }
     ],
     "autoload": {
