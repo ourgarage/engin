@@ -190,6 +190,7 @@ return [
         Ourgarage\Contacts\ContactsServiceProvider::class,
         Ourgarage\StaticPages\StaticPagesServiceProvider::class,
         Ourgarage\Blog\BlogServiceProvider::class,
+        Ourgarage\Gallery\GalleryServiceProvider::class,
 
     ],
 
