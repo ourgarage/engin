@@ -5,3 +5,5 @@ function buttonConfirmation(e, text) {
     e.preventDefault();
     return false;
 }
+
+$("a[data=tb]").attr("target", "_blank");

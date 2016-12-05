@@ -17,4 +17,7 @@ elixir(function(mix) {
     mix.copy('node_modules/moment/min/moment-with-locales.min.js', 'public/libs/moment');
     mix.copy('node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js', 'public/libs/bootstrap-tagsinput');
     mix.copy('node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css', 'public/libs/bootstrap-tagsinput');
+    mix.copy('node_modules/select2/dist/css/select2.min.css', 'public/libs/select2');
+    mix.copy('node_modules/select2/dist/js/select2.min.js', 'public/libs/select2');
+    mix.copy('node_modules/select2/dist/js/i18n', 'public/libs/select2/i18n');
 });
