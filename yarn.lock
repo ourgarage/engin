@@ -597,6 +597,10 @@ es6-iterator@2:
     es5-ext "^0.10.7"
     es6-symbol "3"
 
+es6-promise@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.0.5.tgz#7882f30adde5b240ccfa7f7d78c548330951ae42"
+
 es6-symbol@^3.0.2, es6-symbol@~3.1, es6-symbol@3:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/es6-symbol/-/es6-symbol-3.1.0.tgz#94481c655e7a7cad82eba832d97d5433496d7ffa"
@@ -1198,11 +1202,6 @@ http-signature@~1.1.0:
     assert-plus "^0.2.0"
     jsprim "^1.2.2"
     sshpk "^1.7.0"
-
-"https://github.com/ourgarage/tinymce-languages", "ourgarage-tinymce-languages@https://github.com/ourgarage/tinymce-languages":
-  name ourgarage-tinymce-languages
-  version "1.0.0"
-  resolved "https://github.com/ourgarage/tinymce-languages#8b017a2f548ad75b5cfaf1d8db8c7a5068c65ab2"
 
 image-size@~0.5.0:
   version "0.5.0"
@@ -2081,6 +2080,10 @@ osenv@^0.1.3, osenv@0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
 
+"ourgarage-tinymce-languages@https://github.com/ourgarage/tinymce-languages":
+  version "1.0.0"
+  resolved "https://github.com/ourgarage/tinymce-languages#8b017a2f548ad75b5cfaf1d8db8c7a5068c65ab2"
+
 parse-filepath@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/parse-filepath/-/parse-filepath-1.0.1.tgz#159d6155d43904d16c10ef698911da1e91969b73"
@@ -2619,6 +2622,12 @@ supports-color@^3.1.2:
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-3.1.2.tgz#72a262894d9d408b956ca05ff37b2ed8a6e2a2d5"
   dependencies:
     has-flag "^1.0.0"
+
+sweetalert2:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-6.2.1.tgz#3f010b1abd396ccb5a0f93853f67df6f4c4288ad"
+  dependencies:
+    es6-promise "^4.0.5"
 
 tar@^2.0.0:
   version "2.2.1"
