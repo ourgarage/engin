@@ -187,10 +187,11 @@ return [
         Garf\LaravelConf\LaravelConfServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Ourgarage\Contacts\ContactsServiceProvider::class,
         Ourgarage\StaticPages\StaticPagesServiceProvider::class,
         Ourgarage\Blog\BlogServiceProvider::class,
-
+        Ourgarage\Faq\FaqServiceProvider::class,
     ],
 
     /*
