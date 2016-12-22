@@ -13,6 +13,7 @@
         "ourgarage/static-pages": "dev-master",
         "ourgarage/contacts": "dev-master",
         "ourgarage/blog": "dev-master",
+        "ourgarage/faq": "dev-master",
         "intervention/image": "^2.3",
         "barryvdh/laravel-debugbar": "^2.2"
     },
@@ -21,7 +22,8 @@
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~5.0",
         "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*"
+        "symfony/dom-crawler": "3.1.*",
+        "barryvdh/laravel-ide-helper": "^2.2"
     },
     "repositories": [
         {
@@ -35,6 +37,10 @@
         {
             "type": "git",
             "url": "git@github.com:ourgarage/blog.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:ourgarage/faq.git"
         }
     ],
     "autoload": {
