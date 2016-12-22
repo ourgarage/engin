@@ -24,17 +24,19 @@
                               method="POST">
                             {{ csrf_field() }}
                             @if($admin->status == \App\Models\User::STATUS_ACTIVE)
-                                <button type="submit" onclick="return buttonConfirmation(event, 'Deactivate?')"
+                                <button type="submit" data-confirm="{{ trans('users.confirm.deactivate') }}"
                                         class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top"
                                         title="{{ trans('users.tooltip.status') }}"><i class="fa fa-check"></i></button>
                             @else
-                                <button type="submit" onclick="return buttonConfirmation(event, 'Activate?')"
+                                <button type="submit" data-confirm="{{ trans('users.confirm.activate') }}"
                                         class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top"
-                                        title="{{ trans('users.tooltip.status') }}"><i class="fa fa-power-off"></i></button>
+                                        title="{{ trans('users.tooltip.status') }}"><i class="fa fa-power-off"></i>
+                                </button>
                             @endif
                         </form>
                         <form action="{{ route('admin-users-edit', ['id' => $admin->id]) }}" method="GET">
-                            <button type="submit" class="btn btn-xs btn-warning" data-toggle="tooltip" data-placement="top"
+                            <button type="submit" class="btn btn-xs btn-warning" data-toggle="tooltip"
+                                    data-placement="top"
                                     title="{{ trans('users.tooltip.edit') }}"><i class="fa fa-pencil"></i>
                             </button>
                         </form>
@@ -42,8 +44,10 @@
                               method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                            <button type="submit" onclick="return buttonConfirmation(event, 'Delete?')"
-                                    class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="{{ trans('users.tooltip.delete') }}"><i class="fa fa-remove"></i></button>
+                            <button type="submit" data-confirm="{{ trans('users.confirm.delete') }}"
+                                    class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top"
+                                    title="{{ trans('users.tooltip.delete') }}"><i class="fa fa-remove"></i>
+                            </button>
                         </form>
                     </td>
                 </tr>

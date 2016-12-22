@@ -38,6 +38,12 @@ return [
         'delete' => 'Delete',
     ],
 
+    'confirm' => [
+        'activate' => 'Do you want activate this user?',
+        'deactivate' => 'Do you want deactivate this user?',
+        'delete' => 'Do you want delete this user?',
+    ],
+
     'index' => [
         'title' => 'Administrators',
     ],
