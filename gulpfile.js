@@ -20,4 +20,7 @@ elixir(function(mix) {
     mix.copy('node_modules/select2/dist/css/select2.min.css', 'public/libs/select2');
     mix.copy('node_modules/select2/dist/js/select2.min.js', 'public/libs/select2');
     mix.copy('node_modules/select2/dist/js/i18n', 'public/libs/select2/i18n');
+    mix.copy('node_modules/dropzone/dist/min/dropzone.min.js', 'public/libs/dropzone');
+    mix.copy('node_modules/dropzone/dist/min/dropzone.min.css', 'public/libs/dropzone');
+    mix.copy('node_modules/dropzone/dist/min/basic.min.css', 'public/libs/dropzone');
 });
