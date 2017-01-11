@@ -1,5 +1,3 @@
-init_dev: composer_install database_create migrations_seeds npm_yarn_gulp nginx_settings env_create
-
 PROJECT ?= engin
 
 ENV_SETTINGS ?= "
@@ -36,6 +34,8 @@ ENV_SETTINGS ?= "
 	PUSHER_SECRET=
 	PUSHER_APP_ID=
 "
+
+init_dev: composer_install database_create migrations_seeds npm_yarn_gulp
 	
 composer_install:
 	php composer.phar install
@@ -52,8 +52,4 @@ npm_yarn_gulp:
 	npm install
 	yarn
 	gulp
-	
-env_create:
-	echo ${ENV_SETTINGS} > .env
-	php artisan key:generate
 	
