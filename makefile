@@ -17,4 +17,3 @@ npm_yarn_gulp:
 	npm install
 	yarn
 	gulp
-	
