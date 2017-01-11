@@ -1,4 +1,4 @@
-init_dev: composer_install database_create migrations_seeds init_front
+init_dev: composer_install database_create migrations_seeds init_front env_copy
 	
 composer_install:
 	php composer.phar install
