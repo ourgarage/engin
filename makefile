@@ -1,4 +1,4 @@
-init_dev:
+init_dev: composer_install database_create migrations_seeds npm_yarn_gulp nginx_settings env_create
 
 PROJECT ?= engin
 
