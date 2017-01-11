@@ -1,6 +1,6 @@
 PROJECT ?= engin
 
-init_dev: composer_install database_create migrations_seeds npm_yarn_gulp
+init_dev: composer_install database_create migrations_seeds init_front
 	
 composer_install:
 	php composer.phar install
@@ -13,6 +13,6 @@ database_create:
 migrations_seeds:
 	php artisan migrate:refresh --seed
 	
-npm_yarn_gulp:
+init_front:
 	yarn
 	gulp
