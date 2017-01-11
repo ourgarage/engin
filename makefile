@@ -1,5 +1,3 @@
-PROJECT ?= engin
-
 init_dev: composer_install database_create migrations_seeds init_front
 	
 composer_install:
@@ -7,7 +5,7 @@ composer_install:
 	
 database_create:
 	mysql -u homestead -p
-	CREATE DATABASE ${PROJECT};
+	CREATE DATABASE engin;
 	exit;
 	
 migrations_seeds:
