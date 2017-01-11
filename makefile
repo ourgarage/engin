@@ -14,6 +14,5 @@ migrations_seeds:
 	php artisan migrate:refresh --seed
 	
 npm_yarn_gulp:
-	npm install
 	yarn
 	gulp
