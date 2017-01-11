@@ -18,4 +18,5 @@ elixir(function(mix) {
     mix.copy('node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js', 'public/libs/bootstrap-tagsinput');
     mix.copy('node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css', 'public/libs/bootstrap-tagsinput');
     mix.copy('node_modules/sweetalert2/dist', 'public/libs/sweetalert2');
+    mix.copy('node_modules/fancybox/dist', 'public/libs/fancybox');
 });
