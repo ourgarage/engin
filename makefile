@@ -14,3 +14,7 @@ migrations_seeds:
 init_front:
 	yarn
 	gulp
+
+env_copy:
+	cp .env.example .env
+	php artisan key:generate
