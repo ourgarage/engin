@@ -1,0 +1,19 @@
+/*COLORS*/
+/*Example*/
+body {
+  background: #e1e3ea;
+}
+.page-logo {
+  text-align: center;
+  padding: .5em 0 2.3em 0;
+}
+.page-logo img {
+  height: 3.1em;
+  max-width: 90vw;
+  max-height: 5em;
+}
+.form-description {
+  padding-top: .5em;
+  font-size: .95em;
+  color: #918f97;
+}

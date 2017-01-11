@@ -5,16 +5,44 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.5.9",
-        "laravel/framework": "5.2.*"
+        "php": ">=5.6.4",
+        "laravel/framework": "5.3.*",
+        "garf/laravel-title": "2.*",
+        "garf/laravel-conf": "3.*",
+        "garf/laravel-notifications": "2.*",
+        "ourgarage/static-pages": "dev-master",
+        "ourgarage/contacts": "dev-master",
+        "ourgarage/blog": "dev-master",
+        "ourgarage/faq": "dev-master",
+        "intervention/image": "^2.3",
+        "barryvdh/laravel-debugbar": "^2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~4.0",
-        "symfony/css-selector": "2.8.*|3.0.*",
-        "symfony/dom-crawler": "2.8.*|3.0.*"
+        "phpunit/phpunit": "~5.0",
+        "symfony/css-selector": "3.1.*",
+        "symfony/dom-crawler": "3.1.*",
+        "barryvdh/laravel-ide-helper": "^2.2"
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:ourgarage/static-pages.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:ourgarage/contacts.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:ourgarage/blog.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:ourgarage/faq.git"
+        }
+    ],
     "autoload": {
         "classmap": [
             "database"
@@ -30,7 +58,7 @@
     },
     "scripts": {
         "post-root-package-install": [
-            "php -r \"copy('.env.example', '.env');\""
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
             "php artisan key:generate"
