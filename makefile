@@ -4,7 +4,7 @@ composer_install:
 	php composer.phar install
 	
 database_create:
-	mysql -u homestead -e
+	mysql -u homestead -psecret
 	CREATE DATABASE engin;
 	exit;
 	
