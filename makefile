@@ -1,12 +1,14 @@
-init_dev: composer_install database_create migrations_seeds init_front env_copy
+init_dev: composer_install database_create env_copy migrations_seeds init_front key_generate
 	
 composer_install:
 	php composer.phar install
 	
 database_create:
-	mysql -u homestead -psecret
-	CREATE DATABASE engin;
+	mysql -u homestead -psecret -e "CREATE DATABASE engin CHARACTER SET utf8 COLLATE utf8_general_ci; GRANT ALL PRIVILEGES ON engin.* TO engin@localhost IDENTIFIED BY 'engin'";
 	exit;
+
+env_copy:
+	cp .env.example .env
 	
 migrations_seeds:
 	php artisan migrate:refresh --seed
@@ -15,6 +17,5 @@ init_front:
 	yarn
 	gulp
 
-env_copy:
-	cp .env.example .env
+key_generate:
 	php artisan key:generate
