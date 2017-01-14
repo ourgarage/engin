@@ -14,7 +14,7 @@ migrations_seeds:
 	php artisan migrate:refresh --seed
 	
 init_front:
-	yarn
+	yarn install --no-bin-links
 	gulp
 
 key_generate:
