@@ -4,7 +4,7 @@ composer_install:
 	php composer.phar install
 	
 database_create:
-	mysql -u homestead -psecret -e "CREATE DATABASE engin CHARACTER SET utf8 COLLATE utf8_general_ci; GRANT ALL PRIVILEGES ON engin.* TO engin@localhost IDENTIFIED BY 'engin'";
+	mysql -u homestead -psecret -e "CREATE DATABASE IF NOT EXISTS engin CHARACTER SET utf8 COLLATE utf8_general_ci; GRANT ALL PRIVILEGES ON engin.* TO engin@localhost IDENTIFIED BY 'engin'";
 	exit;
 
 env_copy:
