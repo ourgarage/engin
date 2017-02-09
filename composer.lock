@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b661f7c230ac22b1a32bd0993966e9d1",
+    "content-hash": "093a19ef5fcc7eccaff9d5bebe6673e2",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -543,17 +543,61 @@
             "time": "2015-04-20T18:58:01+00:00"
         },
         {
-            "name": "laravel/framework",
-            "version": "v5.4.9",
+            "name": "laracasts/utilities",
+            "version": "2.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "600330ae1d218919b3b307e0578461a2df248663"
+                "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                "reference": "4402a0ed774f8eb36ea7ba169341d9d5b6049378"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/600330ae1d218919b3b307e0578461a2df248663",
-                "reference": "600330ae1d218919b3b307e0578461a2df248663",
+                "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/4402a0ed774f8eb36ea7ba169341d9d5b6049378",
+                "reference": "4402a0ed774f8eb36ea7ba169341d9d5b6049378",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laracasts\\Utilities\\JavaScript\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Transform your PHP to JavaScript",
+            "keywords": [
+                "javascript",
+                "laravel"
+            ],
+            "time": "2015-10-01T05:16:28+00:00"
+        },
+        {
+            "name": "laravel/framework",
+            "version": "v5.4.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "4c8837046c998925972c8010bfac435c4be5facc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/4c8837046c998925972c8010bfac435c4be5facc",
+                "reference": "4c8837046c998925972c8010bfac435c4be5facc",
                 "shasum": ""
             },
             "require": {
@@ -669,7 +713,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-02-03T19:47:35+00:00"
+            "time": "2017-02-08T15:01:52+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1157,7 +1201,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:ourgarage/faq.git",
-                "reference": "a4617dae4cf5b817d3a0fca321dd0ac20d201dd0"
+                "reference": "1427a03ca65697a4c5c024b8a911d344ba6c006a"
             },
             "type": "package",
             "autoload": {
@@ -1175,7 +1219,7 @@
                 }
             ],
             "description": "Package FAQ for Engin CMS",
-            "time": "2017-01-24 10:39:49"
+            "time": "2017-02-07 10:37:53"
         },
         {
             "name": "ourgarage/static-pages",
@@ -3257,16 +3301,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.11",
+            "version": "5.7.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a6ad2472daba76b0689042b7709f86d4f06bcaab"
+                "reference": "944600e244f80a5252679878553b95c63dbf978b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a6ad2472daba76b0689042b7709f86d4f06bcaab",
-                "reference": "a6ad2472daba76b0689042b7709f86d4f06bcaab",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/944600e244f80a5252679878553b95c63dbf978b",
+                "reference": "944600e244f80a5252679878553b95c63dbf978b",
                 "shasum": ""
             },
             "require": {
@@ -3335,7 +3379,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-02-05T15:31:31+00:00"
+            "time": "2017-02-08T05:54:05+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
