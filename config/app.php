@@ -193,6 +193,7 @@ return [
         Ourgarage\StaticPages\StaticPagesServiceProvider::class,
         Ourgarage\Blog\BlogServiceProvider::class,
         Ourgarage\Faq\FaqServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
     ],
 
     /*
