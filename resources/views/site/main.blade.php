@@ -7,5 +7,7 @@
 </head>
 <body>
     @yield('body')
+
+    @yield('js')
 </body>
 </html>
