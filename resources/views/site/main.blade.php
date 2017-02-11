@@ -8,6 +8,8 @@
 <body>
     @yield('body')
 
+    @include('site.partials.footer')
+
     @yield('js')
 </body>
 </html>
